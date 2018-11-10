@@ -20943,6 +20943,80 @@ textarea:focus {
 .header-bottom .top-phone span {
   color: #c60000;
 }
+.home-top-right h2 {
+  margin-top: 0 !important;
+}
+.home-top-right .mf-category-tabs .tabs-header ul {
+  padding: 0;
+}
+.home-top-right .mf-category-tabs .tabs-nav {
+  border-bottom: 1px solid #000;
+}
+.home-top-right .mf-category-tabs .tabs-nav li {
+  width: 50% !important;
+  background-color: #000;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.home-top-right .mf-category-tabs .tabs-content {
+  padding: 15px;
+}
+.home-top-right .mf-category-tabs .tabs-content ul li {
+  width: 100% !important;
+  margin: 0;
+}
+.home-top-right .mf-category-tabs .tabs-nav li a h2 {
+  color: #fff;
+  font-size: 16px;
+}
+.home-top-right .mf-category-tabs .tabs-nav li:after {
+  display: none;
+}
+.home-top-right .mf-category-tabs .tabs-nav li.active {
+  background-color: #cc2424;
+}
+.home-top-right .mf-category-tabs .tabs-nav li:first-child {
+  position:relative;
+}
+.home-top-right .mf-category-tabs .tabs-nav li:first-child:before {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    content: '';
+    width: 0;
+    height: 0;
+    border-right: 15px solid;
+    border-right-color:  #cc2424;
+    border-bottom: 23px solid transparent;
+    border-top: 25px solid transparent;
+    right: 0px;
+}
+.home-top-right .mf-category-tabs .tabs-nav li:first-child.active:before {
+  border-right-color: #000 !important;
+}
+.home-top-right .mf-category-tabs .tabs-nav li.active a h2 {
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.home-top-right .mf-category-tabs .tabs-content ul li .t-imgage {
+  width: 25%;
+  float: left;
+  padding-right: 15px;
+}
+.home-top-right .mf-category-tabs .tabs-content ul li h2 {
+  font-size: 14px;
+  color: #111111;
+  text-align: left;
+  margin-top: 0;
+}
+.home-top-right .mf-category-tabs .tabs-content ul li h2:hover {
+  cursor: pointer;
+}
+.home-top-right .mf-category-tabs .tabs-nav .slick-track {
+  width: 100% !important;
+}
+
 @media (max-width: 1199px) {
   .header-bottom .header-logo {
     width: 20% !important;
