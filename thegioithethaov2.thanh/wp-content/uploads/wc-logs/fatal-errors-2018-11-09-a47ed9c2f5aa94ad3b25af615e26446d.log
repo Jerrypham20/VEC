@@ -1,0 +1,19 @@
+2018-11-09T02:01:10+00:00 CRITICAL Uncaught Error: Call to undefined function martfury_header_bar() in D:\OSPanel\domains\thegioithethaothanh.local\wp-content\themes\martfury\template-parts\headers\layout-3.php:39
+Stack trace:
+#0 D:\OSPanel\domains\thegioithethaothanh.local\wp-includes\template.php(690): require()
+#1 D:\OSPanel\domains\thegioithethaothanh.local\wp-includes\template.php(647): load_template('D:\\OSPanel\\doma...', false)
+#2 D:\OSPanel\domains\thegioithethaothanh.local\wp-includes\general-template.php(155): locate_template(Array, true, false)
+#3 D:\OSPanel\domains\thegioithethaothanh.local\wp-content\themes\martfury\inc\frontend\header.php(457): get_template_part('template-parts/...', '3')
+#4 D:\OSPanel\domains\thegioithethaothanh.local\wp-includes\class-wp-hook.php(286): martfury_show_header('')
+#5 D:\OSPanel\domains\thegioithethaothanh.local\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#6 D:\OSPanel\domains\thegioithethaothanh.local\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#7 D:\OSPanel\do in D:\OSPanel\domains\thegioithethaothanh.local\wp-content\themes\martfury\template-parts\headers\layout-3.php on line 39
+
+2018-11-09T04:02:35+00:00 CRITICAL syntax error, unexpected '$register' (T_VARIABLE), expecting ',' or ')' in D:\OSPanel\domains\thegioithethaothanh.local\wp-content\themes\martfury\inc\functions\header.php on line 100
+
+2018-11-09T04:02:48+00:00 CRITICAL syntax error, unexpected ')' in D:\OSPanel\domains\thegioithethaothanh.local\wp-content\themes\martfury\inc\functions\header.php on line 99
+
+2018-11-09T04:03:11+00:00 CRITICAL syntax error, unexpected ')' in D:\OSPanel\domains\thegioithethaothanh.local\wp-content\themes\martfury\inc\functions\header.php on line 100
+
+2018-11-09T09:35:36+00:00 CRITICAL Maximum execution time of 180 seconds exceeded in D:\OSPanel\domains\thegioithethaothanh.local\wp-includes\class-wp-http-curl.php on line 331
+
