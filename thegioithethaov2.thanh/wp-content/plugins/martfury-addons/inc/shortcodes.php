@@ -77,6 +77,8 @@ class Martfury_Shortcodes {
 			'banners_grid',
 			'banners_grid_2',
 			'banner_small',
+			'banner_sliders',
+			'banner_slider',
 			'banner_large',
 			'banner_medium',
 			'products_grid',

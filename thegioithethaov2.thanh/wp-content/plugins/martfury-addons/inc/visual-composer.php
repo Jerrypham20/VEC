@@ -166,7 +166,6 @@ class Martfury_VC {
 	 * @return void
 	 */
 	function map_shortcodes() {
-
 		// Empty Space
 		vc_map(
 			array(
@@ -2161,6 +2160,64 @@ class Martfury_VC {
 			)
 		);
 
+
+		// Banner Slider
+		vc_map(
+			array(
+				'name'        => esc_html__( 'Banner Slider', 'martfury' ),
+				'base'        => 'martfury_banner_sliders',
+				'as_parent'   => array( 'only' => 'martfury_banner_slider' ),
+				'class'       => '',
+				'content_element'         => true,
+				'show_settings_on_create' => false,
+				'is_container'            => true,
+				'category'    => esc_html__( 'Martfury', 'martfury' ),
+				'icon'        => $this->get_icon(),
+				'description' => esc_html__( 'List slider banner', 'martfury' ),
+				'js_view'                 => 'VcColumnView',
+			)
+		);
+		vc_map(
+			array(
+				'name'        => esc_html__( 'Banner Slider', 'martfury' ),
+				'base'        => 'martfury_banner_slider',
+				'as_child'    => array( 'only' => 'martfury_banner_sliders' ),
+				'class'       => '',
+				'category'    => esc_html__( 'Martfury', 'martfury' ),
+				'icon'        => $this->get_icon(),
+				'description' => esc_html__( 'Simple image with text', 'martfury' ),
+				'params'      => array(
+					array(
+						'heading'    => esc_html__( 'Tags', 'martfury' ),
+						'type'       => 'param_group',
+						'value'      => '',
+						'param_name' => 'tags',
+						'params'     => array(
+							array(
+								'type'        => 'attach_image',
+								'heading'     => esc_html__( 'Image', 'martfury' ),
+								'param_name'  => 'image',
+								'value'       => '',
+								'description' => esc_html__( 'Select an image from media library', 'martfury' ),
+							),
+							array(
+								'heading'     => esc_html__( 'Title', 'martfury' ),
+								'param_name'  => 'title',
+								'type'        => 'textfield',
+								'value'       => '',
+								'admin_label' => true,
+							),
+							array(
+								'heading'    => esc_html__( 'Link', 'martfury' ),
+								'param_name' => 'link',
+								'type'       => 'vc_link',
+								'value'      => '',
+							),
+						),
+					),
+				),
+			)
+		);
 		// Add category tabs
 		vc_map(
 			array(
@@ -2308,7 +2365,7 @@ class Martfury_VC {
 			)
 		);
 
-		// Add category tabs
+		// Add Category Box
 		vc_map(
 			array(
 				'name'        => esc_html__( 'Category Box', 'martfury' ),
@@ -2388,7 +2445,7 @@ class Martfury_VC {
 			)
 		);
 
-		// Add category tabs
+		// Add Banners Grid
 		vc_map(
 			array(
 				'name'        => esc_html__( 'Banners Grid', 'martfury' ),
@@ -2442,6 +2499,7 @@ class Martfury_VC {
 			)
 		);
 
+		//Banners Grid 2
 		vc_map(
 			array(
 				'name'        => esc_html__( 'Banners Grid 2', 'martfury' ),
@@ -3680,6 +3738,8 @@ class Martfury_VC {
 				),
 			)
 		);
+
+
 
 		// Banner Medium
 		vc_map(
@@ -5214,5 +5274,14 @@ if ( class_exists( 'WPBakeryShortCodesContainer' ) ) {
 }
 if ( class_exists( 'WPBakeryShortCode' ) ) {
 	class WPBakeryShortCode_martfury_category_tab extends WPBakeryShortCode {
+	}
+}
+
+if ( class_exists( 'WPBakeryShortCodesContainer' ) ) {
+	class WPBakeryShortCode_martfury_banner_sliders extends WPBakeryShortCodesContainer {
+	}
+}
+if ( class_exists( 'WPBakeryShortCode' ) ) {
+	class WPBakeryShortCode_martfury_banner_slider extends WPBakeryShortCode {
 	}
 }
