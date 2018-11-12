@@ -15,11 +15,11 @@ if ( empty( $extras ) || ! in_array( 'department', $extras ) ) {
                     <div class="d-logo">
 						<?php get_template_part( 'template-parts/logo' ); ?>
                     </div>
-					<?php if ( intval( martfury_get_option( 'sticky_header' ) ) ) : ?>
+					<!-- <?php if ( intval( martfury_get_option( 'sticky_header' ) ) ) : ?>
                         <div class="d-department hidden-md hidden-xs hidden-sm">
 							<?php martfury_extra_department( true, 'sticky' ); ?>
                         </div>
-					<?php endif; ?>
+					<?php endif; ?> -->
                 </div>
                 <div class="header-extras">
                     <ul class="extras-menu">

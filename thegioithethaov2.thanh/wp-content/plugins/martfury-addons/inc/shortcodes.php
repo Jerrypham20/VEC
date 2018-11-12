@@ -78,7 +78,6 @@ class Martfury_Shortcodes {
 			'banners_grid_2',
 			'banner_small',
 			'banner_sliders',
-			'banner_slider',
 			'banner_large',
 			'banner_medium',
 			'products_grid',
@@ -432,6 +431,9 @@ class Martfury_Shortcodes {
 			implode( ' ', $output )
 		);
 	}
+
+
+
 
 	/**
 	 * Category Tabs
@@ -2247,6 +2249,7 @@ class Martfury_Shortcodes {
 		}
 
 		$tabs        = vc_param_group_parse_atts( $atts['tabs'] );
+	
 		$tab_content = array();
 		if ( $tabs ) {
 			$header_tabs[] = '<div class="tabs-header-nav">';
@@ -2334,6 +2337,84 @@ class Martfury_Shortcodes {
 		} else {
 			return implode( ' ', $tab_content );
 		}
+	}
+
+
+	/**
+	 * Banner sliders shortcode
+	 *
+	 * @param array $atts
+	 * @param string $content
+	 *
+	 * @return string
+	 */
+	function banner_sliders( $atts, $content ) {
+		$atts = shortcode_atts(
+			array(
+				'group_banner'            => '',
+			), $atts
+		);
+
+		if ( ! $this->wc_actived ) {
+			return;
+		}
+
+		$this->cat_tabs[] = array(
+			'group_banner'             => $atts['group_banner'],
+		);
+
+		foreach ( $this->cat_tabs as $index => $tab ) {
+
+			$group = vc_param_group_parse_atts( $tab['group_banner'] );
+
+			$tab_content_image = array();
+			$tab_content_title = array();
+			if ( $group ) {
+				$tab_content_image[] = '<div id="slider-image" class="flexslider"><ul class="slides">';
+				$tab_content_title[] = '<div id="banner-title" class="flexslider"><ul class="slides">';
+				foreach ( $group as $tab ) {
+					$tag_image = $this->get_Image_By_Size(
+						array(
+							'attach_id'  => $tab['image'],
+						)
+					);
+					$link      = isset( $tab['link'] ) ? vc_build_link( $tab['link'] ) : '';
+
+					$attributes = array();
+					if ( ! empty( $link['url'] ) ) {
+						$attributes['href'] = $link['url'];
+					}
+
+
+					if ( ! empty( $link['rel'] ) ) {
+						$attributes['rel'] = $link['rel'];
+					}
+					$attr = array();
+					foreach ( $attributes as $name => $value ) {
+						$attr[] = $name . '="' . esc_attr( $value ) . '"';
+					}
+
+					$tab_content_image[] = sprintf(
+						'<li><a %s>%s</a></li>',
+						implode( ' ', $attr ),
+						$tag_image
+					);
+					$tab_content_title[] = sprintf(
+						'<li>%s</li>',
+						esc_html( $tab['title'])
+					);
+
+				}
+				$tab_content_image[] = '</ul></div>';
+				$tab_content_title[] = '</ul></div>';
+
+			}
+		}
+			return sprintf(
+				'<section class="slider">'.'%s'.'%s'.'</section>',
+				implode( '', $tab_content_image ),
+				implode( '', $tab_content_title )
+			);
 	}
 
 	/**

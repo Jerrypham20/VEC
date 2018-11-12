@@ -592,10 +592,10 @@ dd {
 }
 @font-face {
   font-family: 'Helvetica';
-  src:  url('/fonts/helvetica/Helvetica.eot?#iefix') format('embedded-opentype'),  
-        url('/fonts/helvetica/Helvetica.woff') format('woff'), 
-        url('/fonts/helvetica/Helvetica.ttf')  format('truetype'), 
-        url('/fonts/helvetica/Helvetica.svg#Helvetica') format('svg');
+  src:  url('fonts/helvetica/Helvetica.eot?#iefix') format('embedded-opentype'),  
+        url('fonts/helvetica/Helvetica.woff') format('woff'), 
+        url('fonts/helvetica/Helvetica.ttf')  format('truetype'), 
+        url('fonts/helvetica/Helvetica.svg#Helvetica') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -3047,13 +3047,9 @@ div.aligncenter,
   z-index: 999;
   animation-name: fadeInDown;
   animation-duration: 0.25s;
-  padding-top: 10px;
-  padding-bottom: 10px;
   border-bottom: 1px solid #e1e1e1;
 }
-.sticky-header .site-header.minimized .header-main .d-logo {
-  display: none;
-}
+
 .sticky-header .site-header.minimized .header-main .d-department {
   display: block;
   align-items: left;
@@ -19272,8 +19268,6 @@ textarea:focus {
     left: 0;
     right: 0;
     z-index: 9999;
-    padding-top: 10px;
-    padding-bottom: 10px;
     background-color: #fff;
     -webkit-animation-name: fadeInDown;
     animation-name: fadeInDown;
