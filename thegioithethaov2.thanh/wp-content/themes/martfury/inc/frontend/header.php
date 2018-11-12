@@ -21,6 +21,7 @@ function martfury_enqueue_scripts() {
 	wp_register_style( 'ionicons', get_template_directory_uri() . '/css/ionicons.min.css', array(), '2.0.0' );
 	wp_register_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.6.3' );
 	wp_register_style( 'eleganticons', get_template_directory_uri() . '/css/eleganticons.min.css', array(), '1.0.0' );
+	wp_register_style( 'flex-css', get_template_directory_uri() . '/css/flexslider.css', array(), '1.0.0' );
 	wp_register_style( 'photoswipe', get_theme_file_uri( 'css/photoswipe.css' ), array(), '4.1.1' );
 	wp_enqueue_style( 'martfury', get_template_directory_uri() . '/style.css', array(
 		'martfury-fonts',
@@ -29,6 +30,7 @@ function martfury_enqueue_scripts() {
 		'font-awesome',
 		'eleganticons',
 		'bootstrap',
+		'flex-css',
 	), '20170801' );
 
 	wp_add_inline_style( 'martfury', martfury_header_styles() );

@@ -2352,6 +2352,7 @@ class Martfury_Shortcodes {
 		$atts = shortcode_atts(
 			array(
 				'group_banner'            => '',
+				'image_size'       		=> 'full',
 			), $atts
 		);
 
@@ -2361,6 +2362,7 @@ class Martfury_Shortcodes {
 
 		$this->cat_tabs[] = array(
 			'group_banner'             => $atts['group_banner'],
+			'image_size'             => $atts['image_size'],
 		);
 
 		foreach ( $this->cat_tabs as $index => $tab ) {
@@ -2372,13 +2374,14 @@ class Martfury_Shortcodes {
 			if ( $group ) {
 				$tab_content_image[] = '<div id="slider-image" class="flexslider"><ul class="slides">';
 				$tab_content_title[] = '<div id="banner-title" class="flexslider"><ul class="slides">';
-				foreach ( $group as $tab ) {
+				foreach ( $group as $tag ) {
 					$tag_image = $this->get_Image_By_Size(
 						array(
-							'attach_id'  => $tab['image'],
+							'attach_id'  => $tag['image'],
+							'thumb_size' => $tab['image_size'],
 						)
 					);
-					$link      = isset( $tab['link'] ) ? vc_build_link( $tab['link'] ) : '';
+					$link      = isset( $tag['link'] ) ? vc_build_link( $tag['link'] ) : '';
 
 					$attributes = array();
 					if ( ! empty( $link['url'] ) ) {
@@ -2400,8 +2403,9 @@ class Martfury_Shortcodes {
 						$tag_image
 					);
 					$tab_content_title[] = sprintf(
-						'<li>%s</li>',
-						esc_html( $tab['title'])
+						'<li><span>%s</span><strong>%s</strong></li>',
+						esc_html( $tag['title']),
+						esc_html( $tag['subtitle'])
 					);
 
 				}

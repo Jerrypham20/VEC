@@ -1045,6 +1045,13 @@ class Martfury_VC {
 				'description' => esc_html__( 'Show multiple Slider', 'martfury' ),
 				'params'      => array(
 					array(
+						'heading'     => esc_html__( 'Image Size', 'martfury' ),
+						'param_name'  => 'image_size',
+						'type'        => 'textfield',
+						'value'       => 'full',
+						'description' => esc_html__( 'Enter image size (Example: "thumbnail", "medium", "large", "full" or other sizes defined by theme). Alternatively enter size in pixels (Example: 200x100 (Width x Height)).', 'martfury' ),
+					),
+					array(
 						'heading'    => esc_html__( 'Group banner Setting', 'martfury' ),
 						'type'       => 'param_group',
 						'value'      => '',
@@ -1059,19 +1066,29 @@ class Martfury_VC {
 								'admin_label' => true,
 							),
 							array(
+								'type'        => 'textfield',
+								'heading'     => esc_html__( 'Subtitle', 'martfury' ),
+								'param_name'  => 'subtitle',
+								'value'       => '',
+								'admin_label' => true,
+							),
+							array(
 								'type'        => 'attach_image',
 								'heading'     => esc_html__( 'Image', 'martfury' ),
 								'param_name'  => 'image',
 								'value'       => '',
 								'description' => esc_html__( 'Select an image from media library', 'martfury' ),
 							),
+							
 							array(
 								'heading'    => esc_html__( 'Link', 'martfury' ),
 								'param_name' => 'link',
 								'type'       => 'vc_link',
 								'value'      => '',
 							),
+
 						),
+
 					),
 				),
 			)

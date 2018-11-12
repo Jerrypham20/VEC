@@ -195,6 +195,10 @@ Tags: one-column, two-columns, left-sidebar, right-sidebar, full-width-template,
     transform: none;
   }
 }
+a:hover {
+  cursor: pointer;
+  color: #c60000;
+}
 /* Slider */
 .slick-slider {
   position: relative;
@@ -21010,7 +21014,41 @@ textarea:focus {
 .home-top-right .mf-category-tabs .tabs-nav .slick-track {
   width: 100% !important;
 }
+#slider-image,
+#banner-title {
+  margin: 0 !important;
+  border: none !important;
+  background-color: #f0f0f0;
+}
+#slider-image {
+  max-height: 380px;
+}
+#banner-title li {
+  min-width: 200px !important;
+}
+#banner-title .slides li {
+  padding: 10px 25px;
+  background-color: #fff;
+  text-align: center;
+}
+#banner-title .slides li
+#banner-title .slides li span,
+#banner-title .slides li strong {
+  display: block;
+  font-size: 13px;
+  color: #000;
+}
+#banner-title .flex-active-slide span, 
+#banner-title .flex-active-slide strong {
+  color: #c60000 !important;
+}
+#banner-title .flex-active-slide {
+  border-bottom: 2px solid #c60000;
+}
 
+.flex-direction-nav {
+  display: none !important; 
+}
 @media (max-width: 1199px) {
   .header-bottom .header-logo {
     width: 20% !important;

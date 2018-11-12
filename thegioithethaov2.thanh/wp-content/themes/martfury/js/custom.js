@@ -1,9 +1,4 @@
-(function ($) {
-    'use strict';
-//Flexslider
-	jQuery(function(){
-      SyntaxHighlighter.all();
-    });
+
     jQuery(window).load(function(){
       jQuery('#banner-title').flexslider({
         animation: "slide",
@@ -26,4 +21,3 @@
         }
       });
     });
-});
