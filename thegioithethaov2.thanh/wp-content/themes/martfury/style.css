@@ -15402,7 +15402,7 @@ textarea:focus {
   background-color: #fff;
 }
 .mf-products-of-category .products-box {
-  width: 57.5%;
+  width: 80%;
 }
 .mf-products-of-category .products-box > .woocommerce {
   height: 100%;
@@ -21119,6 +21119,7 @@ textarea:focus {
 .jr-best-selling .tabs-content .tabs-panel .products {
   padding-top: 30px;
 }
+
 @media (max-width: 1199px) {
   .header-bottom .header-logo {
     width: 20% !important;

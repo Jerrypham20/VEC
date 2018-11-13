@@ -1,0 +1,35 @@
+2018-11-13T09:32:25+00:00 CRITICAL Uncaught Error: Call to undefined function c_map() in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\martfury-addons\inc\visual-composer.php:170
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-hook.php(286): Martfury_VC->map_shortcodes('')
+#1 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-settings.php(450): do_action('init')
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-config.php(89): require_once('D:\\OSPanel\\doma...')
+#5 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-load.php(37): require_once('D:\\OSPanel\\doma...')
+#6 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-cron.php(33): require_once('D:\\OSPanel\\doma...')
+#7 {main}
+  thrown in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\martfury-addons\inc\visual-composer.php on line 170
+
+2018-11-13T09:32:25+00:00 CRITICAL Uncaught Error: Call to undefined function c_map() in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\martfury-addons\inc\visual-composer.php:170
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-hook.php(286): Martfury_VC->map_shortcodes('')
+#1 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-settings.php(450): do_action('init')
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-config.php(89): require_once('D:\\OSPanel\\doma...')
+#5 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-load.php(37): require_once('D:\\OSPanel\\doma...')
+#6 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-admin\admin.php(31): require_once('D:\\OSPanel\\doma...')
+#7 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-admin\post.php(12): require_once('D:\\OSPanel\\ in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\martfury-addons\inc\visual-composer.php on line 170
+
+2018-11-13T09:32:26+00:00 CRITICAL Uncaught Error: Call to undefined function c_map() in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\martfury-addons\inc\visual-composer.php:170
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-hook.php(286): Martfury_VC->map_shortcodes('')
+#1 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-settings.php(450): do_action('init')
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-config.php(89): require_once('D:\\OSPanel\\doma...')
+#5 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-load.php(37): require_once('D:\\OSPanel\\doma...')
+#6 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-admin\admin-ajax.php(22): require_once('D:\\OSPanel\\doma...')
+#7 {main}
+  thrown in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\martfury-addons\inc\visual-composer.php on line 170
+

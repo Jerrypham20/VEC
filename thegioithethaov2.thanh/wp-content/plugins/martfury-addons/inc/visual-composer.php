@@ -69,6 +69,12 @@ class Martfury_VC {
 			$this,
 			'productCatsAutocompleteSuggester',
 		), 10, 1 );
+
+		add_filter( 'vc_autocomplete_martfury_product_tabs_hightlight_cat_callback', array(
+			$this,
+			'productCatsAutocompleteSuggester',
+		), 10, 1 );
+
 		add_filter( 'vc_autocomplete_martfury_producs_tabs_cat_render', array(
 			$this,
 			'productCatsAutocompleteRender',
@@ -166,6 +172,65 @@ class Martfury_VC {
 	 * @return void
 	 */
 	function map_shortcodes() {
+
+		vc_map(
+			array(
+				'name'        => esc_html__( 'Product Tabs Highlight', 'martfury' ),
+				'base'        => 'martfury_product_tabs_hightlight',
+				'class'       => '',
+				'category'    => esc_html__( 'Martfury', 'martfury' ),
+				'icon'        => $this->get_icon(),
+				'description' => esc_html__( 'Show multiple products in tabs.', 'martfury' ),
+				'params'      => array(
+					array(
+						'type'        => 'textfield',
+						'heading'     => esc_html__( 'Title', 'martfury' ),
+						'param_name'  => 'title',
+						'value'       => '',
+						'admin_label' => true,
+					),
+					array(
+						'type'       => 'dropdown',
+						'heading'    => esc_html__( 'Header Style', 'martfury' ),
+						'param_name' => 'header',
+						'value'      => array(
+							esc_html__( 'Style 1', 'martfury' ) => '1',
+							esc_html__( 'Style 2', 'martfury' ) => '2',
+						),
+					),
+					array(
+						'type'       => 'vc_link',
+						'heading'    => esc_html__( 'Link', 'martfury' ),
+						'param_name' => 'link',
+					),
+					array(
+						'type'        => 'autocomplete',
+						'heading'     => esc_html__( 'Product Category Highlight', 'martfury' ),
+						'param_name'  => 'cat',
+						'group'       => esc_html__( 'Products Category', 'martfury' ),
+						'settings'    => array(
+							'multiple' => true,
+							'sortable' => false,
+						),
+						'save_always' => true,
+						'description' => esc_html__( 'Enter a product category', 'martfury' ),
+					),
+					array(
+						'type'        => 'autocomplete',
+						'heading'     => esc_html__( 'Product Category', 'martfury' ),
+						'param_name'  => 'cat',
+						'group'       => esc_html__( 'Products Category', 'martfury' ),
+						'settings'    => array(
+							'multiple' => true,
+							'sortable' => false,
+						),
+						'save_always' => true,
+						'description' => esc_html__( 'Enter product categories', 'martfury' ),
+					),
+				),
+			)
+		);
+
 		// Empty Space
 		vc_map(
 			array(
@@ -5279,3 +5344,4 @@ if ( class_exists( 'WPBakeryShortCode' ) ) {
 	class WPBakeryShortCode_martfury_category_tab extends WPBakeryShortCode {
 	}
 }
+
