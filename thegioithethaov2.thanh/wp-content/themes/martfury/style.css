@@ -15479,14 +15479,15 @@ textarea:focus {
   border-right: none;
 }
 .mf-products-tabs .tabs-header {
-  background-color: #f4f4f4;
+  background-color: #f0f0f0;
   padding: 16px 20px 16px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #e3e3e3;
   margin-bottom: 30px;
+
 }
+
 .mf-products-tabs .tabs-header h2 {
   line-height: 1;
   margin: 0;
@@ -19028,8 +19029,9 @@ textarea:focus {
 @media (max-width: 1680px) {
   .martfury-container {
     width: 100%;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
   }
   .mf-recently-products.rv-full-width > .rv-container {
     width: 100%;
@@ -21048,6 +21050,74 @@ textarea:focus {
 
 .flex-direction-nav {
   display: none !important; 
+}
+.jr-best-selling .tabs-header {
+  margin-bottom: 0;
+  padding: 0;
+  width: 100%;
+  float: left;
+  text-align: center;
+}
+.jr-best-selling .tabs-header h2 {
+  position: relative;
+  width: 100%;
+  float: left;
+}
+.jr-best-selling .tabs-header h2:before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  background-color: #cf0202;
+}
+.jr-best-selling .tabs-header h2 span{
+  display: inline-block;
+  font-size: 20px;
+  color: #fff;
+  margin: 0 auto;
+  font-weight: bold;
+  padding: 15px 25px;
+  position: relative;
+  background-color: #cc2424;
+  text-transform: uppercase;
+}
+.jr-best-selling .tabs-header h2 span:after {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    content: '';
+    width: 0;
+    height: 0;
+    border-right: 15px solid;
+    border-right-color: #cc2424;
+    border-bottom: 23px solid transparent;
+    border-top: 26px solid transparent;
+    left: -15px;
+}
+.jr-best-selling .tabs-header h2 span:before {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 15px solid;
+    border-left-color: #cc2424;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    right: -15px;
+}
+.jr-best-selling .tabs-content {
+  border: 1px solid #cc2424;
+  width: 100%;
+  float: left;
+  border-top: none;
+  margin-top: -25px;
+}
+.jr-best-selling .tabs-content .tabs-panel .products {
+  padding-top: 30px;
 }
 @media (max-width: 1199px) {
   .header-bottom .header-logo {
