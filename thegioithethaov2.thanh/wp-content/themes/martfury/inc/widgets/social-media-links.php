@@ -23,12 +23,14 @@ class Martfury_Social_Links_Widget extends WP_Widget {
 			'rss'        => esc_html__( 'RSS', 'martfury' )
 
 		);
+
 		$this->default = array(
 			'title' => '',
 		);
 		foreach ( $this->socials as $k => $v ) {
 			$this->default["{$k}_title"] = $v;
 			$this->default["{$k}_url"]   = '';
+			$this->default["{$k}_img"]   = 'image';
 		}
 
 		parent::__construct(

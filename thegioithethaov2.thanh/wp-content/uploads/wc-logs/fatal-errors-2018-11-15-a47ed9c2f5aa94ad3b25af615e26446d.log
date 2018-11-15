@@ -1,0 +1,10 @@
+2018-11-15T04:32:01+00:00 CRITICAL Uncaught Error: Call to undefined function wp_trim_word() in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-post-grid.php:61
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\template.php(690): require()
+#1 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\template.php(647): load_template('D:\\OSPanel\\doma...', false)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\general-template.php(155): locate_template(Array, true, false)
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\martfury-addons\inc\shortcodes.php(759): get_template_part('template-parts/...', '')
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(319): Martfury_Shortcodes->post_grid(Array, '', 'martfury_post_g...')
+#5 [internal function]: do_shortcode_tag(Array)
+#6 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(197): preg_replace_callback('/\\[(\\[?)(martfu...', 'do_shortcode_ta...', ' in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-post-grid.php on line 61
+

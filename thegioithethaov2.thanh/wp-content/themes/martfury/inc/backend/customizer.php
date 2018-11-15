@@ -4031,7 +4031,7 @@ function martfury_customize_settings() {
 			'label'       => esc_html__( 'Footer Columns', 'martfury' ),
 			'section'     => 'footer',
 			'default'     => '4',
-			'description' => esc_html__( 'Go to Appearance - Widgets - Footer 1, 2, 3, 4, 5, 6 to add widgets content.', 'martfury' ),
+			'description' => esc_html__( 'Go to Appearance - Widgets - Footer 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 to add widgets content.', 'martfury' ),
 			'priority'    => 20,
 			'choices'     => array(
 				'4' => esc_html__( '4 Columns', 'martfury' ),

@@ -172,111 +172,14 @@ class Martfury_VC {
 	 * @return void
 	 */
 	function map_shortcodes() {
-
-		/* Map New blog */
-			$categories_array = array(
-				esc_html__( 'All', 'martfury' ) => '',
+		$taxonomy_array = array(
+			esc_html__( 'All', 'martfury' ) => '',
 			);
-			$args             = array();
-			$categories       = get_categories( $args );
-			foreach ( $categories as $category ) {
-				$categories_array[$category->name] = $category->slug;
-			}
-			vc_map(
-				array(
-					'name'        => esc_html__( 'Blog', 'martfury' ),
-					'base'        => 'martfury_blog', // shortcode
-					'icon'        => $this->get_icon(),
-					'category'    => esc_html__( 'Martfury', 'martfury' ),
-					'description' => esc_html__( 'Display a blog lists.', 'martfury' ),
-					'params'      => array(
-						array(
-							'type'        => 'textfield',
-							'heading'     => esc_html__( 'Title', 'martfury' ),
-							'param_name'  => 'blog_title',
-							'description' => esc_html__( 'The title of shortcode', 'martfury' ),
-							'admin_label' => true,
-						),
-						array(
-							'type'       => 'dropdown',
-							'heading'    => esc_html__( 'Select Type Post', 'martfury' ),
-							'param_name' => 'select_post',
-							'value'      => array(
-								esc_html__( 'Single Post', 'martfury' )   => '1',
-								esc_html__( 'Multiple Post', 'martfury' ) => '0',
-							),
-							'std'        => '0',
-						),
-						array(
-							'type'        => 'autocomplete',
-							'heading'     => esc_html__( 'Select a Post', 'kuteshop' ),
-							'param_name'  => 'post_ids',
-							'description' => esc_html__( 'Only work with Post.', 'kuteshop' ),
-							'settings'    => array(
-								'multiple' => true,
-								'sortable' => true,
-								'groups'   => false,
-							),
-							'dependency'  => array(
-								'element' => 'select_post',
-								'value'   => array( '1' ),
-							),
-							'admin_label' => true,
-						),
-						array(
-							'type'        => 'number',
-							'heading'     => esc_html__( 'Number Post', 'martfury' ),
-							'param_name'  => 'per_page',
-							'value'       => 4,
-							'suffix'      => esc_html__( 'item(s)', 'martfury' ),
-							'admin_label' => true,
-							'dependency'  => array(
-								'element' => 'select_post',
-								'value'   => array( '0' ),
-							),
-						),
-						array(
-							'param_name'  => 'category_slug',
-							'type'        => 'dropdown',
-							'value'       => $categories_array, // here I'm stuck
-							'heading'     => esc_html__( 'Category filter:', 'martfury' ),
-							"admin_label" => true,
-							'dependency'  => array(
-								'element' => 'select_post',
-								'value'   => array( '0' ),
-							),
-						),
-						array(
-							'type'        => 'dropdown',
-							'heading'     => esc_html__( 'Order by', 'martfury' ),
-							'param_name'  => 'orderby',
-							'value'       => array(
-								esc_html__( 'None', 'martfury' )     => 'none',
-								esc_html__( 'ID', 'martfury' )       => 'ID',
-								esc_html__( 'Author', 'martfury' )   => 'author',
-								esc_html__( 'Name', 'martfury' )     => 'name',
-								esc_html__( 'Date', 'martfury' )     => 'date',
-								esc_html__( 'Modified', 'martfury' ) => 'modified',
-								esc_html__( 'Rand', 'martfury' )     => 'rand',
-							),
-							'std'         => 'date',
-							'description' => esc_html__( 'Select how to sort retrieved posts.', 'martfury' ),
-						),
-						array(
-							'type'        => 'dropdown',
-							'heading'     => esc_html__( 'Order', 'martfury' ),
-							'param_name'  => 'order',
-							'value'       => array(
-								esc_html__( 'ASC', 'martfury' )  => 'ASC',
-								esc_html__( 'DESC', 'martfury' ) => 'DESC',
-							),
-							'std'         => 'DESC',
-							'description' => esc_html__( "Designates the ascending or descending order.", 'martfury' ),
-						),
-					),
-				)
-			);
-
+			$args             = array('product_cat');
+			$taxonomys       = get_terms( $args );
+			foreach ( $taxonomys as $taxonomy ) {
+				$taxonomy_array[$taxonomy->name] = $taxonomy->slug;
+		}
 		vc_map(
 			array(
 				'name'        => esc_html__( 'Product Tabs Highlight', 'martfury' ),
@@ -303,12 +206,6 @@ class Martfury_VC {
 						),
 					),
 					array(
-						'type'       => 'vc_link',
-						'heading'    => esc_html__( 'Link', 'martfury' ),
-						'param_name' => 'link',
-					),
-
-					array(
 						'heading'    => esc_html__( 'Tabs Setting', 'martfury' ),
 						'type'       => 'param_group',
 						'value'      => '',
@@ -323,18 +220,46 @@ class Martfury_VC {
 								'admin_label' => true,
 							),
 							array(
-								'type'        => 'autocomplete',
-								'heading'     => esc_html__( 'Product Category', 'martfury' ),
-								'param_name'  => 'cat',
-								'settings'    => array(
-									'multiple' => true,
-									'sortable' => false,
+								'param_name'  => 'taxonomy_slug',
+								'type'        => 'dropdown',
+								'value'       => $taxonomy_array, // here I'm stuck
+								'heading'     => esc_html__( 'Category filter:', 'martfury' ),
+								"admin_label" => true,
+								'dependency'  => array(
+									'element' => 'select_post',
+									'value'   => array( '0' ),
 								),
-								'save_always' => true,
-								'description' => esc_html__( 'Enter product categories', 'martfury' ),
 							),
 						),
 					),
+					array(
+						'type'        => 'dropdown',
+						'heading'     => esc_html__( 'Order by', 'martfury' ),
+						'param_name'  => 'orderby',
+						'value'       => array(
+							esc_html__( 'None', 'martfury' )     => 'none',
+							esc_html__( 'ID', 'martfury' )       => 'ID',
+							esc_html__( 'Author', 'martfury' )   => 'author',
+							esc_html__( 'Name', 'martfury' )     => 'name',
+							esc_html__( 'Date', 'martfury' )     => 'date',
+							esc_html__( 'Modified', 'martfury' ) => 'modified',
+							esc_html__( 'Rand', 'martfury' )     => 'rand',
+						),
+						'std'         => 'date',
+						'description' => esc_html__( 'Select how to sort retrieved posts.', 'martfury' ),
+					),
+					array(
+						'type'        => 'dropdown',
+						'heading'     => esc_html__( 'Order', 'martfury' ),
+						'param_name'  => 'order',
+						'value'       => array(
+							esc_html__( 'ASC', 'martfury' )  => 'ASC',
+							esc_html__( 'DESC', 'martfury' ) => 'DESC',
+						),
+						'std'         => 'DESC',
+						'description' => esc_html__( "Designates the ascending or descending order.", 'martfury' ),
+					),
+					
 				),
 			)
 		);
@@ -2785,6 +2710,15 @@ class Martfury_VC {
 		);
 
 		// Post Grid
+		/* Map New blog */
+			$categories_array = array(
+				esc_html__( 'All', 'martfury' ) => '',
+			);
+			$args             = array();
+			$categories       = get_categories( $args );
+			foreach ( $categories as $category ) {
+				$categories_array[$category->name] = $category->slug;
+			}
 		vc_map(
 			array(
 				'name'     => esc_html__( 'Post Grid', 'martfury' ),
@@ -2800,10 +2734,17 @@ class Martfury_VC {
 						'value'      => esc_html__( 'News', 'martfury' ),
 					),
 					array(
+						'type'        => 'attach_image',
+						'heading'     => esc_html__( 'Icon Image', 'martfury' ),
+						'param_name'  => 'image',
+						'value'       => '',
+						'description' => esc_html__( 'Select an image from media library', 'martfury' ),
+					),
+					array(
 						'type'        => 'textfield',
 						'heading'     => esc_html__( 'Number of Posts', 'martfury' ),
 						'param_name'  => 'number',
-						'value'       => '3',
+						'value'       => '',
 						'description' => esc_html__( 'Set numbers of Posts you want to display. Set -1 to display all posts', 'martfury' ),
 					),
 					array(
@@ -2815,6 +2756,44 @@ class Martfury_VC {
 							esc_html__( '4 Columns', 'martfury' ) => '4',
 						),
 					),
+					array(
+							'param_name'  => 'category_slug',
+							'type'        => 'dropdown',
+							'value'       => $categories_array, // here I'm stuck
+							'heading'     => esc_html__( 'Category filter:', 'martfury' ),
+							"admin_label" => true,
+							'dependency'  => array(
+								'element' => 'select_post',
+								'value'   => array( '0' ),
+							),
+						),
+						array(
+							'type'        => 'dropdown',
+							'heading'     => esc_html__( 'Order by', 'martfury' ),
+							'param_name'  => 'orderby',
+							'value'       => array(
+								esc_html__( 'None', 'martfury' )     => 'none',
+								esc_html__( 'ID', 'martfury' )       => 'ID',
+								esc_html__( 'Author', 'martfury' )   => 'author',
+								esc_html__( 'Name', 'martfury' )     => 'name',
+								esc_html__( 'Date', 'martfury' )     => 'date',
+								esc_html__( 'Modified', 'martfury' ) => 'modified',
+								esc_html__( 'Rand', 'martfury' )     => 'rand',
+							),
+							'std'         => 'date',
+							'description' => esc_html__( 'Select how to sort retrieved posts.', 'martfury' ),
+						),
+						array(
+							'type'        => 'dropdown',
+							'heading'     => esc_html__( 'Order', 'martfury' ),
+							'param_name'  => 'order',
+							'value'       => array(
+								esc_html__( 'ASC', 'martfury' )  => 'ASC',
+								esc_html__( 'DESC', 'martfury' ) => 'DESC',
+							),
+							'std'         => 'DESC',
+							'description' => esc_html__( "Designates the ascending or descending order.", 'martfury' ),
+						),
 					array(
 						'heading'    => esc_html__( 'Links Group', 'martfury' ),
 						'type'       => 'param_group',

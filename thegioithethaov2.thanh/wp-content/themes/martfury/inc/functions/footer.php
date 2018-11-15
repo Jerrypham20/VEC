@@ -19,7 +19,7 @@ if ( ! function_exists( 'martfury_footer_widgets' ) ) :
 		}
 
 		$footer_widget_columns = martfury_get_option( 'footer_widget_columns' );
-		$columns               = max( 1, absint( $footer_widget_columns ) );
+		$columns               = max( 5, absint( $footer_widget_columns ) );
 		?>
         <div class="footer-widgets">
 			<?php
@@ -33,9 +33,26 @@ if ( ! function_exists( 'martfury_footer_widgets' ) ) :
 
 			?>
         </div>
+        <?php 
+        	$footer_widget_columns = martfury_get_option( 'footer_widget_columns' );
+			$columns_2               = max( 10, absint( $footer_widget_columns ) );
+        ?>
+        <div class="footer-widgets footer-widgets-mb-15">
+			<?php
+			for ( $i = 6; $i <= $columns_2; $i ++ ) :
+				if ( is_active_sidebar( "footer-sidebar-$i" ) ) {
+					?>
+                    <div class="footer-sidebar footer-<?php echo esc_attr( $i ) ?>">
+						<?php dynamic_sidebar( "footer-sidebar-$i" ); ?>
+                    </div>
+				<?php } endfor;
+
+			?>
+        </div>
 		<?php
 	}
 endif;
+
 
 /**
  * Check active widget in footer

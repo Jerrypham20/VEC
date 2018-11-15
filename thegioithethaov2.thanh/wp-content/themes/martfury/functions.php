@@ -100,7 +100,7 @@ function martfury_register_sidebar() {
 	}
 
 	// Register footer sidebars
-	for ( $i = 1; $i <= 6; $i++ ) {
+	for ( $i = 1; $i <= 10; $i++ ) {
 		$sidebars["footer-sidebar-$i"] = esc_html__( 'Footer', 'martfury' ) . " $i";
 	}
 

@@ -691,11 +691,15 @@ class Martfury_Shortcodes {
 	function post_grid( $atts, $content ) {
 		$atts = shortcode_atts(
 			array(
-				'title'       => esc_html__( 'News', 'martfury' ),
-				'number'      => '3',
-				'links_group' => '',
-				'columns'     => '3',
-				'el_class'    => '',
+				'title'       			=> esc_html__( 'Góc tư vấn', 'martfury' ),
+				'image'     		 => '',
+				'number'     		 => '',
+				'links_group'		 => '',
+				'columns'     		=> '3',
+				'category_slug'     => '',
+				'orderby'     		=> '',
+				'order'     		=> '',
+				'el_class'    		=> '',
 			), $atts
 		);
 
@@ -706,8 +710,16 @@ class Martfury_Shortcodes {
 
 		$title = '';
 
+
+		$image_html = shortcode_atts(array(
+            'image' => 'image',
+        ), $atts);
+        $img = wp_get_attachment_image_src($image_html["image"], "full");
+
+        $imgUrl = $img[0];
+
 		if ( $atts['title'] ) {
-			$title = sprintf( '<h2 class="section-title">%s</h2>', $atts['title'] );
+			$title = sprintf( '<h2 class="section-title" >%s</h2>', $atts['title'] );
 		}
 
 		$output = array();
@@ -715,10 +727,25 @@ class Martfury_Shortcodes {
 		$query_args = array(
 			'posts_per_page'      => $atts['number'],
 			'post_type'           => 'post',
+			'orderby'           		=> $atts['orderby'],
+			'order'           		=> $atts['order'],
 			'ignore_sticky_posts' => true,
 		);
 
+		$category_slug = $atts['category_slug'];
+		if ($category_slug != 'all') {
+			$query_args['category_name'] = $category_slug;
+		}
+
+
+		
+
 		$query = new WP_Query( $query_args );
+
+		// echo '<pre>';
+		// var_dump($query);
+		// echo '</pre>';
+		// die();
 
 		global $mf_post;
 		$mf_post['css'] = 'col-md-4 col-sm-6 col-xs-6 post-item-grid';
@@ -729,14 +756,18 @@ class Martfury_Shortcodes {
 
 		while ( $query->have_posts() ) : $query->the_post();
 			ob_start();
-			get_template_part( 'template-parts/content', get_post_format() );
+			get_template_part( 'template-parts/content-post-grid', get_post_format() );
 			$output[] = ob_get_clean();
 
 		endwhile;
 		wp_reset_postdata();
+		if( !empty ($atts['links_group']) ) {
+			$title .= $this->get_links_group( $atts['links_group'] );
+		}else {
+			$title .= "";
+		}
 
-		$title .= $this->get_links_group( $atts['links_group'] );
-
+		
 		return sprintf(
 			'<div class="%s">
 				<div class="post-header">%s</div>
@@ -2201,6 +2232,92 @@ class Martfury_Shortcodes {
 		die();
 	}
 
+
+	/**
+	 * Category Tabs
+	 *
+	 * @param array $atts
+	 *
+	 * @return string
+	 */
+	function product_tabs_highlight( $atts, $content ) {
+		$atts = shortcode_atts(
+			array(
+				'title'        => '',
+				'header'       => '1',
+				'tabs'         => '',
+				'orderby'     => '',
+				'order'   		=> '',
+			), $atts
+		);
+
+		if ( ! $this->wc_actived ) {
+			return;
+		}
+
+
+		$output = array();
+
+		$header_tabs = array();
+		$view_all    = '';
+		if ( ! empty( $atts['title'] ) ) {
+			$link_atts     = array(
+				'content' => $atts['title'],
+			);
+			$header_tabs[] = sprintf( '<h2>%s</h2>', $this->get_vc_link( $link_atts ) );
+		}
+
+		$tabs        = vc_param_group_parse_atts( $atts['tabs'] );
+	
+		$tab_content = array();
+		if ( $tabs ) {
+			$header_tabs[] = '<div class="tabs-header-nav">';
+			$header_tabs[] = '<ul class="tabs-nav">';
+			foreach ( $tabs as $tab ) {
+				if ( isset( $tab['title'] ) ) {
+					$header_tabs[] = sprintf( '<li><a href="#" data-href="%s">%s</a></li>', esc_attr( $tab['products'] ), esc_html( $tab['title'] ) );
+				}
+			}
+			$header_tabs[] = '</ul>';
+
+			if ( ! empty( $atts['all_link'] ) ) {
+				$link_atts     = array(
+					'link'    => $atts['all_link'],
+					'content' => '',
+					'class'   => 'link',
+				);
+				$header_tabs[] = $this->get_vc_link( $link_atts );
+			}
+
+			$header_tabs[] = '</div>';
+
+		}
+		$tabs = vc_param_group_parse_atts( $atts['tabs'] );
+		if ( $tabs ) {
+			foreach ( $tabs as $tab ) {
+				$tab_atts      = array(
+					'columns'  => intval( $atts['columns'] ),
+					'products' => $tab['products'],
+					'order'    => '',
+					'orderby'  => '',
+					'per_page' => intval( $atts['per_page'] ),
+					'cat'      => $atts['cat'],
+				);
+				$tab_content[] = sprintf( '<div class="tabs-panel tabs-%s">%s</div>', esc_attr( $tab['products'] ), $this->get_wc_products( $tab_atts ) );
+			}
+		}
+
+
+		$output[] = sprintf( '<div class="tabs-header">%s</div>', implode( ' ', $header_tabs ) );
+		//$output[] = sprintf( '<div class="tabs-content">%s</div>', implode( ' ', $tab_content ) );
+
+
+		return sprintf(
+			'<div class="mf-products-tabs mf-products-tabs-highlight martfury-tabs woocommerce " >%s</div>',
+			implode( '', $output )
+		);
+	}
+
 	/**
 	 * Products tabs carousel shortcode
 	 *
@@ -2340,77 +2457,6 @@ class Martfury_Shortcodes {
 		}
 	}
 
-
-	/**
-	 * Products cats carousel shortcode
-	 *
-	 * @param array $atts
-	 * @param string $content
-	 *
-	 * @return string
-	 */
-	function product_tabs_highlight( $atts, $content ) {
-		$atts = shortcode_atts(
-			array(
-				'title'        => '',
-				'header'       => '1',
-				'link'         => '',
-				'tabs'          => '',
-			), $atts
-		);
-
-		// var_dump($atts);
-		// die();
-		if ( ! $this->wc_actived ) {
-			return;
-		}
-
-
-		$output = array();
-
-		$header_cats = array();
-		$view_all    = '';
-		if ( ! empty( $atts['title'] ) ) {
-			$link_atts     = array(
-				'link'    => $atts['link'],
-				'content' => $atts['title'],
-			);
-			$header_cats[] = sprintf( '<h2>%s</h2>', esc_html( $atts['title']) );
-		}
-
-		$tabs        = vc_param_group_parse_atts( $atts['tabs'] );
-		$cat_content = array();
-		if ( $tabs ) {
-			$header_cats[] = '<div class="cats-header-nav">';
-			$header_cats[] = '<ul class="cats-nav">';
-			foreach ( $tabs as $tab ) {
-				if ( isset( $tab['title'] ) ) {
-					$header_cats[] = sprintf( '<li><a href="#" data-href="%s" >%s</a></li>',esc_attr( $id ), esc_html( $tab['title'] ) );
-				}
-			}
-			$header_cats[] = '</ul>';
-
-			if ( ! empty( $atts['all_link'] ) ) {
-				$link_atts     = array(
-					'link'    => $atts['all_link'],
-					'content' => '',
-					'class'   => 'link',
-				);
-				$header_cats[] = $this->get_vc_link( $link_atts );
-			}
-
-			$header_cats[] = '</div>';
-
-		}
-			$output[] = sprintf( '<div class="cats-header">%s</div>', implode( ' ', $header_cats ) );
-			$output[] = sprintf( '<div class="cats-content">%s</div>', implode( ' ', $cat_content ) );
-
-			return sprintf(
-				'<div class="mf-products-cats martfury-cats woocommerce product-highlight">%s</div>',
-				implode( '', $header_cats )
-			);
-
-	}
 
 	/**
 	 * Banner sliders shortcode
