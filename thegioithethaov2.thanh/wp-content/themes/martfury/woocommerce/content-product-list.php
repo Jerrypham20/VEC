@@ -28,7 +28,7 @@ global $product;
 			<a href="<?php echo esc_url( $product->get_permalink() ); ?>"><?php echo martfury_get_image_html( get_post_thumbnail_id( $id ), 'shop_thumbnail' ); ?></a>
 		</div>
 
-		<div class="product-inners">
+		<div class="product-inners ">
 			<h2>
 				<a href="<?php echo esc_url( $product->get_permalink() ); ?>"><?php echo esc_html( $product->get_title() ); ?></a>
 			</h2>

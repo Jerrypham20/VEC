@@ -21119,7 +21119,26 @@ textarea:focus {
 .jr-best-selling .tabs-content .tabs-panel .products {
   padding-top: 30px;
 }
-
+.woocommerce ul.products li.product h2 a {
+  font-size: 14px;
+  color: #111111;
+}
+.woocommerce ul.products li.product h2:hover a {
+  color: #111111;
+}
+.woocommerce ul.products li.product .product-inner {
+  border: none;
+}
+.woocommerce ul.products li.product .product-inner:hover .mf-product-details-hover {
+  background-color: #fff;
+  border: none;
+}
+.woocommerce ul.products li.product .product-inner:hover .mf-product-details-hover a {
+  color: #f00505;
+}
+.jr-best-selling .tabs-content .tabs-panel .products {
+  background-color: #fff;
+}
 @media (max-width: 1199px) {
   .header-bottom .header-logo {
     width: 20% !important;

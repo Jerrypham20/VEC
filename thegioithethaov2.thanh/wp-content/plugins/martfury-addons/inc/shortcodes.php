@@ -60,6 +60,7 @@ class Martfury_Shortcodes {
 			'products_of_category',
 			'products_of_category_2',
 			'product_tabs',
+			'product_tabs_highlight',
 			'products_carousel',
 			'products_list_carousel',
 			'deals_of_the_day',
@@ -2339,6 +2340,77 @@ class Martfury_Shortcodes {
 		}
 	}
 
+
+	/**
+	 * Products cats carousel shortcode
+	 *
+	 * @param array $atts
+	 * @param string $content
+	 *
+	 * @return string
+	 */
+	function product_tabs_highlight( $atts, $content ) {
+		$atts = shortcode_atts(
+			array(
+				'title'        => '',
+				'header'       => '1',
+				'link'         => '',
+				'tabs'          => '',
+			), $atts
+		);
+
+		// var_dump($atts);
+		// die();
+		if ( ! $this->wc_actived ) {
+			return;
+		}
+
+
+		$output = array();
+
+		$header_cats = array();
+		$view_all    = '';
+		if ( ! empty( $atts['title'] ) ) {
+			$link_atts     = array(
+				'link'    => $atts['link'],
+				'content' => $atts['title'],
+			);
+			$header_cats[] = sprintf( '<h2>%s</h2>', esc_html( $atts['title']) );
+		}
+
+		$tabs        = vc_param_group_parse_atts( $atts['tabs'] );
+		$cat_content = array();
+		if ( $tabs ) {
+			$header_cats[] = '<div class="cats-header-nav">';
+			$header_cats[] = '<ul class="cats-nav">';
+			foreach ( $tabs as $tab ) {
+				if ( isset( $tab['title'] ) ) {
+					$header_cats[] = sprintf( '<li><a href="#" data-href="%s" >%s</a></li>',esc_attr( $id ), esc_html( $tab['title'] ) );
+				}
+			}
+			$header_cats[] = '</ul>';
+
+			if ( ! empty( $atts['all_link'] ) ) {
+				$link_atts     = array(
+					'link'    => $atts['all_link'],
+					'content' => '',
+					'class'   => 'link',
+				);
+				$header_cats[] = $this->get_vc_link( $link_atts );
+			}
+
+			$header_cats[] = '</div>';
+
+		}
+			$output[] = sprintf( '<div class="cats-header">%s</div>', implode( ' ', $header_cats ) );
+			$output[] = sprintf( '<div class="cats-content">%s</div>', implode( ' ', $cat_content ) );
+
+			return sprintf(
+				'<div class="mf-products-cats martfury-cats woocommerce product-highlight">%s</div>',
+				implode( '', $header_cats )
+			);
+
+	}
 
 	/**
 	 * Banner sliders shortcode
