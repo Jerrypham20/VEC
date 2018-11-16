@@ -2292,24 +2292,28 @@ class Martfury_Shortcodes {
 			$header_tabs[] = '</div>';
 
 		}
+		$args = array(
+			'post_type' => 'product',
+			'order'    => $atts['order'],
+			'orderby'  => $atts['orderby']
+		);
 		$tabs = vc_param_group_parse_atts( $atts['tabs'] );
+
 		if ( $tabs ) {
 			foreach ( $tabs as $tab ) {
-				$tab_atts      = array(
-					'columns'  => intval( $atts['columns'] ),
-					'products' => $tab['products'],
-					'order'    => '',
-					'orderby'  => '',
-					'per_page' => intval( $atts['per_page'] ),
-					'cat'      => $atts['cat'],
+				$args['tax_query']      = array(
+				        'taxonomy' => 'product_cat',
+				        'terms' => $tab['taxonomy_slug'],
+				        'field' => 'slug',
 				);
-				$tab_content[] = sprintf( '<div class="tabs-panel tabs-%s">%s</div>', esc_attr( $tab['products'] ), $this->get_wc_products( $tab_atts ) );
+	
+				$tab_content[] = sprintf( '<div class="tabs-panel tabs-%s">%s</div>', esc_attr( $tab['taxonomy_slug'] ), $this->get_wc_products( $args ) );
 			}
 		}
 
 
 		$output[] = sprintf( '<div class="tabs-header">%s</div>', implode( ' ', $header_tabs ) );
-		//$output[] = sprintf( '<div class="tabs-content">%s</div>', implode( ' ', $tab_content ) );
+		$output[] = sprintf( '<div class="tabs-content">%s</div>', implode( ' ', $tab_content ) );
 
 
 		return sprintf(
