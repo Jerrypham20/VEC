@@ -853,7 +853,7 @@ class Martfury_WooCommerce {
 		}
 		$rating = '<div class="mf-rating">';
 		$rating .= $html;
-		$rating .= '<span class="count">' . $count . '</span>';
+		$rating .= '<span class="count">' . $count . ' đánh giá</span>';
 		$rating .= '</div>';
 
 		return $rating;

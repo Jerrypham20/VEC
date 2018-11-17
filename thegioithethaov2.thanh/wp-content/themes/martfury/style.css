@@ -21192,6 +21192,9 @@ textarea:focus {
 .footer-bottom .footer-copyright {
   color: #fff;
 }
+.hidden-rating .mf-rating {
+  display: none !important;
+}
 @media (max-width: 1199px) {
   .header-bottom .header-logo {
     width: 20% !important;

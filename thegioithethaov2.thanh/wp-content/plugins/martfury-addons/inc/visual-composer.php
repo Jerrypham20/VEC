@@ -206,6 +206,25 @@ class Martfury_VC {
 						),
 					),
 					array(
+						'type'        => 'textfield',
+						'heading'     => esc_html__( 'Total Products', 'martfury' ),
+						'param_name'  => 'per_page',
+						'value'       => '12',
+						'description' => esc_html__( 'Set numbers of products to show.', 'martfury' ),
+					),
+					array(
+						'type'       => 'dropdown',
+						'heading'    => esc_html__( 'Columns', 'martfury' ),
+						'param_name' => 'columns',
+						'value'      => array(
+							esc_html__( '5 Columns', 'martfury' ) => '5',
+							esc_html__( '4 Columns', 'martfury' ) => '4',
+							esc_html__( '3 Columns', 'martfury' ) => '3',
+							esc_html__( '6 Columns', 'martfury' ) => '6',
+							esc_html__( '7 Columns', 'martfury' ) => '7',
+						),
+					),
+					array(
 						'heading'    => esc_html__( 'Tabs Setting', 'martfury' ),
 						'type'       => 'param_group',
 						'value'      => '',
@@ -1030,6 +1049,13 @@ class Martfury_VC {
 							esc_html__( 'Style 1', 'martfury' ) => '1',
 							esc_html__( 'Style 2', 'martfury' ) => '2',
 						),
+					),
+					array(
+						'type'        => 'checkbox',
+						'heading'     => esc_html__( 'Hide rating', 'martfury' ),
+						'param_name'  => 'rating',
+						'value'       => array( esc_html__( 'Yes', 'martfury' ) => 'true' ),
+						'description' => esc_html__( 'If "YES" rating control will be removed . ', 'martfury' ),
 					),
 					array(
 						'type'       => 'vc_link',
