@@ -2233,6 +2233,7 @@ class Martfury_Shortcodes {
 	}
 
 
+
 	/**
 	 * Category Tabs
 	 *
@@ -2241,6 +2242,7 @@ class Martfury_Shortcodes {
 	 * @return string
 	 */
 	function product_tabs_highlight( $atts, $content ) {
+		
 		$atts = shortcode_atts(
 			array(
 				'title'       	 => '',
@@ -2261,6 +2263,8 @@ class Martfury_Shortcodes {
 		$output = array();
 
 		$header_tabs = array();
+		$header_tabs_price = array();
+
 		$view_all    = '';
 		if ( ! empty( $atts['title'] ) ) {
 			$link_atts     = array(
@@ -2273,8 +2277,9 @@ class Martfury_Shortcodes {
 	
 		$tab_content = array();
 		if ( $tabs ) {
-			$header_tabs[] = '<div class="tabs-header-nav">';
-			$header_tabs[] = '<ul class="tabs-nav">';
+			$header_tabs[] 		= '<div class="tabs-header-nav">';
+			$header_tabs[] 		= '<ul class="tabs-nav">';
+			$header_tabs_price 	= '<ul class="tabs-nav">';
 			foreach ( $tabs as $tab ) {
 				if ( isset( $tab['title'] ) ) {
 					$header_tabs[] = sprintf( '<li><a href="#" data-href="%s">%s</a></li>', esc_attr( $tab['taxonomy_slug'] ), esc_html( $tab['title'] ) );
@@ -2304,7 +2309,7 @@ class Martfury_Shortcodes {
 						'orderby'  => '',
 						'per_page' 		=> intval( $atts['per_page'] ),
 						'columns'      	=> $atts['columns'],
-						'cat'      => $tab['taxonomy_slug'],
+						'cat'      		=> $tab['taxonomy_slug'],
 					);
 					$tab_content[] = sprintf( '<div class="tabs-panel tabs-%s">%s</div>', esc_attr( $tab['taxonomy_slug'] ), $this->get_wc_products( $tab_atts ) );
 				}

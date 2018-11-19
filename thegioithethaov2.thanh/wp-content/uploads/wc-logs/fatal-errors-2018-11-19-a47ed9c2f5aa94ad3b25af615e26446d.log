@@ -1,0 +1,9 @@
+2018-11-19T03:01:53+00:00 CRITICAL Uncaught Error: Call to undefined function WP_Query() in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\martfury-addons\inc\shortcodes.php:2257
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(319): Martfury_Shortcodes->product_tabs_highlight(Array, '', 'martfury_produc...')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(197): preg_replace_callback('/\\[(\\[?)(martfu...', 'do_shortcode_ta...', '[martfury_empty...')
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\js_composer\include\helpers\helpers.php(236): do_shortcode('[martfury_empty...')
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\js_composer\include\templates\shortcodes\vc_column.php(94): wpb_js_remove_wpautop('[martfury_empty...')
+#5 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\js_composer\include\classes\shortcodes\shortcodes.php(478): include('D:\\OSPanel\ in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\martfury-addons\inc\shortcodes.php on line 2257
+

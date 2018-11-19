@@ -197,7 +197,7 @@ Tags: one-column, two-columns, left-sidebar, right-sidebar, full-width-template,
 }
 a:hover {
   cursor: pointer;
-  color: #c60000 !important;
+  color: #c60000;
 }
 /* Slider */
 .slick-slider {
@@ -1209,8 +1209,8 @@ div.aligncenter,
   position: absolute;
   top: 120%;
   left: calc(50% - 5px);
-  width: 13px;
-  height: 13px;
+  width: 10px;
+  height: 10px;
   transform: rotate(45deg);
   border-left: 1px solid #cccccc;
   border-top: 1px solid #cccccc;
@@ -1222,7 +1222,7 @@ div.aligncenter,
   opacity: 0;
 }
 .site-header .primary-nav .menu > li.menu-item-has-children:hover > a:before {
-  top: 100%;
+  top: 77%;
   opacity: 1;
   z-index: 9999;
 }
@@ -5005,9 +5005,9 @@ body.page .comments-area .comment-respond .form-submit {
   margin: 0;
 }
 .woocommerce ul.products li.product {
-  margin-bottom: 25px;
   padding-left: 0;
   padding-right: 0;
+  margin-bottom: 0;
 }
 .woocommerce ul.products li.product.product-category .woocommerce-loop-category__title {
   color: #000;
@@ -5026,7 +5026,7 @@ body.page .comments-area .comment-respond .form-submit {
 .woocommerce ul.products li.product .product-inner {
   padding: 20px;
   border: 1px solid #e1e1e1;
-  margin-bottom: 20px;
+  border-bottom: none;
 }
 
 .woocommerce ul.products li.product .product-inner:hover .footer-button {
@@ -5108,6 +5108,7 @@ body.page .comments-area .comment-respond .form-submit {
   top: 0;
   opacity: 0;
   border: 1px solid #e1e1e1;
+  border-bottom: none;
   border-top: none;
   min-height: 100%;
   padding: 0 20px 20px;
@@ -15474,10 +15475,11 @@ textarea:focus {
   border-right: none;
 }
 .mf-products-tabs .tabs-header {
-  padding: 16px 20px 16px 20px;
+  padding: 12px 20px 16px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid #e1e1e1;
 }
 
 .mf-products-tabs .tabs-header h2 {
@@ -21052,11 +21054,13 @@ textarea:focus {
   width: 100%;
   float: left;
   text-align: center;
+  border: none !important; 
 }
 .jr-best-selling .tabs-header h2 {
   position: relative;
   width: 100%;
   float: left;
+  padding-left: 0 !important;
 }
 .jr-best-selling .tabs-header h2:before {
   content: "";
@@ -21076,7 +21080,9 @@ textarea:focus {
   padding: 15px 25px;
   position: relative;
   background-color: #cc2424;
+  background-image: linear-gradient(to right, #cc2424 , #f30505);
   text-transform: uppercase;
+  z-index: 9;
 }
 .jr-best-selling .tabs-header h2 span:after {
     z-index: 2;
@@ -21099,20 +21105,24 @@ textarea:focus {
     width: 0;
     height: 0;
     border-left: 15px solid;
-    border-left-color: #cc2424;
+    border-left-color: #f30505;
     border-top: 25px solid transparent;
     border-bottom: 25px solid transparent;
-    right: -15px;
+    right: -14px;
 }
 .jr-best-selling .tabs-content {
   border: 1px solid #cc2424;
   width: 100%;
   float: left;
   border-top: none;
-  margin-top: -25px;
+  margin-top: -24px;
+  background-color: #fff;
 }
 .jr-best-selling .tabs-content .tabs-panel .products {
   padding-top: 30px;
+}
+.jr-best-selling .tabs-content .tabs-panel .products .product .product-inner{
+  border: none !important; 
 }
 .woocommerce ul.products li.product h2 a {
   font-size: 14px;
@@ -21134,15 +21144,16 @@ textarea:focus {
 .blog-layout-grid {
   background: #fff;
 }
-.tabs-header .cat-title,
+.tabs-header h2,
 .blog-layout-grid .post-header .section-title {
   font-size: 20px;
   color: #000;
-  font-weight: bold;
+  font-weight: bold !important;
   padding-left: 80px;
   position: relative;
   text-transform: uppercase;
 }
+.tabs-header h2:before,
 .blog-layout-grid .post-header .section-title:before {
   content: "";
   background: url(images/icons/categories-icon.png) no-repeat left center;
@@ -21151,6 +21162,12 @@ textarea:focus {
   left: 0;
   top: -23px;
   position: absolute;
+}
+.jr-best-selling .tabs-header h2:before {
+  background-image: none;
+}
+.jr-best-selling .mf-product-details-hover {
+  border-color: transparent !important;
 }
 .blog-wapper .entry-title a {
   font-size: 16px;
@@ -21189,6 +21206,10 @@ textarea:focus {
 }
 .mf-products-tabs {
   background-color: #fff;
+  border: 1px solid #e2e2e2;
+}
+.jr-best-selling.mf-products-tabs {
+  border: none !important;
 }
 @media (max-width: 1199px) {
   .header-bottom .header-logo {

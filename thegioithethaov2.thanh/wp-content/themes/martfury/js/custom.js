@@ -21,3 +21,28 @@
         }
       });
     });
+
+    var nameElement = jQuery('.tabs-panel .products').find('.product-inner .mf-product-details .mf-product-content h2');
+    function fixHeightLocation (nameElement) {
+      if ( jQuery(window).width() > 991 ) {
+
+          nameElement.removeAttr('sytle');
+          var heightLocation = 0;
+          nameElement.each(function() {
+              if (jQuery(this).height() > heightLocation) {
+                  heightLocation = jQuery(this).outerHeight();
+              }
+          })
+
+          nameElement.css({ 'height': heightLocation });
+      }else {
+          nameElement.css({ 'height': 'auto' });
+      }
+    }
+
+
+    fixHeightLocation(nameElement);
+    jQuery( window ).resize(function() {
+      fixHeightLocation(nameElement);
+    });
+

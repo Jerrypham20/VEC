@@ -70,9 +70,13 @@ class Martfury_VC {
 			'productCatsAutocompleteSuggester',
 		), 10, 1 );
 
-		add_filter( 'vc_autocomplete_martfury_product_tabs_highlight_cat_callback', array(
+		add_filter( 'vc_autocomplete_martfury_product_tabs_highlight_tabs_cat_callback', array(
 			$this,
 			'productCatsAutocompleteSuggester',
+		), 10, 1 );
+		add_filter( 'vc_autocomplete_martfury_product_tabs_highlight_tabs_cat_render', array(
+			$this,
+			'productCatsAutocompleteRender',
 		), 10, 1 );
 
 		add_filter( 'vc_autocomplete_martfury_producs_tabs_cat_render', array(
@@ -179,7 +183,9 @@ class Martfury_VC {
 			$taxonomys       = get_terms( $args );
 			foreach ( $taxonomys as $taxonomy ) {
 				$taxonomy_array[$taxonomy->name] = $taxonomy->slug;
-		}
+	}
+
+
 		vc_map(
 			array(
 				'name'        => esc_html__( 'Product Tabs Highlight', 'martfury' ),
@@ -225,6 +231,22 @@ class Martfury_VC {
 						),
 					),
 					array(
+						'heading'     => esc_html__( 'Product Category', 'martfury' ),
+						'params' => array(
+							array(
+								'type' => 'autocomplete',
+								'heading' => __( 'Select identificator', 'martfury' ),
+								'param_name' => 'id',
+								'description' => __( 'Input product ID or product SKU or product title to see suggestions', 'martfury' ),
+							),
+							array(
+								'type' => 'hidden',
+								// This will not show on render, but will be used when defining value for autocomplete
+								'param_name' => 'sku',
+							),
+						),
+					),
+					array(
 						'heading'    => esc_html__( 'Tabs Setting', 'martfury' ),
 						'type'       => 'param_group',
 						'value'      => '',
@@ -249,6 +271,7 @@ class Martfury_VC {
 									'value'   => array( '0' ),
 								),
 							),
+							
 						),
 					),
 					array(
