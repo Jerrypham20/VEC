@@ -545,7 +545,7 @@ class Martfury_Shortcodes {
 			'%s' .
 			'<div class="martfury-tabs">' .
 			'<div class="tabs-header">' .
-			'<ul class="tabs-nav">' .
+			'<ul class="jp-list-nav">' .
 			'%s' .
 			'</ul>' .
 			'</div>' .
@@ -2246,8 +2246,9 @@ class Martfury_Shortcodes {
 		$atts = shortcode_atts(
 			array(
 				'title'       	 => '',
+				'taxonomy'       => '',
+				'product'       => '',
 				'header'       	=> '1',
-				'tabs'         	=> '',
 				'orderby'     	=> '',
 				'order'   		=> '',
 				'per_page'		=> '',
@@ -2259,12 +2260,11 @@ class Martfury_Shortcodes {
 			return;
 		}
 
-
+		
+		
 		$output = array();
 
 		$header_tabs = array();
-		$header_tabs_price = array();
-
 		$view_all    = '';
 		if ( ! empty( $atts['title'] ) ) {
 			$link_atts     = array(
@@ -2273,51 +2273,66 @@ class Martfury_Shortcodes {
 			$header_tabs[] = sprintf( '<h2>%s</h2>', $this->get_vc_link( $link_atts ) );
 		}
 
-		$tabs        = vc_param_group_parse_atts( $atts['tabs'] );
-	
-		$tab_content = array();
-		if ( $tabs ) {
-			$header_tabs[] 		= '<div class="tabs-header-nav">';
-			$header_tabs[] 		= '<ul class="tabs-nav">';
-			$header_tabs_price 	= '<ul class="tabs-nav">';
-			foreach ( $tabs as $tab ) {
-				if ( isset( $tab['title'] ) ) {
-					$header_tabs[] = sprintf( '<li><a href="#" data-href="%s">%s</a></li>', esc_attr( $tab['taxonomy_slug'] ), esc_html( $tab['title'] ) );
-				}
-			}
-			$header_tabs[] = '</ul>';
 
-			if ( ! empty( $atts['all_link'] ) ) {
-				$link_atts     = array(
-					'link'    => $atts['all_link'],
-					'content' => '',
-					'class'   => 'link',
-				);
-				$header_tabs[] = $this->get_vc_link( $link_atts );
-			}
+		$list_id_product = explode( ',', $atts['product'] );
+		
+		$args = array(
+			'post_type' => 'product',
+			'post__in' => $list_id_product,
+		);
 
-			$header_tabs[] = '</div>';
+		$get_products = new WP_Query( $args );
 
+	    while ( $get_products->have_posts() ) : $get_products->the_post();
+	        ob_start();
+				get_template_part( 'template-parts/content-product', get_post_format() );
+				$product_highlight[] = ob_get_clean();
+	    endwhile;
+	    wp_reset_postdata();
+
+	    $product_highlight_content[] = sprintf( '<div class="tabs-25">%s</div>', implode( ' ', $product_highlight ) );
+
+			
+		
+
+		//tabs list new product 
+		$get_term_id = get_term_by('slug', $atts['taxonomy'], 'product_cat');
+		$term_id = $get_term_id->term_id;
+		$taxonomy_name = 'product_cat';
+		$termchildren = get_term_children( $term_id, $taxonomy_name );
+
+		$header_tabs[] 		= '<div class="jp-header-nav">';
+		$header_tabs[] 		= '<ul class="jp-list-nav">';
+		foreach ( $termchildren as $child  ) {
+				$term = get_term_by( 'id', $child, $taxonomy_name );
+				$header_tabs[] = sprintf( '<li><a href="%s">%s</a></li>', $term->slug, $term->name );
 		}
-		$tabs = vc_param_group_parse_atts( $atts['tabs'] );
-			if ( $tabs ) {
-				foreach ( $tabs as $tab ) {
-					$tab_atts      = array(
-						'columns'  => intval( $atts['columns'] ),
-						'products' => $tab['products'],
-						'order'    => '',
-						'orderby'  => '',
-						'per_page' 		=> intval( $atts['per_page'] ),
-						'columns'      	=> $atts['columns'],
-						'cat'      		=> $tab['taxonomy_slug'],
-					);
-					$tab_content[] = sprintf( '<div class="tabs-panel tabs-%s">%s</div>', esc_attr( $tab['taxonomy_slug'] ), $this->get_wc_products( $tab_atts ) );
-				}
-			}
+		$header_tabs[] = '</ul>';
+
+		if ( ! empty( $atts['all_link'] ) ) {
+			$link_atts     = array(
+				'link'    => $atts['all_link'],
+				'content' => '',
+				'class'   => 'link',
+			);
+			$header_tabs[] = $this->get_vc_link( $link_atts );
+		}
+
+		$header_tabs[] = '</div>';
+
+		$tab_atts      = array(
+			'columns'  => intval( $atts['columns'] ),
+			'order'    => '',
+			'orderby'  => DESC,
+			'per_page' 		=> intval( $atts['per_page'] ),
+			'columns'      	=> $atts['columns'],
+			'cat'      		=> $atts['taxonomy'],
+		);
+		$tab_content[] = sprintf( '<div class="tabs-panel">%s</div>', $this->get_wc_products( $tab_atts ) );
 
 
 		$output[] = sprintf( '<div class="tabs-header">%s</div>', implode( ' ', $header_tabs ) );
-		$output[] = sprintf( '<div class="tabs-content">%s</div>', implode( ' ', $tab_content ) );
+		$output[] = sprintf( '<div class="tabs-content">%s%s</div>',implode( ' ', $product_highlight_content ), implode( ' ', $tab_content ) );
 
 
 		return sprintf(
@@ -2386,8 +2401,8 @@ class Martfury_Shortcodes {
 	
 		$tab_content = array();
 		if ( $tabs ) {
-			$header_tabs[] = '<div class="tabs-header-nav">';
-			$header_tabs[] = '<ul class="tabs-nav">';
+			$header_tabs[] = '<div class="jp-header-nav">';
+			$header_tabs[] = '<ul class="jp-list-nav">';
 			foreach ( $tabs as $tab ) {
 				if ( isset( $tab['title'] ) ) {
 					$header_tabs[] = sprintf( '<li><a href="#" data-href="%s">%s</a></li>', esc_attr( $tab['products'] ), esc_html( $tab['title'] ) );
@@ -2797,10 +2812,10 @@ class Martfury_Shortcodes {
 		if ( $atts['cat'] ) {
 			$tabs = explode( ',', $atts['cat'] );
 		}
-		$header_tabs[] = '<div class="tabs-header-nav">';
+		$header_tabs[] = '<div class="jp-header-nav">';
 		$tab_content   = array();
 		if ( $tabs ) {
-			$header_tabs[] = '<ul class="tabs-nav">';
+			$header_tabs[] = '<ul class="jp-list-nav">';
 			foreach ( $tabs as $tab ) {
 				$term = get_term_by( 'slug', $tab, 'product_cat' );
 				if ( ! is_wp_error( $term ) && $term ) {

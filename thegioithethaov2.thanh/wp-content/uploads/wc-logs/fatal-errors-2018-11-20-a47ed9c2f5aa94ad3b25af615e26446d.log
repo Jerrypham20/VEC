@@ -1,0 +1,79 @@
+2018-11-20T03:26:22+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Term as array in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\martfury-addons\inc\shortcodes.php:2288
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(319): Martfury_Shortcodes->product_tabs_highlight(Array, '', 'martfury_produc...')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(197): preg_replace_callback('/\\[(\\[?)(martfu...', 'do_shortcode_ta...', '[martfury_empty...')
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\js_composer\include\helpers\helpers.php(236): do_shortcode('[martfury_empty...')
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\js_composer\include\templates\shortcodes\vc_column.php(94): wpb_js_remove_wpautop('[martfury_empty...')
+#5 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\js_composer\include\classes\shortcodes\shortcodes.php(478): include('D:\\OSP in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\martfury-addons\inc\shortcodes.php on line 2288
+
+2018-11-20T03:26:41+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_Term as array in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\martfury-addons\inc\shortcodes.php:2288
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(319): Martfury_Shortcodes->product_tabs_highlight(Array, '', 'martfury_produc...')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(197): preg_replace_callback('/\\[(\\[?)(martfu...', 'do_shortcode_ta...', '[martfury_empty...')
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\js_composer\include\helpers\helpers.php(236): do_shortcode('[martfury_empty...')
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\js_composer\include\templates\shortcodes\vc_column.php(94): wpb_js_remove_wpautop('[martfury_empty...')
+#5 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\js_composer\include\classes\shortcodes\shortcodes.php(478): include('D:\\OSP in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\martfury-addons\inc\shortcodes.php on line 2288
+
+2018-11-20T03:40:13+00:00 CRITICAL Uncaught Error: Call to undefined function term_id() in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\martfury-addons\inc\shortcodes.php:2278
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(319): Martfury_Shortcodes->product_tabs_highlight(Array, '', 'martfury_produc...')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(197): preg_replace_callback('/\\[(\\[?)(martfu...', 'do_shortcode_ta...', '[martfury_empty...')
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\js_composer\include\helpers\helpers.php(236): do_shortcode('[martfury_empty...')
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\js_composer\include\templates\shortcodes\vc_column.php(94): wpb_js_remove_wpautop('[martfury_empty...')
+#5 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\js_composer\include\classes\shortcodes\shortcodes.php(478): include('D:\\OSPanel\\ in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\martfury-addons\inc\shortcodes.php on line 2278
+
+2018-11-20T06:56:29+00:00 CRITICAL Cannot declare class Vc_Vendor_Woocommerce, because the name is already in use in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\js_composer\include\classes\vendors\plugins\class-vc-vendor-woocommerce.php on line 12
+
+2018-11-20T08:01:51+00:00 CRITICAL Uncaught Error: Call to undefined function get_title() in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\martfury-addons\inc\shortcodes.php:2297
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(319): Martfury_Shortcodes->product_tabs_highlight(Array, '', 'martfury_produc...')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(197): preg_replace_callback('/\\[(\\[?)(martfu...', 'do_shortcode_ta...', '[martfury_empty...')
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\js_composer\include\helpers\helpers.php(236): do_shortcode('[martfury_empty...')
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\js_composer\include\templates\shortcodes\vc_column.php(94): wpb_js_remove_wpautop('[martfury_empty...')
+#5 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\js_composer\include\classes\shortcodes\shortcodes.php(478): include('D:\\OSPanel in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\martfury-addons\inc\shortcodes.php on line 2297
+
+2018-11-20T08:35:08+00:00 CRITICAL Uncaught Error: Call to a member function have_posts() on null in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\martfury-addons\inc\shortcodes.php:2285
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(319): Martfury_Shortcodes->product_tabs_highlight(Array, '', 'martfury_produc...')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(197): preg_replace_callback('/\\[(\\[?)(martfu...', 'do_shortcode_ta...', '[martfury_empty...')
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\js_composer\include\helpers\helpers.php(236): do_shortcode('[martfury_empty...')
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\js_composer\include\templates\shortcodes\vc_column.php(94): wpb_js_remove_wpautop('[martfury_empty...')
+#5 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\js_composer\include\classes\shortcodes\shortcodes.php(478): include('D:\ in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\martfury-addons\inc\shortcodes.php on line 2285
+
+2018-11-20T09:17:17+00:00 CRITICAL Uncaught Error: Call to undefined function get_post_thumbnail_url() in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php:4
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\template.php(690): require()
+#1 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\template.php(647): load_template('D:\\OSPanel\\doma...', false)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\general-template.php(155): locate_template(Array, true, false)
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\martfury-addons\inc\shortcodes.php(2288): get_template_part('template-parts/...', '')
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(319): Martfury_Shortcodes->product_tabs_highlight(Array, '', 'martfury_produc...')
+#5 [internal function]: do_shortcode_tag(Array)
+#6 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(197): preg_replace_callback('/\\[(\\[?)(martfu...', 'd in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php on line 4
+
+2018-11-20T09:39:13+00:00 CRITICAL Uncaught Error: Call to undefined function get_price() in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php:13
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\template.php(690): require()
+#1 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\template.php(647): load_template('D:\\OSPanel\\doma...', false)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\general-template.php(155): locate_template(Array, true, false)
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\martfury-addons\inc\shortcodes.php(2288): get_template_part('template-parts/...', '')
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(319): Martfury_Shortcodes->product_tabs_highlight(Array, '', 'martfury_produc...')
+#5 [internal function]: do_shortcode_tag(Array)
+#6 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(197): preg_replace_callback('/\\[(\\[?)(martfu...', 'do_shortcode_ in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php on line 13
+
+2018-11-20T09:41:33+00:00 CRITICAL Uncaught Error: Call to undefined function product_get_rating_html() in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php:17
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\template.php(690): require()
+#1 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\template.php(647): load_template('D:\\OSPanel\\doma...', false)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\general-template.php(155): locate_template(Array, true, false)
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\martfury-addons\inc\shortcodes.php(2288): get_template_part('template-parts/...', '')
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(319): Martfury_Shortcodes->product_tabs_highlight(Array, '', 'martfury_produc...')
+#5 [internal function]: do_shortcode_tag(Array)
+#6 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(197): preg_replace_callback('/\\[(\\[?)(martfu...',  in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php on line 17
+
+2018-11-20T10:16:28+00:00 CRITICAL Cannot declare class Martfury_WooCommerce, because the name is already in use in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php on line 8
+

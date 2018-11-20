@@ -820,7 +820,7 @@ class Martfury_WooCommerce {
 	 * @since 1.0
 	 */
 	function open_product_inner() {
-		echo '<div class="product-inner hello  clearfix">';
+		echo '<div class="product-inner clearfix">';
 	}
 
 	/**

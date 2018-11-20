@@ -70,13 +70,23 @@ class Martfury_VC {
 			'productCatsAutocompleteSuggester',
 		), 10, 1 );
 
-		add_filter( 'vc_autocomplete_martfury_product_tabs_highlight_tabs_cat_callback', array(
+		add_filter( 'vc_autocomplete_martfury_product_tabs_highlight_taxonomy_callback', array(
 			$this,
 			'productCatsAutocompleteSuggester',
 		), 10, 1 );
-		add_filter( 'vc_autocomplete_martfury_product_tabs_highlight_tabs_cat_render', array(
+		add_filter( 'vc_autocomplete_martfury_product_tabs_highlight_taxonomy_render', array(
 			$this,
 			'productCatsAutocompleteRender',
+		), 10, 1 );
+
+		add_filter( 'vc_autocomplete_martfury_product_tabs_highlight_product_callback', array(
+			$this,
+			'productIdAutocompleteSuggester',
+		), 10, 1 );
+
+		add_filter( 'vc_autocomplete_martfury_product_tabs_highlight_product_render', array(
+			$this,
+			'productIdAutocompleteRender',
 		), 10, 1 );
 
 		add_filter( 'vc_autocomplete_martfury_producs_tabs_cat_render', array(
@@ -203,6 +213,28 @@ class Martfury_VC {
 						'admin_label' => true,
 					),
 					array(
+						'type'        => 'autocomplete',
+						'heading'     => esc_html__( 'Product Category', 'martfury' ),
+						'param_name'  => 'taxonomy',
+						'settings'    => array(
+							'multiple' => true,
+							'sortable' => false,
+						),
+						'save_always' => true,
+						'description' => esc_html__( 'Enter product categories', 'martfury' ),
+					),
+					array(
+						'type'        => 'autocomplete',
+						'heading'     => esc_html__( 'Product ', 'martfury' ),
+						'param_name'  => 'product',
+						'settings'    => array(
+							'multiple' => true,
+							'sortable' => false,
+						),
+						'save_always' => true,
+						'description' => esc_html__( 'Enter a product categories', 'martfury' ),
+					),
+					array(
 						'type'       => 'dropdown',
 						'heading'    => esc_html__( 'Header Style', 'martfury' ),
 						'param_name' => 'header',
@@ -230,50 +262,7 @@ class Martfury_VC {
 							esc_html__( '7 Columns', 'martfury' ) => '7',
 						),
 					),
-					array(
-						'heading'     => esc_html__( 'Product Category', 'martfury' ),
-						'params' => array(
-							array(
-								'type' => 'autocomplete',
-								'heading' => __( 'Select identificator', 'martfury' ),
-								'param_name' => 'id',
-								'description' => __( 'Input product ID or product SKU or product title to see suggestions', 'martfury' ),
-							),
-							array(
-								'type' => 'hidden',
-								// This will not show on render, but will be used when defining value for autocomplete
-								'param_name' => 'sku',
-							),
-						),
-					),
-					array(
-						'heading'    => esc_html__( 'Tabs Setting', 'martfury' ),
-						'type'       => 'param_group',
-						'value'      => '',
-						'param_name' => 'tabs',
-						'group'      => esc_html__( 'Tabs', 'martfury' ),
-						'params'     => array(
-							array(
-								'type'        => 'textfield',
-								'heading'     => esc_html__( 'Title', 'martfury' ),
-								'param_name'  => 'title',
-								'value'       => '',
-								'admin_label' => true,
-							),
-							array(
-								'param_name'  => 'taxonomy_slug',
-								'type'        => 'dropdown',
-								'value'       => $taxonomy_array, // here I'm stuck
-								'heading'     => esc_html__( 'Category filter:', 'martfury' ),
-								"admin_label" => true,
-								'dependency'  => array(
-									'element' => 'select_post',
-									'value'   => array( '0' ),
-								),
-							),
-							
-						),
-					),
+
 					array(
 						'type'        => 'dropdown',
 						'heading'     => esc_html__( 'Order by', 'martfury' ),
@@ -4345,6 +4334,81 @@ class Martfury_VC {
 
 		return $results;
 	}
+
+
+
+	/**
+	 * Suggester for autocomplete by id/name/title/sku
+	 * @since 4.4
+	 *
+	 * @param $query
+	 *
+	 * @return array - id's from products with title/sku.
+	 */
+	public function productIdAutocompleteSuggester( $query ) {
+		global $wpdb;
+		$product_id = (int) $query;
+		$post_meta_infos = $wpdb->get_results( $wpdb->prepare( "SELECT a.ID AS id, a.post_title AS title, b.meta_value AS sku
+					FROM {$wpdb->posts} AS a
+					LEFT JOIN ( SELECT meta_value, post_id  FROM {$wpdb->postmeta} WHERE `meta_key` = '_sku' ) AS b ON b.post_id = a.ID
+					WHERE a.post_type = 'product' AND ( a.ID = '%d' OR b.meta_value LIKE '%%%s%%' OR a.post_title LIKE '%%%s%%' )", $product_id > 0 ? $product_id : - 1, stripslashes( $query ), stripslashes( $query ) ), ARRAY_A );
+
+		$results = array();
+		if ( is_array( $post_meta_infos ) && ! empty( $post_meta_infos ) ) {
+			foreach ( $post_meta_infos as $value ) {
+				$data = array();
+				$data['value'] = $value['id'];
+				$data['label'] = __( 'Id', 'js_composer' ) . ': ' . $value['id'] . ( ( strlen( $value['title'] ) > 0 ) ? ' - ' . __( 'Title', 'js_composer' ) . ': ' . $value['title'] : '' ) . ( ( strlen( $value['sku'] ) > 0 ) ? ' - ' . __( 'Sku', 'js_composer' ) . ': ' . $value['sku'] : '' );
+				$results[] = $data;
+			}
+		}
+
+		return $results;
+	}
+
+	/**
+	 * Find product by id
+	 * @since 4.4
+	 *
+	 * @param $query
+	 *
+	 * @return bool|array
+	 */
+	public function productIdAutocompleteRender( $query ) {
+		$query = trim( $query['value'] ); // get value from requested
+		if ( ! empty( $query ) ) {
+			// get product
+			$product_object = wc_get_product( (int) $query );
+			if ( is_object( $product_object ) ) {
+				$product_sku = $product_object->get_sku();
+				$product_title = $product_object->get_title();
+				$product_id = $product_object->get_id();
+
+				$product_sku_display = '';
+				if ( ! empty( $product_sku ) ) {
+					$product_sku_display = ' - ' . __( 'Sku', 'js_composer' ) . ': ' . $product_sku;
+				}
+
+				$product_title_display = '';
+				if ( ! empty( $product_title ) ) {
+					$product_title_display = ' - ' . __( 'Title', 'js_composer' ) . ': ' . $product_title;
+				}
+
+				$product_id_display = __( 'Id', 'js_composer' ) . ': ' . $product_id;
+
+				$data = array();
+				$data['value'] = $product_id;
+				$data['label'] = $product_id_display . $product_title_display . $product_sku_display;
+
+				return ! empty( $data ) ? $data : false;
+			}
+
+			return false;
+		}
+
+		return false;
+	}
+
 
 	/**
 	 * Get categories
