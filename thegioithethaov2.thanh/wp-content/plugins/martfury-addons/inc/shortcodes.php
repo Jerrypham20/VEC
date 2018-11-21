@@ -2264,6 +2264,7 @@ class Martfury_Shortcodes {
 		
 		$output = array();
 
+		//Title
 		$header_tabs = array();
 		$view_all    = '';
 		if ( ! empty( $atts['title'] ) ) {
@@ -2272,10 +2273,9 @@ class Martfury_Shortcodes {
 			);
 			$header_tabs[] = sprintf( '<h2>%s</h2>', $this->get_vc_link( $link_atts ) );
 		}
-
-
-		$list_id_product = explode( ',', $atts['product'] );
 		
+		//get product highlight
+		$list_id_product = explode( ',', $atts['product'] );
 		$args = array(
 			'post_type' => 'product',
 			'post__in' => $list_id_product,
@@ -2283,12 +2283,17 @@ class Martfury_Shortcodes {
 
 		$get_products = new WP_Query( $args );
 
-	    while ( $get_products->have_posts() ) : $get_products->the_post();
-	        ob_start();
-				get_template_part( 'template-parts/content-product', get_post_format() );
-				$product_highlight[] = ob_get_clean();
-	    endwhile;
+		ob_start();
+		if ( $get_products->have_posts() ) :
+			woocommerce_product_loop_start();
+		    while ( $get_products->have_posts() ) : $get_products->the_post();
+		        wc_get_template_part( 'content', 'product-highlight' );	
+					
+		    endwhile;
+		    woocommerce_product_loop_end();
+		endif;
 	    wp_reset_postdata();
+	    $product_highlight[] = ob_get_clean();
 
 	    $product_highlight_content[] = sprintf( '<div class="tabs-25">%s</div>', implode( ' ', $product_highlight ) );
 
@@ -2301,6 +2306,8 @@ class Martfury_Shortcodes {
 		$taxonomy_name = 'product_cat';
 		$termchildren = get_term_children( $term_id, $taxonomy_name );
 
+
+		//header title tabs
 		$header_tabs[] 		= '<div class="jp-header-nav">';
 		$header_tabs[] 		= '<ul class="jp-list-nav">';
 		foreach ( $termchildren as $child  ) {
@@ -2320,6 +2327,23 @@ class Martfury_Shortcodes {
 
 		$header_tabs[] = '</div>';
 
+		//price
+		$header_tabs_price[] = '<div class="jp-header-nav nav-price"><span>Giá từ : </span> <ul class="jp-list-nav">';
+		$array_prices = array(
+				'100000' =>'100k',
+				'200000' =>'200k',
+				'300000' =>'300k',
+				'400000' =>'400k',
+				'500000' =>'500k',
+		);
+
+		foreach ($array_prices as $price => $value) {
+			$header_tabs_price[] = sprintf( '<li><a href="/?min_price=%s">%s</a></li>',$price, $value );
+		}
+
+		$header_tabs_price[] = '</ul></div>';
+
+		// tabs content product
 		$tab_atts      = array(
 			'columns'  => intval( $atts['columns'] ),
 			'order'    => '',
@@ -2331,7 +2355,7 @@ class Martfury_Shortcodes {
 		$tab_content[] = sprintf( '<div class="tabs-panel">%s</div>', $this->get_wc_products( $tab_atts ) );
 
 
-		$output[] = sprintf( '<div class="tabs-header">%s</div>', implode( ' ', $header_tabs ) );
+		$output[] = sprintf( '<div class="tabs-header">%s%s</div>', implode( ' ', $header_tabs ), implode( ' ', $header_tabs_price ) );
 		$output[] = sprintf( '<div class="tabs-content">%s%s</div>',implode( ' ', $product_highlight_content ), implode( ' ', $tab_content ) );
 
 

@@ -160,6 +160,7 @@ class Martfury_WooCommerce {
 		add_action( 'woocommerce_before_shop_loop_item_title', array( $this, 'product_content_thumbnail' ) );
 
 		add_action( 'woocommerce_shop_loop_item_title', array( $this, 'open_product_details' ), 5 );
+		add_action( 'woocommerce_shop_loop_item_rating', array( $this, 'product_get_rating_html' ), 5 );
 		add_action( 'woocommerce_after_shop_loop_item', array( $this, 'close_product_details' ), 100 );
 		add_action( 'woocommerce_after_shop_loop_item_title', array( $this, 'close_product_content' ), 9 );
 		add_action( 'woocommerce_after_shop_loop_item_title', array( $this, 'close_product_price_box' ), 100 );

@@ -1,0 +1,184 @@
+2018-11-21T01:34:26+00:00 CRITICAL Cannot declare class Martfury_WooCommerce, because the name is already in use in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php on line 33
+
+2018-11-21T01:35:05+00:00 CRITICAL Cannot declare class Martfury_WooCommerce, because the name is already in use in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php on line 34
+
+2018-11-21T01:58:30+00:00 CRITICAL Cannot declare class Martfury_WooCommerce_Child, because the name is already in use in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php on line 3572
+
+2018-11-21T02:05:29+00:00 CRITICAL Cannot declare class Martfury_WooCommerce_Child, because the name is already in use in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php on line 3572
+
+2018-11-21T02:06:15+00:00 CRITICAL Uncaught Error: Class 'Martfury_WooCommerce_Child' not found in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\functions.php:63
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-hook.php(286): martfury_setup('')
+#1 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-settings.php(434): do_action('after_setup_the...')
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-config.php(89): require_once('D:\\OSPanel\\doma...')
+#5 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-load.php(37): require_once('D:\\OSPanel\\doma...')
+#6 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-blog-header.php(13): require_once('D:\\OSPanel\\doma...')
+#7 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\index.php(17): require('D:\\OSPanel\\doma...')
+#8 {main}
+  in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\functions.php on line 63
+
+2018-11-21T02:06:21+00:00 CRITICAL Uncaught Error: Class 'Martfury_WooCommerce_Child' not found in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\functions.php:63
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-hook.php(286): martfury_setup('')
+#1 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-settings.php(434): do_action('after_setup_the...')
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-config.php(89): require_once('D:\\OSPanel\\doma...')
+#5 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-load.php(37): require_once('D:\\OSPanel\\doma...')
+#6 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-blog-header.php(13): require_once('D:\\OSPanel\\doma...')
+#7 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\index.php(17): require('D:\\OSPanel\\doma...')
+#8 {main}
+  in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\functions.php on line 63
+
+2018-11-21T02:10:25+00:00 CRITICAL Uncaught Error: Class 'Martfury_WooCommerce_Child' not found in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\functions.php:64
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-hook.php(286): martfury_setup('')
+#1 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-settings.php(434): do_action('after_setup_the...')
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-config.php(89): require_once('D:\\OSPanel\\doma...')
+#5 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-load.php(37): require_once('D:\\OSPanel\\doma...')
+#6 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-blog-header.php(13): require_once('D:\\OSPanel\\doma...')
+#7 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\index.php(17): require('D:\\OSPanel\\doma...')
+#8 {main}
+  in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\functions.php on line 64
+
+2018-11-21T02:12:01+00:00 CRITICAL require(): Failed opening required 'D:\OSPanel\domains\VEC\thegioithethaov2.thanh/wp-content/themes/martfury/inc/template-parts/content-product.php' (include_path='.;d:/ospanel/modules/php/PHP-7.0-x64;d:/ospanel/modules/php/PHP-7.0-x64/PEAR/pear') in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\functions.php on line 159
+
+2018-11-21T02:12:19+00:00 CRITICAL Cannot declare class Martfury_WooCommerce_Child, because the name is already in use in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php on line 3547
+
+2018-11-21T02:12:50+00:00 CRITICAL Cannot declare class Martfury_WooCommerce_Child, because the name is already in use in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php on line 8
+
+2018-11-21T02:13:56+00:00 CRITICAL Cannot declare class Martfury_WooCommerce_Child_1, because the name is already in use in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php on line 8
+
+2018-11-21T02:15:11+00:00 CRITICAL Cannot declare class Martfury_WooCommerce_Child_1, because the name is already in use in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php on line 8
+
+2018-11-21T02:16:05+00:00 CRITICAL Cannot declare class Product_Highlight, because the name is already in use in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php on line 2
+
+2018-11-21T02:18:23+00:00 CRITICAL syntax error, unexpected end of file, expecting function (T_FUNCTION) in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php on line 4
+
+2018-11-21T02:18:39+00:00 CRITICAL Cannot declare class Child, because the name is already in use in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php on line 2
+
+2018-11-21T02:21:27+00:00 CRITICAL Cannot declare class Martfury_WooCommerce, because the name is already in use in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\frontend\woocommerce.php on line 8
+
+2018-11-21T02:21:48+00:00 CRITICAL Cannot declare class Martfury_WooCommerce, because the name is already in use in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\frontend\woocommerce.php on line 8
+
+2018-11-21T03:34:33+00:00 CRITICAL Cannot declare class Martfury_WooCommerce_Child, because the name is already in use in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php on line 2
+
+2018-11-21T03:36:39+00:00 CRITICAL Cannot declare class Martfury_WooCommerce_Child_hello, because the name is already in use in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php on line 2
+
+2018-11-21T04:34:46+00:00 CRITICAL Cannot redeclare __construct() (previously declared in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php:9) in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php on line 20
+
+2018-11-21T04:37:30+00:00 CRITICAL Cannot declare class Martfury_WooCommerce_Highlight, because the name is already in use in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\frontend\woocommerce-highlight.php on line 8
+
+2018-11-21T04:38:00+00:00 CRITICAL Uncaught Error: Class 'Martfury_WooCommerce_Highlight' not found in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\functions.php:64
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-hook.php(286): martfury_setup('')
+#1 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-settings.php(434): do_action('after_setup_the...')
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-config.php(89): require_once('D:\\OSPanel\\doma...')
+#5 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-load.php(37): require_once('D:\\OSPanel\\doma...')
+#6 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-blog-header.php(13): require_once('D:\\OSPanel\\doma...')
+#7 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\index.php(17): require('D:\\OSPanel\\doma...')
+#8 {mai in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\functions.php on line 64
+
+2018-11-21T04:38:31+00:00 CRITICAL Cannot declare class Martfury_WooCommerce_Highlight, because the name is already in use in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\frontend\woocommerce-highlight.php on line 8
+
+2018-11-21T04:44:22+00:00 CRITICAL Cannot declare class Martfury_WooCommerce_Highlight, because the name is already in use in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\frontend\woocommerce-highlight.php on line 8
+
+2018-11-21T04:45:06+00:00 CRITICAL Cannot redeclare get_product_price_html() (previously declared in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php:8) in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php on line 38
+
+2018-11-21T04:48:44+00:00 CRITICAL require(): Failed opening required 'D:\OSPanel\domains\VEC\thegioithethaov2.thanh/wp-content/themes/martfury/inc/frontend/woocommerce-highlight.php' (include_path='.;d:/ospanel/modules/php/PHP-7.0-x64;d:/ospanel/modules/php/PHP-7.0-x64/PEAR/pear') in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\functions.php on line 157
+
+2018-11-21T04:49:05+00:00 CRITICAL Cannot redeclare get_product_price_html() (previously declared in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php:8) in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php on line 38
+
+2018-11-21T04:51:09+00:00 CRITICAL Cannot declare class Product_Highlight, because the name is already in use in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php on line 2
+
+2018-11-21T04:52:57+00:00 CRITICAL Cannot declare class Product_Highlight, because the name is already in use in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php on line 2
+
+2018-11-21T04:53:36+00:00 CRITICAL Cannot declare class Product_Highlight_1, because the name is already in use in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php on line 2
+
+2018-11-21T04:56:00+00:00 CRITICAL Cannot redeclare get_product_price_html() (previously declared in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php:9) in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php on line 39
+
+2018-11-21T06:55:55+00:00 CRITICAL Cannot redeclare wpa83367_price_html() (previously declared in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php:18) in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php on line 20
+
+2018-11-21T07:10:54+00:00 CRITICAL Uncaught Error: [] operator not supported for strings in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\martfury-addons\inc\shortcodes.php:2336
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(319): Martfury_Shortcodes->product_tabs_highlight(Array, '', 'martfury_produc...')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(197): preg_replace_callback('/\\[(\\[?)(martfu...', 'do_shortcode_ta...', '[martfury_empty...')
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\js_composer\include\helpers\helpers.php(236): do_shortcode('[martfury_empty...')
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\js_composer\include\templates\shortcodes\vc_column.php(94): wpb_js_remove_wpautop('[martfury_empty...')
+#5 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\js_composer\include\classes\shortcodes\shortcodes.php(478): include('D:\\OSPanel\ in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\martfury-addons\inc\shortcodes.php on line 2336
+
+2018-11-21T07:11:54+00:00 CRITICAL Uncaught Error: [] operator not supported for strings in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\martfury-addons\inc\shortcodes.php:2336
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(319): Martfury_Shortcodes->product_tabs_highlight(Array, '', 'martfury_produc...')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(197): preg_replace_callback('/\\[(\\[?)(martfu...', 'do_shortcode_ta...', '[martfury_empty...')
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\js_composer\include\helpers\helpers.php(236): do_shortcode('[martfury_empty...')
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\js_composer\include\templates\shortcodes\vc_column.php(94): wpb_js_remove_wpautop('[martfury_empty...')
+#5 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\js_composer\include\classes\shortcodes\shortcodes.php(478): include('D:\\OSPanel\ in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\martfury-addons\inc\shortcodes.php on line 2336
+
+2018-11-21T07:12:08+00:00 CRITICAL Uncaught Error: [] operator not supported for strings in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\martfury-addons\inc\shortcodes.php:2336
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(319): Martfury_Shortcodes->product_tabs_highlight(Array, '', 'martfury_produc...')
+#1 [internal function]: do_shortcode_tag(Array)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(197): preg_replace_callback('/\\[(\\[?)(martfu...', 'do_shortcode_ta...', '[martfury_empty...')
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\js_composer\include\helpers\helpers.php(236): do_shortcode('[martfury_empty...')
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\js_composer\include\templates\shortcodes\vc_column.php(94): wpb_js_remove_wpautop('[martfury_empty...')
+#5 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\js_composer\include\classes\shortcodes\shortcodes.php(478): include('D:\\OSPanel\ in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\martfury-addons\inc\shortcodes.php on line 2336
+
+2018-11-21T07:42:38+00:00 CRITICAL Uncaught Error: Call to a member function get_regular_price() on null in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php:16
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\template.php(690): require()
+#1 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\template.php(647): load_template('D:\\OSPanel\\doma...', false)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\general-template.php(155): locate_template(Array, true, false)
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\martfury-addons\inc\shortcodes.php(2288): get_template_part('template-parts/...', '')
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(319): Martfury_Shortcodes->product_tabs_highlight(Array, '', 'martfury_produc...')
+#5 [internal function]: do_shortcode_tag(Array)
+#6 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(197): preg_replace_callback('/\\[(\\[?)(martfu...', in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php on line 16
+
+2018-11-21T07:43:11+00:00 CRITICAL Uncaught Error: Call to a member function get_regular_price() on null in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php:16
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\template.php(690): require()
+#1 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\template.php(647): load_template('D:\\OSPanel\\doma...', false)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\general-template.php(155): locate_template(Array, true, false)
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\martfury-addons\inc\shortcodes.php(2288): get_template_part('template-parts/...', '')
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(319): Martfury_Shortcodes->product_tabs_highlight(Array, '', 'martfury_produc...')
+#5 [internal function]: do_shortcode_tag(Array)
+#6 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(197): preg_replace_callback('/\\[(\\[?)(martfu...', in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php on line 16
+
+2018-11-21T08:12:00+00:00 CRITICAL require(): Failed opening required 'D:\OSPanel\domains\VEC\thegioithethaov2.thanh/wp-content/themes/martfury/template-part/content-product.php' (include_path='.;d:/ospanel/modules/php/PHP-7.0-x64;d:/ospanel/modules/php/PHP-7.0-x64/PEAR/pear') in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\functions.php on line 155
+
+2018-11-21T08:14:34+00:00 CRITICAL Cannot declare class Martfury_WooCommerce_Highlight, because the name is already in use in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php on line 8
+
+2018-11-21T08:18:59+00:00 CRITICAL Cannot declare class Martfury_WooCommerce_Highlight, because the name is already in use in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php on line 8
+
+2018-11-21T08:23:09+00:00 CRITICAL Uncaught Error: Class 'Martfury_WooCommerce_Highlight' not found in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\functions.php:64
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-hook.php(286): martfury_setup('')
+#1 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-settings.php(434): do_action('after_setup_the...')
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-config.php(89): require_once('D:\\OSPanel\\doma...')
+#5 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-load.php(37): require_once('D:\\OSPanel\\doma...')
+#6 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-blog-header.php(13): require_once('D:\\OSPanel\\doma...')
+#7 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\index.php(17): require('D:\\OSPanel\\doma...')
+#8 {mai in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\functions.php on line 64
+
+2018-11-21T08:23:21+00:00 CRITICAL Cannot redeclare open_product_inner() (previously declared in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php:10) in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\template-parts\content-product.php on line 11
+
+2018-11-21T08:51:01+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Variable::product_get_rating_html() in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\woocommerce\content-product-highlight.php:36
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\template.php(690): require()
+#1 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\woocommerce\includes\wc-core-functions.php(178): load_template('D:\\OSPanel\\doma...', false)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\martfury-addons\inc\shortcodes.php(2290): wc_get_template_part('content', 'product-highlig...')
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(319): Martfury_Shortcodes->product_tabs_highlight(Array, '', 'martfury_produc...')
+#4 [internal function]: do_shortcode_tag(Array)
+#5 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(197): preg_replace_callback('/\\[(\\[?)(martfu...', 'do_shortcode_ta...', '[martfury_empty...')
+#6 D:\O in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\woocommerce\content-product-highlight.php on line 36
+

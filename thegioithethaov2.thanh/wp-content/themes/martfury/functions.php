@@ -60,6 +60,8 @@ function martfury_setup() {
 	global $martfury_woocommerce;
 	$martfury_woocommerce = new Martfury_WooCommerce;
 
+
+
 	global $martfury_dokan;
 	$martfury_dokan = new Martfury_Dokan;
 
@@ -151,6 +153,7 @@ require get_template_directory() . '/inc/functions/entry.php';
 
 // Woocommerce
 require get_template_directory() . '/inc/frontend/woocommerce.php';
+
 
 // Vendor
 require get_template_directory() . '/inc/frontend/dokan.php';
