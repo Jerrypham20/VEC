@@ -30,7 +30,7 @@ if ( ! function_exists( 'martfury_get_layout' ) ) :
 			}
 		} elseif ( martfury_is_catalog() ) {
 			$catalog_layout = martfury_get_catalog_layout();
-			$layout         = martfury_get_option( 'catalog_sidebar_' . $catalog_layout );
+			//$layout         = martfury_get_option( 'catalog_sidebar_' . $catalog_layout );
 		} elseif ( is_singular( 'product' ) ) {
 			$product_layout = martfury_get_option( 'product_page_layout' );
 			$layout         = 'full-content';

@@ -545,7 +545,7 @@ class Martfury_Shortcodes {
 			'%s' .
 			'<div class="martfury-tabs">' .
 			'<div class="tabs-header">' .
-			'<ul class="jp-list-nav">' .
+			'<ul class="jp-list-nav tabs-nav">' .
 			'%s' .
 			'</ul>' .
 			'</div>' .
@@ -2312,7 +2312,7 @@ class Martfury_Shortcodes {
 		$header_tabs[] 		= '<ul class="jp-list-nav">';
 		foreach ( $termchildren as $child  ) {
 				$term = get_term_by( 'id', $child, $taxonomy_name );
-				$header_tabs[] = sprintf( '<li><a href="%s">%s</a></li>', $term->slug, $term->name );
+				$header_tabs[] = sprintf( '<li><a href="%s">%s</a></li>', get_term_link( $child, $taxonomy_name ), $term->name );
 		}
 		$header_tabs[] = '</ul>';
 
@@ -2425,8 +2425,8 @@ class Martfury_Shortcodes {
 	
 		$tab_content = array();
 		if ( $tabs ) {
-			$header_tabs[] = '<div class="jp-header-nav">';
-			$header_tabs[] = '<ul class="jp-list-nav">';
+			$header_tabs[] = '<div class="tabs-header-nav">';
+			$header_tabs[] = '<ul class="tabs-nav">';
 			foreach ( $tabs as $tab ) {
 				if ( isset( $tab['title'] ) ) {
 					$header_tabs[] = sprintf( '<li><a href="#" data-href="%s">%s</a></li>', esc_attr( $tab['products'] ), esc_html( $tab['title'] ) );
@@ -2836,10 +2836,10 @@ class Martfury_Shortcodes {
 		if ( $atts['cat'] ) {
 			$tabs = explode( ',', $atts['cat'] );
 		}
-		$header_tabs[] = '<div class="jp-header-nav">';
+		$header_tabs[] = '<div class="tabs-header-nav">';
 		$tab_content   = array();
 		if ( $tabs ) {
-			$header_tabs[] = '<ul class="jp-list-nav">';
+			$header_tabs[] = '<ul class="tabs-nav">';
 			foreach ( $tabs as $tab ) {
 				$term = get_term_by( 'slug', $tab, 'product_cat' );
 				if ( ! is_wp_error( $term ) && $term ) {

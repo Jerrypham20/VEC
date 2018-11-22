@@ -191,6 +191,7 @@ class Martfury_WooCommerce {
 		add_action( 'woocommerce_archive_description', array( $this, 'search_products_header' ), 30 );
 
 		// Add Shop Toolbar
+		add_action( 'woocommerce_before_shop_loop', array( $this, 'shop_category_child' ), 20 );
 		add_action( 'woocommerce_before_shop_loop', array( $this, 'shop_toolbar' ), 20 );
 		add_action( 'woocommerce_before_shop_loop', array( $this, 'catalog_toolbar_space' ), 20 );
 
@@ -1968,6 +1969,31 @@ class Martfury_WooCommerce {
 	}
 
 	/**
+	 * Display category child of
+	 *
+	 * @since 1.0
+	 */
+	function shop_category_child() {
+		$taxonomy_name = 'product_cat';
+		$output = array();
+		$parent = 0;
+		
+		if ( function_exists( 'is_product_category' ) && is_product_category() ) {
+			global $wp_query;
+			$current_cat = $wp_query->get_queried_object();
+			$term_children = get_term_children( $current_cat->term_id, $taxonomy_name );
+			$url_icon = get_field('icon_breadcrumb')['url'];
+			var_dump($current_cat);
+
+        	echo '<div class="catalog-cat"><ul class="breadcrumb-catchild"><li class="current-cat">'.$current_cat->name.'</li>';
+			foreach ( $term_children as $child ) {
+				$term = get_term_by( 'id', $child, $taxonomy_name );
+				echo '<li><img src="'.$url_icon.'"><a href="' . get_term_link( $child, $taxonomy_name ) . '">' . $term->name . '</a></li>';
+			}
+			echo '</ul></div>';
+		}
+	}
+	/**
 	 * Display a tool bar on top of product archive
 	 *
 	 * @since 1.0
@@ -1998,27 +2024,47 @@ class Martfury_WooCommerce {
 			if ( in_array( 'found', $elements ) ) {
 				global $wp_query;
 				$total    = $wp_query->found_posts;
-				$output[] = '<div class="products-found"><strong>' . $total . '</strong>' . esc_html__( 'Products found', 'martfury' ) . '</div>';
+				//$output[] = '<div class="products-found"><strong>' . $total . '</strong>' . esc_html__( 'Products found', 'martfury' ) . '</div>';
 
 			}
 		}
 
-		if ( in_array( 'view', $elements ) ) {
-			$list_current = $this->shop_view == 'list' ? 'current' : '';
-			$grid_current = $this->shop_view == 'grid' ? 'current' : '';
-			$output[]     = sprintf(
-				'<div class="shop-view">' .
-				'<span>%s</span>' .
-				'<a href="#" class="grid-view mf-shop-view %s" data-view="grid"><i class="icon-grid"></i></a>' .
-				'<a href="#" class="list-view mf-shop-view %s" data-view="list"><i class="icon-list4"></i></a>' .
-				'</div>',
-				esc_html__( 'View', 'martfury' ),
-				$grid_current,
-				$list_current
-			);
+		$array_price = array(
+				'0-300000' => 'Dưới 300k',
+				'300000-500000' => 'Từ 300k - 500k',
+				'500000-700000' => 'Từ 500k - 700k',
+				'700000-1000000' => 'Từ 700k - 1000k',
+				'1000000' => 'Trên 1000k',
+		);
+
+		$list_price[] = '<ul class="jp-list-nav">';
+		foreach ($array_price as $prices => $value) {
+			$value_price = explode('-',$prices);
+			$min_price = $value_price[0];
+			$max_price = $value_price[1];
+			$list_price[] = sprintf( '<li><a href="/?min_price=%s&max_price=%s">%s</a></li>',$min_price,$max_price, $value );
 		}
+		$list_price[] = '</ul>';
+		$output[] = sprintf('<div class="products-found"><span>Chọn mức giá:</span> %s</div>',implode( ' ', $list_price ));
+
+
+		// if ( in_array( 'view', $elements ) ) {
+		// 	$list_current = $this->shop_view == 'list' ? 'current' : '';
+		// 	$grid_current = $this->shop_view == 'grid' ? 'current' : '';
+		// 	$output[]     = sprintf(
+		// 		'<div class="shop-view">' .
+		// 		'<span>%s</span>' .
+		// 		'<a href="#" class="grid-view mf-shop-view %s" data-view="grid"><i class="icon-grid"></i></a>' .
+		// 		'<a href="#" class="list-view mf-shop-view %s" data-view="list"><i class="icon-list4"></i></a>' .
+		// 		'</div>',
+		// 		esc_html__( 'View', 'martfury' ),
+		// 		$grid_current,
+		// 		$list_current
+		// 	);
+		// }
 
 		if ( in_array( 'sortby', $elements ) ) {
+			//$output[] = '<div id="product-sortby">Sắp xếp</div>';
 			ob_start();
 			woocommerce_catalog_ordering();
 			$output[] = ob_get_clean();

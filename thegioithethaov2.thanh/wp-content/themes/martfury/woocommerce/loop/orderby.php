@@ -40,7 +40,7 @@ foreach ( $_GET as $key => $val ) {
 	}
 }
 
-$order_current = esc_html__('Sort by Default', 'martfury');
+$order_current = esc_html__('Sắp xếp', 'martfury');
 $order_html    = '';
 foreach ( $catalog_orderby_options as $id => $name ) {
 	$url       = $form_action . '?orderby=' . esc_attr( $id ) . $params;
@@ -59,7 +59,7 @@ foreach ( $catalog_orderby_options as $id => $name ) {
 }
 ?>
 <ul class="woocommerce-ordering">
-	<li class="current"><span> <?php echo $order_current; ?></span>
+	<li class="current"><span> Sắp xếp</span>
 		<ul>
 			<?php echo $order_html ?>
 		</ul>

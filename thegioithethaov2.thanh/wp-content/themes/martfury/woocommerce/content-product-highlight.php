@@ -21,6 +21,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 global $product;
+	$price = $product->price;
+	$price_sale = $product->sale_price;
+	$percentage = round( ( ( $product->regular_price - $product->sale_price ) / $product->regular_price ) * 100 ) . '%';
+// echo '<pre>';
+// var_dump($product);
+// echo '</pre>';
 ?>
 <li class="product">
 	<div class="product-item">
@@ -35,18 +41,17 @@ global $product;
 			<span class="price"><?php echo wp_kses_post($product->get_price_html()); ?></span>
 			<div class="highlight-desc">
 				<ul class="progress">
-					<li class="progress__item">
-				      	<p class="progress__title progress__title_discount ">free ship</p>
-				    </li>
-				    <li class="progress__item">
-				      	<p class="progress__title">Cấu tạo nhiều lớp, ruột làm bằng cao su cao cấp, giữ hơi tốt.</p>
-				    </li>
-				    <li class="progress__item">
-				      	<p class="progress__title">Phù hợp với nhiều loại sân như sân cỏ thường, sân cỏ nhân tạo…</p>
-				    </li>
-				    <li class="progress__item">
-				     	<p class="progress__title">Không bị thấm nước khi trời mưa.</p>
-				    </li>
+					<li class="progress__item <?php if($price_sale == '') {echo 'progress_freeship';} ?>">
+				      	<p class="progress__title progress__title_discount <?php if($price_sale == '') {echo 'progress_freeship';} ?> "><?php if($price_sale != '') {echo 'sale ' .$percentage;}else{echo 'free ship'; } ?></p>
+				    </li>			    
+				    	<?php 
+				    	if( have_rows('description_highlights') ):
+				    		while ( have_rows('description_highlights') ) : the_row();
+				    			$content = get_sub_field('content');
+				    			echo '<li class="progress__item"><p class="progress__title">'.$content.'</p></li>';
+				    		endwhile;
+						endif;				    			
+				    ?>	
 				 </ul>
 			</div>
 		</div>

@@ -1,0 +1,22 @@
+2018-11-22T02:00:38+00:00 CRITICAL Cannot redeclare get_product_single_excerpt() (previously declared in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\woocommerce\content-product-highlight.php:23) in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\woocommerce\content-product-highlight.php on line 32
+
+2018-11-22T02:01:04+00:00 CRITICAL Uncaught Error: Call to undefined function get_product_single_excerpt() in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\woocommerce\content-product-highlight.php:41
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\template.php(690): require()
+#1 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\woocommerce\includes\wc-core-functions.php(178): load_template('D:\\OSPanel\\doma...', false)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\martfury-addons\inc\shortcodes.php(2290): wc_get_template_part('content', 'product-highlig...')
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(319): Martfury_Shortcodes->product_tabs_highlight(Array, '', 'martfury_produc...')
+#4 [internal function]: do_shortcode_tag(Array)
+#5 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\shortcodes.php(197): preg_replace_callback('/\\[(\\[?)(martfu...', 'do_shortcode_ta...', '[martfury_empty...')
+#6 D:\OSPanel\domains\V in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\woocommerce\content-product-highlight.php on line 41
+
+2018-11-22T02:01:28+00:00 CRITICAL Cannot redeclare get_product_single_excerpt_highlight() (previously declared in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\woocommerce\content-product-highlight.php:23) in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\woocommerce\content-product-highlight.php on line 32
+
+2018-11-22T02:25:10+00:00 CRITICAL syntax error, unexpected '.' in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\woocommerce\content-product-highlight.php on line 48
+
+2018-11-22T02:31:30+00:00 CRITICAL syntax error, unexpected '}', expecting ',' or ';' in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\woocommerce\content-product-highlight.php on line 45
+
+2018-11-22T02:45:17+00:00 CRITICAL syntax error, unexpected ''</p>'' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\woocommerce\content-product-highlight.php on line 54
+
+2018-11-22T09:55:46+00:00 CRITICAL Object of class WP_Error could not be converted to string in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\frontend\woocommerce.php on line 2003
+

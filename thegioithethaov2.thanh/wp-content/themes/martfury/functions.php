@@ -136,6 +136,22 @@ function martfury_register_sidebar() {
 
 add_action( 'widgets_init', 'martfury_register_sidebar' );
 
+
+//woocommer custom product sorting
+add_filter('woocommerce_catalog_orderby', 'wc_customize_product_sorting');
+function wc_customize_product_sorting($sorting_options){
+    $sorting_options = array(
+        'menu_order' => __( 'Sắp xếp mặc định', 'woocommerce' ),
+        'popularity' => __( 'Sắp xếp theo thứ tự phổ biến', 'woocommerce' ),
+        'rating'     => __( 'Sắp xếp theo điểm đánh giá', 'woocommerce' ),
+        'date'       => __( 'Sắp xếp theo sản phẩm mới nhất', 'woocommerce' ),
+        'price'      => __( 'Sắp xếp theo giá từ thấp đến cao', 'woocommerce' ),
+        'price-desc' => __( 'Sắp xếp theo giá từ cao xuống thấp', 'woocommerce' ),
+    );
+
+    return $sorting_options;
+}
+
 /**
  * Load theme
  */
