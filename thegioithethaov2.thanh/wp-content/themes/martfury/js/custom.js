@@ -23,8 +23,8 @@
     });
 
     var nameElement = jQuery('.mf-products-tabs-highlight .tabs-content .products').find('.product');
-    var nameElementSale = jQuery('.jr-best-selling .tabs-content .products').find('.product-inner');
-    var nameElementCat = jQuery('#mf-shop-content .products').find('.product-inner');
+    //var nameElementSale = jQuery('.jr-best-selling .tabs-content .products').find('.product');
+    //var nameElementCat = jQuery('#mf-shop-content .products').find('.product-inner');
     var bannerCategory = jQuery('.catalog-banner-top').find('.banner-height');
     function fixHeightLocation (nameElement) {
       if ( jQuery(window).width() > 991 ) {
@@ -45,13 +45,19 @@
 
 
     fixHeightLocation(nameElement);
-    fixHeightLocation(nameElementSale);
-    fixHeightLocation(nameElementCat);
+    //fixHeightLocation(nameElementSale);
+    //fixHeightLocation(nameElementCat);
     fixHeightLocation(bannerCategory);
     jQuery( window ).resize(function() {
       fixHeightLocation(nameElement);
-      fixHeightLocation(nameElementSale);
-      fixHeightLocation(nameElementCat);
+      //fixHeightLocation(nameElementSale);
+      //fixHeightLocation(nameElementCat);
+      fixHeightLocation(bannerCategory);
+    });
+    jQuery( window ).load(function() {
+      fixHeightLocation(nameElement);
+      //fixHeightLocation(nameElementSale);
+      //fixHeightLocation(nameElementCat);
       fixHeightLocation(bannerCategory);
     });
 

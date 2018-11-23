@@ -18875,7 +18875,7 @@ textarea:focus {
   z-index: 10000;
   font-size: 36px;
   text-shadow: none;
-  color: #000;
+  color: #bb0303;
   text-align: center;
   opacity: 0;
   transition: 0.5s;
@@ -21158,6 +21158,7 @@ textarea:focus {
 }*/
 .blog-layout-grid {
   background: #fff;
+  border: 1px solid #e1e1e1;
 }
 .tabs-header h2,
 .blog-layout-grid .post-header .section-title {
@@ -21174,7 +21175,7 @@ textarea:focus {
   background: url(images/icons/categories-icon.png) no-repeat left center;
   width: 76px;
   height: 60px;
-  left: 0;
+  left: -2px;
   top: -23px;
   position: absolute;
 }
@@ -21451,6 +21452,12 @@ textarea:focus {
 .mf-shop-content {
   background-color: #fff;
 }
+
+/*@media (min-width: 1200px) {
+  .mf-shop-content .product {
+    width: 20%;
+  }
+}*/
 .mf-product-content a:hover {
   color: #e90404 !important;
 }
@@ -21486,6 +21493,15 @@ textarea:focus {
 }
 .woocommerce .blockUI.blockOverlay:after {
   border-color: #ef0505 !important;
+}
+.jr-best-selling .tabs-header-nav {
+  display: none;
+}
+.home .blog-layout-grid article {
+  margin-bottom: 0;
+}
+.home .blog-layout-grid .entry-desc {
+  padding-bottom: 0;
 }
 @media (max-width: 1199px) {
   .header-bottom .header-logo {
