@@ -1982,13 +1982,13 @@ class Martfury_WooCommerce {
 			global $wp_query;
 			$current_cat = $wp_query->get_queried_object();
 			$term_children = get_term_children( $current_cat->term_id, $taxonomy_name );
-			$url_icon = get_field('icon_breadcrumb')['url'];
-			var_dump($current_cat);
+			$url_icon = get_field('icon_breadcrumb',$current_cat)['url'];
 
-        	echo '<div class="catalog-cat"><ul class="breadcrumb-catchild"><li class="current-cat">'.$current_cat->name.'</li>';
+        	echo '<div class="catalog-cat"><ul class="breadcrumb-catchild"><img src="'.$url_icon.'"><li class="current-cat">'.$current_cat->name.'</li>';
 			foreach ( $term_children as $child ) {
 				$term = get_term_by( 'id', $child, $taxonomy_name );
-				echo '<li><img src="'.$url_icon.'"><a href="' . get_term_link( $child, $taxonomy_name ) . '">' . $term->name . '</a></li>';
+				$url_icon_child = get_field('icon_breadcrumb',$term)['url'];
+				echo '<li><img src="'.$url_icon_child.'"><a href="' . get_term_link( $child, $taxonomy_name ) . '">' . $term->name . '</a></li>';
 			}
 			echo '</ul></div>';
 		}
