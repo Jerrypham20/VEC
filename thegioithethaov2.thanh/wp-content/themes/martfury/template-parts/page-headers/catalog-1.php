@@ -19,11 +19,11 @@ $container_class = apply_filters( 'martfury_catalog_page_header_container', 'con
 			<?php the_archive_title( '<h1 class="entry-title">', '</h1>' ); ?>
         </div>
     </div>
-	<?php if ( ! empty( $elements ) && in_array( 'breadcrumb', $elements ) ) : ?>
+	<!-- <?php if ( ! empty( $elements ) && in_array( 'breadcrumb', $elements ) ) : ?>
         <div class="page-breadcrumbs">
             <div class="<?php echo esc_attr( $container_class ); ?>">
 				<?php martfury_get_breadcrumbs(); ?>
             </div>
         </div>
-	<?php endif; ?>
+	<?php endif; ?> -->
 </div>

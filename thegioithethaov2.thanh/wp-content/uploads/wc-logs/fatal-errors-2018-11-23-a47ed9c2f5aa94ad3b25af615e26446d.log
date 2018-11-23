@@ -1,0 +1,28 @@
+2018-11-23T02:21:42+00:00 CRITICAL syntax error, unexpected 'if' (T_IF) in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\frontend\woocommerce.php on line 1990
+
+2018-11-23T02:23:14+00:00 CRITICAL syntax error, unexpected 'if' (T_IF) in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\frontend\woocommerce.php on line 1990
+
+2018-11-23T02:25:15+00:00 CRITICAL syntax error, unexpected 'if' (T_IF) in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\frontend\woocommerce.php on line 1990
+
+2018-11-23T02:25:38+00:00 CRITICAL syntax error, unexpected 'if' (T_IF) in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\frontend\woocommerce.php on line 1990
+
+2018-11-23T02:36:55+00:00 CRITICAL syntax error, unexpected 'if' (T_IF) in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\frontend\woocommerce.php on line 1990
+
+2018-11-23T02:37:26+00:00 CRITICAL syntax error, unexpected ''){<?php' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\frontend\woocommerce.php on line 1992
+
+2018-11-23T02:38:16+00:00 CRITICAL syntax error, unexpected ''){?>' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\frontend\woocommerce.php on line 1992
+
+2018-11-23T02:39:28+00:00 CRITICAL syntax error, unexpected 'if' (T_IF) in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\frontend\woocommerce.php on line 1990
+
+2018-11-23T02:47:00+00:00 CRITICAL syntax error, unexpected 'endif' (T_ENDIF) in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\frontend\woocommerce.php on line 1995
+
+2018-11-23T03:52:04+00:00 CRITICAL Uncaught Error: Call to undefined function martfury_is_single() in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\frontend\woocommerce.php:665
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-hook.php(286): Martfury_WooCommerce->template_catalog_excerpt('')
+#1 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\woocommerce\content-product.php(62): do_action('woocommerce_aft...')
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\template.php(690): require('D:\\OSPanel\\doma...')
+#5 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\woocommerce\includes\wc-core-functions.php(178): load_template('D:\\OSPanel\\doma...', false)
+#6 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-conten in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\frontend\woocommerce.php on line 665
+

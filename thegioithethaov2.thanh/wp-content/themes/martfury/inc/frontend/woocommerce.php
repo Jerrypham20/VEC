@@ -164,12 +164,13 @@ class Martfury_WooCommerce {
 		add_action( 'woocommerce_after_shop_loop_item', array( $this, 'close_product_details' ), 100 );
 		add_action( 'woocommerce_after_shop_loop_item_title', array( $this, 'close_product_content' ), 9 );
 		add_action( 'woocommerce_after_shop_loop_item_title', array( $this, 'close_product_price_box' ), 100 );
-		add_action( 'woocommerce_after_shop_loop_item_title', array( $this, 'open_product_details_hover' ), 100 );
-		add_action( 'woocommerce_after_shop_loop_item_title', array( $this, 'product_variations_loop' ), 110 );
-		add_action( 'woocommerce_after_shop_loop_item_title', array( $this, 'products_title' ), 130 );
-		add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 130 );
-		add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 130 );
-		add_action( 'woocommerce_after_shop_loop_item_title', array( $this, 'close_product_details_hover' ), 150 );
+		add_action( 'woocommerce_after_shop_loop_item_title', array( $this, 'template_catalog_excerpt' ), 100 );
+		//add_action( 'woocommerce_after_shop_loop_item_title', array( $this, 'open_product_details_hover' ), 100 );
+		//add_action( 'woocommerce_after_shop_loop_item_title', array( $this, 'product_variations_loop' ), 110 );
+		//add_action( 'woocommerce_after_shop_loop_item_title', array( $this, 'products_title' ), 130 );
+		//add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 130 );
+		//add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 130 );
+		//add_action( 'woocommerce_after_shop_loop_item_title', array( $this, 'close_product_details_hover' ), 150 );
 		add_action( 'woocommerce_after_shop_loop_item_title', array( $this, 'template_single_excerpt' ), 8 );
 		add_action( 'woocommerce_after_shop_loop_item_title', array( $this, 'product_loop_footer_buttons' ), 10 );
 
@@ -191,9 +192,10 @@ class Martfury_WooCommerce {
 		add_action( 'woocommerce_archive_description', array( $this, 'search_products_header' ), 30 );
 
 		// Add Shop Toolbar
+		add_action( 'woocommerce_before_shop_loop', array( $this, 'shop_category_banner_top' ), 20 );
 		add_action( 'woocommerce_before_shop_loop', array( $this, 'shop_category_child' ), 20 );
 		add_action( 'woocommerce_before_shop_loop', array( $this, 'shop_toolbar' ), 20 );
-		add_action( 'woocommerce_before_shop_loop', array( $this, 'catalog_toolbar_space' ), 20 );
+		//add_action( 'woocommerce_before_shop_loop', array( $this, 'catalog_toolbar_space' ), 20 );
 
 		add_action( 'dokan_store_profile_frame_after', array( $this, 'shop_toolbar' ), 20 );
 
@@ -654,6 +656,17 @@ class Martfury_WooCommerce {
 		if ( function_exists( 'woocommerce_template_single_excerpt' ) ) {
 			woocommerce_template_single_excerpt();
 		}
+	}
+
+	/**
+	 * woocommerce_template_catalog_excerpt
+	 */
+	function template_catalog_excerpt() {
+		global $post;
+		$short_description = apply_filters( 'woocommerce_short_description', $post->post_excerpt );
+		$short_description_view = wp_trim_words($short_description, 15, '.');
+		echo $short_description_view;
+		
 	}
 
 	/**
@@ -1967,6 +1980,49 @@ class Martfury_WooCommerce {
 
 		return $elements;
 	}
+	/**
+	 * Display bannners category top
+	 *
+	 * @since 1.0
+	 */
+	function shop_category_banner_top () {
+		if ( function_exists( 'is_product_category' ) && is_product_category() ) {
+			global $wp_query;
+			$current_cat = $wp_query->get_queried_object();
+			$banner_large = get_field('banner_top_large',$current_cat)['url'];
+			$banner_large_url = get_field('url_banner_large',$current_cat);
+			$banner_thumbnail = get_field('banner_top_thumbnail',$current_cat)['url'];
+			$banner_thumbnail_url = get_field('url_thumbnail',$current_cat);
+			$banner_thumbnail_2 = get_field('banner_top_thumbnail_2',$current_cat)['url'];
+			$banner_thumbnail_2_url = get_field('url_thumbnail_2',$current_cat);
+
+		?>
+        	<div class="catalog-banner-top">
+        				<div class="container">
+							<div class="row">
+								<?php if($banner_large != ''): ?>
+								<div class="col-xs-12 col-md-8 banner-height">
+									<a href="<?php echo $banner_large_url ?>" title="<?php echo $current_cat->name ?>"><img src="<?php echo $banner_large ?>" alt="<?php echo $current_cat->name ?>"></a>
+								</div>
+								<?php endif; ?>
+								<div class="col-xs-12 col-md-4 banner-height">
+									<?php if($banner_large != '') : ?>
+									<div class="banner-top">
+										<a href="<?php echo $banner_thumbnail_url ?>" title="<?php echo $current_cat->name ?>"><img src="<?php echo $banner_thumbnail ?>" alt="<?php echo $current_cat->name ?>"></a>
+									</div>
+									<?php endif; ?>
+									<?php if($banner_large != ''):?>
+									<div class="banner-bottom">
+										<a href="<?php echo $banner_thumbnail_2_url ?>" title="<?php echo $current_cat->name ?>"><img src="<?php echo $banner_thumbnail_2 ?>" alt="<?php echo $current_cat->name ?>"></a>
+									</div>
+									<?php endif; ?>
+								</div>			
+							</div>
+						</div>
+					</div>
+		<?php	
+		}
+	}
 
 	/**
 	 * Display category child of
@@ -1984,7 +2040,7 @@ class Martfury_WooCommerce {
 			$term_children = get_term_children( $current_cat->term_id, $taxonomy_name );
 			$url_icon = get_field('icon_breadcrumb',$current_cat)['url'];
 
-        	echo '<div class="catalog-cat"><ul class="breadcrumb-catchild"><img src="'.$url_icon.'"><li class="current-cat">'.$current_cat->name.'</li>';
+        	echo '<div class="catalog-cat"><ul class="breadcrumb-catchild"><li class="current-cat"><img src="'.$url_icon.'">'.$current_cat->name.'</li>';
 			foreach ( $term_children as $child ) {
 				$term = get_term_by( 'id', $child, $taxonomy_name );
 				$url_icon_child = get_field('icon_breadcrumb',$term)['url'];
