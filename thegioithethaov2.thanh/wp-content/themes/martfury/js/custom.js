@@ -37,7 +37,7 @@
               }
           })
 
-          nameElement.css({ 'height': heightLocation });
+          nameElement.css({ 'height': heightLocation - 30 });
       }else {
           nameElement.css({ 'height': 'auto' });
       }

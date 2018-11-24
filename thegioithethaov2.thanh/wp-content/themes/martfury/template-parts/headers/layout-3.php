@@ -10,7 +10,7 @@ if ( empty( $extras ) || ! in_array( 'department', $extras ) ) {
 <div class="header-main-wapper">
     <div class="header-main">
         <div class="<?php echo martfury_header_container_classes(); ?>">
-            <div class="row header-row">
+            <div class="header-row">
                 <div class="header-logo">
                     <div class="d-logo">
 						<?php get_template_part( 'template-parts/logo' ); ?>

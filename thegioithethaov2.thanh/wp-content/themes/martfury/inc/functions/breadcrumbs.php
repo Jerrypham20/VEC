@@ -9,7 +9,7 @@
 function martfury_breadcrumbs( $args = '' ) {
 	$args = wp_parse_args(
 		$args, array(
-			'separator'         => '<span class="sep">/</span>',
+			'separator'         => '<span class="sep">></span>',
 			'home_class'        => 'home',
 			'before'            => '<span class="before">' . esc_html__( 'You are here: ', 'martfury' ) . '</span>',
 			'before_item'       => '',
@@ -18,7 +18,7 @@ function martfury_breadcrumbs( $args = '' ) {
 			'display_last_item' => true,
 			'show_on_front'     => true,
 			'labels'            => array(
-				'home'      => esc_html__( 'Home', 'martfury' ),
+				'home'      => esc_html__( 'Trang chủ', 'martfury' ),
 				'archive'   => esc_html__( 'Archives', 'martfury' ),
 				'blog'      => esc_html__( 'Blog', 'martfury' ),
 				'search'    => esc_html__( 'Search results for', 'martfury' ),
@@ -57,7 +57,7 @@ function martfury_breadcrumbs( $args = '' ) {
 		$items[] = sprintf( $item_tpl, get_home_url(), $args['labels']['home'] );
 	} else {
 		$items[] = sprintf(
-			'%s<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+			'%s<li itemprop="itemListElement">
 				<a class="%s" href="%s" itemprop="item"><span itemprop="name">%s </span></a>
 			</li>%s',
 			$args['before_item'],

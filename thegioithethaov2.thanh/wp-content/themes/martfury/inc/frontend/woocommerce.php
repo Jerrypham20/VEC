@@ -377,7 +377,7 @@ class Martfury_WooCommerce {
 		?>
 
         <a href="<?php echo esc_url( wc_get_cart_url() ) ?>" class="cart-contents" id="icon-cart-contents">
-            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <img src="<?php echo get_template_directory_uri() ?>/images/cart.png" alt="Shopping Cart">
             <span class="mini-item-counter"><?php echo intval( $woocommerce->cart->cart_contents_count ) ?></span>
         </a>
 
@@ -883,7 +883,7 @@ class Martfury_WooCommerce {
 	 */
 	function format_sale_price( $price, $regular_price, $sale_price ) {
 
-		$price = '<ins>' . ( is_numeric( $sale_price ) ? wc_price( $sale_price ) : $sale_price ) . '</ins><del>' . ( is_numeric( $regular_price ) ? wc_price( $regular_price ) : $regular_price ) . '</del>';
+		$price = '<ins class="price-sale">' . ( is_numeric( $sale_price ) ? wc_price( $sale_price ) : $sale_price ) . '</ins><del class="price-regular">' . ( is_numeric( $regular_price ) ? wc_price( $regular_price ) : $regular_price ) . '</del>';
 
 		return $price;
 	}
@@ -1066,7 +1066,7 @@ class Martfury_WooCommerce {
 			return;
 		}
 
-		$this->catalog_top_categories();
+		//$this->catalog_top_categories();
 		echo '<div class="col-md-12 col-xs-12 col-sm-12">';
 		$this->catalog_products_carousel();
 		$this->catalog_featured_categories();
@@ -2284,25 +2284,28 @@ class Martfury_WooCommerce {
                 <ul class="entry-meta">
 					<?php
 
-					$this->single_product_brand();
+					//$this->single_product_brand();
 					global $product;
 					if ( function_exists( 'woocommerce_template_single_rating' ) && $product->get_rating_count() ) {
 						echo '<li>';
 						woocommerce_template_single_rating();
 						echo '</li>';
 					}
-					if ( in_array( $layout, array( '1', '5' ) ) ) {
-						$this->single_product_sku();
-					}
+					// if ( in_array( $layout, array( '1', '5' ) ) ) {
+					// 	$this->single_product_sku();
+					// }
 					?>
 
                 </ul>
             </div>
-			<?php
-			if ( in_array( $layout, array( '1', '5' ) ) ) {
-				$this->single_product_socials();
-			}
-			?>
+            <div class="facebook">
+				<div class="fb-like" data-action="like" data-href="" data-layout="button_count" data-share="true" data-show-faces="false" data-width="520"/></div>
+			</div>
+			<!-- <?php
+			// if ( in_array( $layout, array( '1', '5' ) ) ) {
+			// 	$this->single_product_socials();
+			// }
+			?> -->
         </div>
 		<?php
 	}

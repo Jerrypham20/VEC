@@ -36,13 +36,10 @@ if ( $rating_count > 0 ) : ?>
 		<?php echo wc_get_rating_html( $average, $rating_count ); ?>
 		<?php if ( comments_open() ) : ?>
             <a href="#reviews" class="woocommerce-review-link" rel="nofollow">
-                <span class="character">(</span>
 				<?php
-				$review_text  = $review_count > 1 ? esc_html__( 'Reviews', 'martfury' ) : esc_html__( 'Review', 'martfury' );
+				$review_text  = $review_count > 1 ? esc_html__( 'Đánh giá', 'martfury' ) : esc_html__( 'Đánh giá', 'martfury' );
 				echo sprintf( '<span class="count">%s</span> %s', $review_count, $review_text );
 				?>
-                <span class="character">)
-                </span>
             </a>
 		<?php endif ?>
     </div>

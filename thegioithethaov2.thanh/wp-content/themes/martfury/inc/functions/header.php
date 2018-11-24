@@ -17,7 +17,7 @@ if ( ! function_exists( 'martfury_extra_account' ) ) :
 	function martfury_extra_account() {
 		$extras = martfury_menu_extras();
 		$items  = '';
-
+		$get_url = get_template_directory_uri();
 		if ( empty( $extras ) || ! in_array( 'account', $extras ) ) {
 			return;
 		}
@@ -49,8 +49,8 @@ if ( ! function_exists( 'martfury_extra_account' ) ) :
 					$account_link = get_permalink( wcmp_vendor_dashboard_page_id() );
 				}
 			}
-			$get_url = get_template_directory();
-			$logged_type = '<i class="fa fa-user-circle-o" aria-hidden="true"></i>';
+			$get_url = get_template_directory_uri();
+			$logged_type = sprintf('<img src="%s/images/login.png">',$get_url);
 			if ( martfury_get_option( 'user_logged_type' ) == 'avatar' ) {
 				$logged_type = get_avatar( $user_id, 32 );
 			}
@@ -93,10 +93,11 @@ if ( ! function_exists( 'martfury_extra_account' ) ) :
 
 			$items .= sprintf(
 				'<li class="extra-menu-item menu-item-account">
-				<a href="%s" id="menu-extra-login"><i class="extra-icon icon-user"></i>%s</a>
+				<a href="%s" id="menu-extra-login"><img src="%s/images/login.png" alt="Login">%s</a>
 				%s
 			</li>',
 				esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ),
+				$get_url,
 				esc_html__( '', 'martfury' ),
 				$register
 			);
@@ -270,13 +271,13 @@ if ( ! function_exists( 'martfury_extra_cart' ) ) :
 		ob_start();
 		woocommerce_mini_cart();
 		$mini_cart = ob_get_clean();
-
+		$get_url = get_template_directory_uri();
 		$mini_content = sprintf( '	<div class="widget_shopping_cart_content">%s</div>', $mini_cart );
 
 		printf(
 			'<li class="extra-menu-item menu-item-cart mini-cart woocommerce">
 			<a class="cart-contents" id="icon-cart-contents" href="%s">
-				<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+				<img src="%s/images/cart.png" alt="Cart" >
 				<span class="mini-item-counter">
 					%s
 				</span>
@@ -287,6 +288,7 @@ if ( ! function_exists( 'martfury_extra_cart' ) ) :
 			</div>
 		</li>',
 			esc_url( wc_get_cart_url() ),
+			$get_url,
 			intval( $woocommerce->cart->cart_contents_count ),
 			$mini_content
 		);

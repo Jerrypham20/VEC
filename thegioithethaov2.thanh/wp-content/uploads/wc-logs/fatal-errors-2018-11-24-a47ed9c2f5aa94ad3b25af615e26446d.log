@@ -1,0 +1,16 @@
+2018-11-24T03:42:19+00:00 CRITICAL syntax error, unexpected ';', expecting ',' or ')' in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\functions\header.php on line 290
+
+2018-11-24T08:45:07+00:00 CRITICAL syntax error, unexpected ')' in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\functions\breadcrumbs.php on line 65
+
+2018-11-24T08:45:30+00:00 CRITICAL syntax error, unexpected 'if' (T_IF) in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\functions\breadcrumbs.php on line 55
+
+2018-11-24T10:02:10+00:00 CRITICAL Uncaught Error: Call to undefined function single_product_facebook() in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\frontend\woocommerce.php:2303
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\frontend\woocommerce.php(2267): Martfury_WooCommerce->get_single_product_header('1')
+#1 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-hook.php(286): Martfury_WooCommerce->single_product_header('')
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\woocommerce\content-single-product.php(50): do_action('woocommerce_bef...')
+#5 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\template.php(690): require('D:\\OSPanel\\doma...')
+#6 D:\OSPanel\domains\VEC\thegioithethaov2.than in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\frontend\woocommerce.php on line 2303
+
