@@ -6052,15 +6052,15 @@ body.page .comments-area .comment-respond .form-submit {
 .woocommerce div.product span.price ins,
 .woocommerce div.product p.price ins {
   font-size: 24px;
-  color: #ff3300;
+  color: #ef0505;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: bold;
 }
 .woocommerce div.product span.price del,
 .woocommerce div.product p.price del {
   opacity: 1;
   font-size: 14px;
-  color: #666;
+  color: #888888;
   font-weight: 500;
   padding-left: 5px;
 }
@@ -21535,6 +21535,10 @@ textarea:focus {
 }
 .facebook {
   float: right;
+}
+.woocommerce-product-details__short-description li {
+  font-size: 14px;
+  color: #111;
 }
 @media (max-width: 1199px) {
   .header-bottom .header-logo {
