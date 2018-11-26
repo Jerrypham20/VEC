@@ -15,7 +15,7 @@
  * @package       WooCommerce/Templates
  * @version       3.4.0
  */
-
+global $product;
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -29,7 +29,7 @@ if ( $max_value && $min_value === $max_value ) {
 } else {
 	?>
 	<div class="quantity">
-		<label class="label" for="<?php echo esc_attr( $input_id ); ?>"><?php esc_html_e( 'Quantity', 'martfury' ); ?></label>
+		<label class="label" for="<?php echo esc_attr( $input_id ); ?>"><?php esc_html_e( 'Số lượng:', 'martfury' ); ?></label>
 		<div class="qty-box">
 			<span class="decrease  icon_minus-06"></span>
 			<input
@@ -47,6 +47,10 @@ if ( $max_value && $min_value === $max_value ) {
 				inputmode="<?php echo esc_attr( $inputmode ); ?>" />
 			<span class="increase icon_plus"></span>
 		</div>
+		<?php $stock = get_post_meta( $product->get_id(), '_stock', true ); ?>
+		<?php if($stock != ''){ ?>
+			<span><?php esc_html_e( '(Còn lại '.$stock.' sản phẩm):', 'martfury' ); ?></span>
+			<?php }else{ esc_html_e( '(Hết hàng)', 'martfury' ); } ?>
 	</div>
 	<?php
 }

@@ -69,7 +69,13 @@ if ( post_password_required() ) {
 			?>
 
 		</div>
-		<!-- .summary -->
+		<!-- .summary -->	
+		</div>
+		<div class="col-md-4 col-lg-3 sidebar sidebar-product">
+			<?php if ( is_active_sidebar( 'product-sidebar' ) ) : ?>
+				<?php dynamic_sidebar( 'product-sidebar' ); ?>
+			<?php endif ?>
+		</div>			
 	</div>
 	<div class="summary-sep clear"></div>
 	<div class="mf-product-summary">

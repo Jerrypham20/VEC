@@ -28,7 +28,10 @@ if ( ! $product->is_purchasable() ) {
 if ( $product->is_in_stock() ) : ?>
 
 	<?php do_action( 'woocommerce_before_add_to_cart_form' ); ?>
-
+	<div class="cart-content">
+		<p>Vận chuyển: Địa điểm giao hàng tại Hà Nội</p>
+		<p><img src="<?php echo get_template_directory_uri() ?>/images/icons/freeship.jpg">Freeship với đơn hàng trên <span>1 triệu</span></p>
+	</div>
 	<form class="cart" action="<?php echo esc_url( apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) ); ?>" method="post" enctype='multipart/form-data'>
 		<?php
 			/**
@@ -46,15 +49,14 @@ if ( $product->is_in_stock() ) : ?>
 			'max_value'   => apply_filters( 'woocommerce_quantity_input_max', $product->get_max_purchase_quantity(), $product ),
 			'input_value' => isset( $_POST['quantity'] ) ? wc_stock_amount( wp_unslash( $_POST['quantity'] ) ) : $product->get_min_purchase_quantity(), // WPCS: CSRF ok, input var ok.
 		) );
-
-			/**
-			 * @since 3.0.0.
-			 */
-			do_action( 'woocommerce_after_add_to_cart_quantity' );
+		
 		?>
+	
+		<div class="list-button-addcart">
 
-		<button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" class="single_add_to_cart_button button alt"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
-
+			<button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" class="single_add_to_cart_button button alt"><i class="fa fa-shopping-cart" aria-hidden="true"></i><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
+			<a href="?quick_buy=1&add-to-cart=<?php echo $product->get_id()?>" class="qn_btn"><?php echo esc_html( 'Mua ngay' ); ?></a>
+		</div>
 		<?php
 			/**
 			 * @since 2.1.0.

@@ -1,0 +1,59 @@
+2018-11-26T02:01:16+00:00 CRITICAL syntax error, unexpected 'public' (T_PUBLIC), expecting end of file in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\functions.php on line 160
+
+2018-11-26T02:01:32+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Simple::single_custom_add_to_cart_text() in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\woocommerce\single-product\add-to-cart\simple.php:56
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\woocommerce\includes\wc-core-functions.php(208): include()
+#1 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\woocommerce\includes\wc-template-functions.php(1503): wc_get_template('single-product/...')
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-hook.php(286): woocommerce_simple_add_to_cart('')
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#5 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\woocommerce\includes\wc-template-functions.php(1494): do_action('woocommerce_sim...')
+#6 D: in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\woocommerce\single-product\add-to-cart\simple.php on line 56
+
+2018-11-26T02:04:25+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO) in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\functions.php on line 157
+
+2018-11-26T02:05:14+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Simple::single_custom_add_to_cart_text() in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\woocommerce\single-product\add-to-cart\simple.php:56
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\woocommerce\includes\wc-core-functions.php(208): include()
+#1 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\woocommerce\includes\wc-template-functions.php(1503): wc_get_template('single-product/...')
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-hook.php(286): woocommerce_simple_add_to_cart('')
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#5 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\woocommerce\includes\wc-template-functions.php(1494): do_action('woocommerce_sim...')
+#6 D: in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\woocommerce\single-product\add-to-cart\simple.php on line 56
+
+2018-11-26T02:14:41+00:00 CRITICAL Cannot redeclare redirect_to_checkout() (previously declared in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\functions.php:164) in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\functions.php on line 175
+
+2018-11-26T02:14:48+00:00 CRITICAL Cannot redeclare redirect_to_checkout() (previously declared in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\functions.php:164) in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\functions.php on line 175
+
+2018-11-26T02:50:58+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Simple::count_product() in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\woocommerce\single-product\add-to-cart\simple.php:57
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\woocommerce\includes\wc-core-functions.php(208): include()
+#1 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\woocommerce\includes\wc-template-functions.php(1503): wc_get_template('single-product/...')
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-hook.php(286): woocommerce_simple_add_to_cart('')
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#5 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\woocommerce\includes\wc-template-functions.php(1494): do_action('woocommerce_sim...')
+#6 D:\OSPanel\domains\ in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\woocommerce\single-product\add-to-cart\simple.php on line 57
+
+2018-11-26T02:55:51+00:00 CRITICAL syntax error, unexpected 'print' (T_PRINT), expecting ',' or ';' in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\woocommerce\single-product\add-to-cart\simple.php on line 54
+
+2018-11-26T03:01:46+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO) in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\woocommerce\single-product\add-to-cart\simple.php on line 52
+
+2018-11-26T03:06:01+00:00 CRITICAL Uncaught Error: Call to a member function get_id() on null in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\woocommerce\global\quantity-input.php:50
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\woocommerce\includes\wc-core-functions.php(208): include()
+#1 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\woocommerce\includes\wc-template-functions.php(1606): wc_get_template('global/quantity...', Array)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\woocommerce\single-product\add-to-cart\simple.php(47): woocommerce_quantity_input(Array)
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\woocommerce\includes\wc-core-functions.php(208): include('D:\\OSPanel\\doma...')
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\woocommerce\includes\wc-template-functions.php(1503): wc_get_template('single-product/...')
+#5 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class- in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\woocommerce\global\quantity-input.php on line 50
+
+2018-11-26T03:23:13+00:00 CRITICAL syntax error, unexpected '}' in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\functions.php on line 179
+
+2018-11-26T08:57:49+00:00 CRITICAL syntax error, unexpected ':', expecting ';' in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\woocommerce\global\quantity-input.php on line 53
+
+2018-11-26T08:58:04+00:00 CRITICAL syntax error, unexpected ':', expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\woocommerce\global\quantity-input.php on line 53
+
+2018-11-26T08:58:46+00:00 CRITICAL syntax error, unexpected ':', expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\woocommerce\global\quantity-input.php on line 53
+

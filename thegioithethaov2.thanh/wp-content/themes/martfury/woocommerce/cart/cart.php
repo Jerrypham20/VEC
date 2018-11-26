@@ -26,10 +26,10 @@ do_action( 'woocommerce_before_cart' ); ?>
 		<thead>
 		<tr>
 			<th class="product-thumbnail">&nbsp;</th>
-			<th class="product-name"><?php esc_html_e( 'Product', 'martfury' ); ?></th>
-			<th class="product-price"><?php esc_html_e( 'Price', 'martfury' ); ?></th>
-			<th class="product-quantity"><?php esc_html_e( 'Quantity', 'martfury' ); ?></th>
-			<th class="product-subtotal"><?php esc_html_e( 'Total', 'martfury' ); ?></th>
+			<th class="product-name"><?php esc_html_e( 'Sản phẩm', 'martfury' ); ?></th>
+			<th class="product-price"><?php esc_html_e( 'Giá', 'martfury' ); ?></th>
+			<th class="product-quantity"><?php esc_html_e( 'Số lượng', 'martfury' ); ?></th>
+			<th class="product-subtotal"><?php esc_html_e( 'Tổng', 'martfury' ); ?></th>
 			<th class="product-remove">&nbsp;</th>
 		</tr>
 		</thead>
@@ -58,7 +58,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 						?>
 					</td>
 
-					<td class="product-name" data-title="<?php esc_attr_e( 'Product', 'martfury' ); ?>">
+					<td class="product-name" data-title="<?php esc_attr_e( 'Sản phẩm', 'martfury' ); ?>">
 						<div class="product-item product-detail-mobile">
 							<?php
 							if ( ! $product_permalink ) {
@@ -86,7 +86,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 						<div class="product-detail-mobile">
 							<div class="product-item">
 								<label>
-									<?php esc_html_e( 'Price:', 'martfury' ); ?>
+									<?php esc_html_e( 'Giá:', 'martfury' ); ?>
 								</label>
 								<?php
 								echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
@@ -94,7 +94,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 							</div>
 							<div class="product-item">
 								<label>
-									<?php esc_html_e( 'Total:', 'martfury' ); ?>
+									<?php esc_html_e( 'Tổng:', 'martfury' ); ?>
 								</label>
 								<?php
 								echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );
@@ -103,13 +103,13 @@ do_action( 'woocommerce_before_cart' ); ?>
 						</div>
 					</td>
 
-					<td class="product-price" data-title="<?php esc_attr_e( 'Price', 'martfury' ); ?>">
+					<td class="product-price" data-title="<?php esc_attr_e( 'Giá', 'martfury' ); ?>">
 						<?php
 						echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
 						?>
 					</td>
 
-					<td class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'martfury' ); ?>">
+					<td class="product-quantity" data-title="<?php esc_attr_e( 'Số lượng', 'martfury' ); ?>">
 						<?php
 						if ( $_product->is_sold_individually() ) {
 							$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
@@ -127,7 +127,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 						?>
 					</td>
 
-					<td class="product-subtotal" data-title="<?php esc_attr_e( 'Total', 'martfury' ); ?>">
+					<td class="product-subtotal" data-title="<?php esc_attr_e( 'Tổng', 'martfury' ); ?>">
 						<?php
 						echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );
 						?>
@@ -159,7 +159,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 				<a href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_shop_page_id' ) ) ); ?>" class="btn-shop"><i class="icon-arrow-left"></i> <?php esc_html_e( 'Back To Shop', 'martfury' ); ?>
 				</a>
 
-				<button type="submit" class="button btn-update" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'martfury' ); ?>"><?php esc_html_e( 'Update cart', 'martfury' ); ?></button>
+				<button type="submit" class="button btn-update" name="update_cart" value="<?php esc_attr_e( 'Cập nhật giỏ hàng', 'martfury' ); ?>"><?php esc_html_e( 'Cập nhật giỏ hàng', 'martfury' ); ?></button>
 
 				<?php do_action( 'woocommerce_cart_actions' ); ?>
 

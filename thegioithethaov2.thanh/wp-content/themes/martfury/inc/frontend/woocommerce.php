@@ -209,7 +209,9 @@ class Martfury_WooCommerce {
 		//add_action( 'woocommerce_single_product_summary', array( $this, 'template_single_summary_header' ), 10 );
 
 		// Add single product header
+		
 		add_action( 'woocommerce_before_single_product_summary', array( $this, 'single_product_header' ), 5 );
+		add_action( 'woocommerce_before_single_product_summary', array( $this, 'open_product_content_details' ), 5 );
 		add_action( 'woocommerce_single_product_summary', array( $this, 'single_product_entry_header' ), 5 );
 
 		$this->product_layout_default();
@@ -222,8 +224,7 @@ class Martfury_WooCommerce {
 
 		add_filter( 'woocommerce_add_to_cart_redirect', array( $this, 'buy_now_redirect' ), 99 );
 
-		add_action( 'woocommerce_after_add_to_cart_button', array( $this, 'yith_button' ) );
-
+		//add_action( 'woocommerce_after_add_to_cart_button', array( $this, 'yith_button' ) ); //list button compare, Whishlist
 		// Remove Up-Seller & Related Product
 		remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
 		remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
@@ -505,6 +506,17 @@ class Martfury_WooCommerce {
 		echo '<div class="mf-product-price-box">';
 	}
 
+	/**
+	 * Open product content detail
+	 *
+	 * @since  1.0
+	 *
+	 *
+	 * @return array
+	 */
+	function open_product_content_details() {
+		echo '<div class="col-md-8 col-lg-9">';
+	}
 	/**
 	 * Close product content
 	 *
@@ -2084,7 +2096,7 @@ class Martfury_WooCommerce {
 
 			}
 		}
-
+		$tax_name = get_queried_object();
 		$array_price = array(
 				'0-300000' => 'Dưới 300k',
 				'300000-500000' => 'Từ 300k - 500k',
@@ -2098,7 +2110,7 @@ class Martfury_WooCommerce {
 			$value_price = explode('-',$prices);
 			$min_price = $value_price[0];
 			$max_price = $value_price[1];
-			$list_price[] = sprintf( '<li><a href="/?min_price=%s&max_price=%s">%s</a></li>',$min_price,$max_price, $value );
+			$list_price[] = sprintf( '<li><a href="/'.$tax_name->slug.'/?min_price=%s&max_price=%s">%s</a></li>',$min_price,$max_price, $value );
 		}
 		$list_price[] = '</ul>';
 		$output[] = sprintf('<div class="products-found"><span>Chọn mức giá:</span> %s</div>',implode( ' ', $list_price ));

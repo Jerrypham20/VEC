@@ -2338,7 +2338,7 @@ class Martfury_Shortcodes {
 		);
 
 		foreach ($array_prices as $price => $value) {
-			$header_tabs_price[] = sprintf( '<li><a href="/?min_price=%s">%s</a></li>',$price, $value );
+			$header_tabs_price[] = sprintf( '<li><a href="/'.$atts['taxonomy'].'/?min_price=%s">%s</a></li>',$price, $value );
 		}
 
 		$header_tabs_price[] = '</ul></div>';

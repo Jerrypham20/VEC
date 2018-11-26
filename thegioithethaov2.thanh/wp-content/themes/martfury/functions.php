@@ -152,6 +152,28 @@ function wc_customize_product_sorting($sorting_options){
     return $sorting_options;
 }
 
+//custom text add to cart
+add_filter('woocommerce_product_single_add_to_cart_text', 'single_custom_add_to_cart_text');
+function single_custom_add_to_cart_text($text) {
+	$text = sprintf('Thêm vào giỏ hàng') ;
+	return $text;
+}
+
+//action button mua ngay
+add_filter ('woocommerce_add_to_cart_redirect', 'redirect_to_checkout');
+function redirect_to_checkout($checkout_url) {
+    global $woocommerce;
+    if($_GET['quick_buy']) {
+        $checkout_url = $woocommerce->cart->get_checkout_url();
+    }
+    return $checkout_url;
+}
+
+function product_content_right_detail() {
+	global $product;
+	
+}
+
 /**
  * Load theme
  */
