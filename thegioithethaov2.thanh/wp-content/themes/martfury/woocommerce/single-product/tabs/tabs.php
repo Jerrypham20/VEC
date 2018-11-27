@@ -28,28 +28,38 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 $tabs   = apply_filters( 'woocommerce_product_tabs', array() );
 $layout = martfury_get_option( 'product_page_layout' );
+// global $product;
+// echo '<pre>';
+// var_dump($tabs);
+// echo '</pre>';
 if ( ! empty( $tabs ) ) :
 	if ( $layout != '3' ) {
 		?>
 
 		<div class="woocommerce-tabs wc-tabs-wrapper">
-			<ul class="tabs wc-tabs" role="tablist">
+			<!-- <ul class="tabs wc-tabs" role="tablist"> -->
 				<?php foreach ( $tabs as $key => $tab ) : ?>
 					<li class="<?php echo esc_attr( $key ); ?>_tab" id="tab-title-<?php echo esc_attr( $key ); ?>" role="tab" aria-controls="tab-<?php echo esc_attr( $key ); ?>">
 						<a href="#tab-<?php echo esc_attr( $key ); ?>"><?php echo apply_filters( 'woocommerce_product_' . $key . '_tab_title', esc_html( $tab['title'] ), $key ); ?></a>
 					</li>
 				<?php endforeach; ?>
-			</ul>
+			<!-- </ul> -->
 			<?php foreach ( $tabs as $key => $tab ) : ?>
-				<div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--<?php echo esc_attr( $key ); ?> panel entry-content wc-tab" id="tab-<?php echo esc_attr( $key ); ?>" role="tabpanel" aria-labelledby="tab-title-<?php echo esc_attr( $key ); ?>">
-					<?php if ( isset( $tab['callback'] ) ) {
+				<div class="col-md-8 col-lg-9 woocommerce-Tabs-panel woocommerce-Tabs-panel--<?php echo esc_attr( $key ); ?> panel entry-content wc-tab" id="tab-<?php echo esc_attr( $key ); ?>" role="tabpanel" aria-labelledby="tab-title-<?php echo esc_attr( $key ); ?>">
+					<?php do_action('_detail_product_gallery'); ?>
+					<?php do_action('_featured_list_post'); ?>
+					<?php //do_shortcode(['top_selling']); ?>
+					<div class="images">
+						<?php if ( isset( $tab['callback'] ) ) {
 						call_user_func( $tab['callback'], $key, $tab );
 					} ?>
+					</div>
+				</div>
+				<div class="col-md-4 col-lg-3">
+					
 				</div>
 			<?php endforeach; ?>
 		</div>
-
-
 	<?php } else {
 		?>
 		<div class="mf-woo-tabs wc-tabs-wrapper">

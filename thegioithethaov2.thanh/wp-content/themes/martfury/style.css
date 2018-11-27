@@ -5425,7 +5425,7 @@ body.page .comments-area .comment-respond .form-submit {
   color: #c60000;
 }
 .price {
-  font-size: 16px;
+  font-size: 16px !important;
   font-weight: bold;
   color: #ef0505 !important;
   line-height: 1;
@@ -21598,13 +21598,15 @@ textarea:focus {
   color: #ff0000;
 }
 /* sidebar single */
-.single-product .widget-area .widget{
+
+.single-product .widget {
     border:1px solid #d9dde5
 }
 .sidebar .widget{
     border:1px solid #e1e1e1;
     margin-bottom:20px
 }
+.widget_recent_entries .widgettitle,
 .sidebar .widget h4.widget-title{
     border-bottom:1px solid #e1e1e1;
     padding:10px 20px;
@@ -21666,6 +21668,7 @@ textarea:focus {
 .single-product .sidebar-policy .item br{
     display:none
 }
+
 .sidebar-product h4.widget-title {
   margin-left: -20px;
   margin-right: -20px;
@@ -21713,6 +21716,51 @@ textarea:focus {
   font-family: FontAwesome;
   color: #3fb846;
   left: 0;
+}
+.woocommerce-Tabs-panel {
+  display: block !important;
+}
+.lazy img {
+  cursor: pointer;
+}
+.lazy .slick-dots li button {
+  background-color: #000;
+  opacity: 0.6;
+  width: 13px;
+  height: 13px;
+}
+.lazy .slick-dots li.slick-active button {
+  opacity: 1;
+}
+.lazy .slick-arrow {
+  background: #000;
+  border: none;
+  padding: 20px 14px;
+  color: #fff;
+  opacity: 0;
+}
+.arrow-show {
+  opacity: 1 !important;
+}
+.lazy .slick-arrow.slick-prev {
+  right: 0;
+  z-index: 9;
+}
+.widget_recent_entries {
+  padding: 15px;
+  background-color: #fff;
+}
+.widget_recent_entries li {
+  padding-bottom: 0 !important;
+  margin-bottom: 15px !important;
+}
+.widget_recent_entries .widgettitle {
+  margin: -15px -15px 15px;
+  border-left: 1px solid #cd2020;
+}
+.widget_recent_entries .post-title a {
+  font-size: 14px;
+  color: #000;
 }
 @media (max-width: 1199px) {
   .header-bottom .header-logo {

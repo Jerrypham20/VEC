@@ -22,8 +22,21 @@
       });
     });
 
+    //gallery single product
+    jQuery(".lazy").slick({
+        lazyLoad: 'ondemand', // ondemand progressive anticipated
+        infinite: true,
+        dots: true,
+        nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>',
+        prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>'
+      });
+
+    jQuery('.lazy').hover(function() {
+      jQuery('.lazy .slick-arrow').toggleClass('arrow-show');
+    })
+
     var nameElement = jQuery('.mf-products-tabs-highlight .tabs-content .products').find('.product');
-    //var nameElementSale = jQuery('.jr-best-selling .tabs-content .products').find('.product');
+    //var nameElementFeature = jQuery('.widget_recent_entries .post-thumb').find('.col-xs-6 img');
     //var nameElementCat = jQuery('#mf-shop-content .products').find('.product-inner');
     var bannerCategory = jQuery('.catalog-banner-top').find('.banner-height');
     function fixHeightLocation (nameElement) {
@@ -45,18 +58,18 @@
 
 
     fixHeightLocation(nameElement);
-    //fixHeightLocation(nameElementSale);
+    //fixHeightLocation(nameElementFeature);
     //fixHeightLocation(nameElementCat);
     fixHeightLocation(bannerCategory);
     jQuery( window ).resize(function() {
       fixHeightLocation(nameElement);
-      //fixHeightLocation(nameElementSale);
+      //fixHeightLocation(nameElementFeature);
       //fixHeightLocation(nameElementCat);
       fixHeightLocation(bannerCategory);
     });
     jQuery( window ).load(function() {
       fixHeightLocation(nameElement);
-      //fixHeightLocation(nameElementSale);
+      //fixHeightLocation(nameElementFeature);
       //fixHeightLocation(nameElementCat);
       fixHeightLocation(bannerCategory);
     });

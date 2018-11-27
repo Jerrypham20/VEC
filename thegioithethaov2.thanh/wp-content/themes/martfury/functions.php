@@ -55,6 +55,7 @@ function martfury_setup() {
 
 	add_image_size( 'martfury-blog-grid', 380, 300, true );
 	add_image_size( 'martfury-blog-list', 790, 510, true );
+	add_image_size( 'martfury-product-post-list', 100, 65, true );
 	add_image_size( 'martfury-blog-masonry', 370, 588, false );
 
 	global $martfury_woocommerce;
@@ -169,10 +170,6 @@ function redirect_to_checkout($checkout_url) {
     return $checkout_url;
 }
 
-function product_content_right_detail() {
-	global $product;
-	
-}
 
 /**
  * Load theme
@@ -197,6 +194,7 @@ require get_template_directory() . '/inc/frontend/woocommerce.php';
 require get_template_directory() . '/inc/frontend/dokan.php';
 require get_template_directory() . '/inc/frontend/wc_vendors.php';
 require get_template_directory() . '/inc/frontend/dc_vendors.php';
+require get_template_directory() . '/inc/frontend/metabox.php';
 
 if ( is_admin() ) {
 	require get_template_directory() . '/inc/libs/class-tgm-plugin-activation.php';
