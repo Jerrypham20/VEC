@@ -35,8 +35,26 @@
       jQuery('.lazy .slick-arrow').toggleClass('arrow-show');
     })
 
+
+    //scroll to div
+    jQuery(".sc-tabs li").find("a").click(function(e) {
+        e.preventDefault();
+        var section = jQuery(this).attr("href");
+        jQuery('html, body').animate({
+          scrollTop: jQuery(jQuery(this).attr('href')).offset().top -100
+        }, 600, 'linear');
+    });
+
+
+    //view more sinlge product 
+    jQuery('.view-more').click(function() {
+      jQuery('.content-product').addClass('content-heightauto');
+
+      return false;
+    })
+
     var nameElement = jQuery('.mf-products-tabs-highlight .tabs-content .products').find('.product');
-    //var nameElementFeature = jQuery('.widget_recent_entries .post-thumb').find('.col-xs-6 img');
+    var titleRelated = jQuery('.related products .mf-product-content').find('h2');
     //var nameElementCat = jQuery('#mf-shop-content .products').find('.product-inner');
     var bannerCategory = jQuery('.catalog-banner-top').find('.banner-height');
     function fixHeightLocation (nameElement) {
@@ -56,21 +74,38 @@
       }
     }
 
+    function fixHeightLocationNormal (nameElement) {
+      if ( jQuery(window).width() > 991 ) {
+
+          nameElement.removeAttr('sytle');
+          var heightLocation = 0;
+          nameElement.each(function() {
+              if (jQuery(this).height() > heightLocation) {
+                  heightLocation = jQuery(this).outerHeight();
+              }
+          })
+
+          nameElement.css({ 'height': heightLocation });
+      }else {
+          nameElement.css({ 'height': 'auto' });
+      }
+    }
+
 
     fixHeightLocation(nameElement);
-    //fixHeightLocation(nameElementFeature);
+    fixHeightLocationNormal(titleRelated);
     //fixHeightLocation(nameElementCat);
-    fixHeightLocation(bannerCategory);
+    fixHeightLocationNormal(bannerCategory);
     jQuery( window ).resize(function() {
       fixHeightLocation(nameElement);
-      //fixHeightLocation(nameElementFeature);
+      fixHeightLocationNormal(titleRelated);
       //fixHeightLocation(nameElementCat);
-      fixHeightLocation(bannerCategory);
+      fixHeightLocationNormal(bannerCategory);
     });
     jQuery( window ).load(function() {
       fixHeightLocation(nameElement);
-      //fixHeightLocation(nameElementFeature);
+      fixHeightLocationNormal(titleRelated);
       //fixHeightLocation(nameElementCat);
-      fixHeightLocation(bannerCategory);
+      fixHeightLocationNormal(bannerCategory);
     });
 

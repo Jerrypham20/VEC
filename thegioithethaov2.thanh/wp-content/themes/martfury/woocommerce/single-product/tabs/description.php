@@ -22,12 +22,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $post;
 
-$heading = esc_html( apply_filters( 'woocommerce_product_description_heading', __( 'Description', 'woocommerce' ) ) );
+$heading = esc_html( __( 'Thông tin chi tiết sản phẩm', 'woocommerce' ) );
 
 ?>
-
-<?php if ( $heading ) : ?>
-  <h2><?php echo $heading; ?></h2>
-<?php endif; ?>
-
-<?php the_content(); ?>
+<div class="col-md-8 col-lg-9">
+	<div class="detail-left">
+		<?php if ( $heading ) : ?>
+		  <h2 class="title-detail"><?php echo $heading; ?></h2>
+		<?php endif; ?>
+		<?php do_action('_detail_product_gallery'); ?>
+		<div class="content-product">
+			<?php the_content(); ?>
+			<a href="#" class="view-more">Xem thêm</a>
+		</div>
+	</div>
+</div>

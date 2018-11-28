@@ -3331,7 +3331,7 @@ function martfury_customize_settings() {
 			'type'            => 'text',
 			'label'           => esc_html__( 'Related Products Title', 'martfury' ),
 			'section'         => 'related_products',
-			'default'         => esc_html__( 'Related products', 'martfury' ),
+			'default'         => esc_html__( 'Sản phẩm liên quan', 'martfury' ),
 			'priority'        => 40,
 			'active_callback' => array(
 				array(

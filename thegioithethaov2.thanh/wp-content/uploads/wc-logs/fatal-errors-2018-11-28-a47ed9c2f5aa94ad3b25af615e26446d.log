@@ -1,0 +1,13 @@
+2018-11-28T08:00:12+00:00 CRITICAL require_once(): Failed opening required 'D:\OSPanel\domains\VEC\thegioithethaov2.thanh/wp-content/themes/martfury/inc/widgets/widget-select.php' (include_path='.;d:/ospanel/modules/php/PHP-7.0-x64;d:/ospanel/modules/php/PHP-7.0-x64/PEAR/pear') in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\widgets\widgets.php on line 15
+
+2018-11-28T08:00:39+00:00 CRITICAL Uncaught Error: Call to undefined function cs_add_element() in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\widgets\widget-products-select.php:99
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-widget.php(507): Products_Widget->form(Array)
+#1 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-admin\includes\widgets.php(243): WP_Widget->form_callback(Array)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-admin\includes\widgets.php(48): wp_widget_control(Array, Array)
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-admin\widgets.php(401): wp_list_widgets()
+#4 {main}
+  thrown in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\widgets\widget-products-select.php on line 99
+
+2018-11-28T08:13:20+00:00 CRITICAL syntax error, unexpected 'endif' (T_ENDIF), expecting end of file in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\woocommerce\content-single-product.php on line 77
+

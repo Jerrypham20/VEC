@@ -24,29 +24,34 @@ $related_title = martfury_get_option( 'product_related_title' );
 $columns       = intval( martfury_get_option( 'related_products_columns' ) );
 $container_class = martfury_get_option('product_page_layout') == '6' ? 'martfury-container' : 'container';
 if ( $related_products ) : ?>
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 col-lg-9">
+			<section class="related products" data-columns="<?php echo esc_attr( $columns ); ?>">
+				<div class="<?php echo esc_attr($container_class); ?>">
+					<div class="related-content">
+						<h2 class="related-title"><?php echo esc_html( $related_title ); ?></h2>
 
-	<section class="related products" data-columns="<?php echo esc_attr( $columns ); ?>">
-		<div class="<?php echo esc_attr($container_class); ?>">
-			<div class="related-content">
-				<h2 class="related-title"><?php echo esc_html( $related_title ); ?></h2>
+						<?php woocommerce_product_loop_start(); ?>
 
-				<?php woocommerce_product_loop_start(); ?>
+						<?php foreach ( $related_products as $related_product ) : ?>
 
-				<?php foreach ( $related_products as $related_product ) : ?>
+							<?php
+							$post_object = get_post( $related_product->get_id() );
 
-					<?php
-					$post_object = get_post( $related_product->get_id() );
+							setup_postdata( $GLOBALS['post'] =& $post_object );
 
-					setup_postdata( $GLOBALS['post'] =& $post_object );
+							wc_get_template_part( 'content', 'product' ); ?>
 
-					wc_get_template_part( 'content', 'product' ); ?>
+						<?php endforeach; ?>
 
-				<?php endforeach; ?>
-
-				<?php woocommerce_product_loop_end(); ?>
-			</div>
+						<?php woocommerce_product_loop_end(); ?>
+					</div>
+				</div>
+			</section>
 		</div>
-	</section>
+	</div>
+</div>
 
 <?php endif;
 

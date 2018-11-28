@@ -86,16 +86,18 @@ add_action( 'after_setup_theme', 'martfury_setup', 100 );
 function martfury_register_sidebar() {
 	// Register primary sidebar
 	$sidebars = array(
-		'blog-sidebar'    => esc_html__( 'Blog Sidebar', 'martfury' ),
-		'topbar-left'     => esc_html__( 'Topbar Left', 'martfury' ),
-		'topbar-right'    => esc_html__( 'Topbar Right', 'martfury' ),
-		'topbar-mobile'   => esc_html__( 'Topbar on Mobile', 'martfury' ),
-		'header-bar'      => esc_html__( 'Header Bar', 'martfury' ),
-		'post-sidebar'    => esc_html__( 'Single Post Sidebar', 'martfury' ),
-		'page-sidebar'    => esc_html__( 'Page Sidebar', 'martfury' ),
-		'catalog-sidebar' => esc_html__( 'Catalog Sidebar', 'martfury' ),
-		'product-sidebar' => esc_html__( 'Single Product Sidebar', 'martfury' ),
-		'footer-links'    => esc_html__( 'Footer Links', 'martfury' ),
+		'blog-sidebar'    			=> esc_html__( 'Blog Sidebar', 'martfury' ),
+		'topbar-left'     			=> esc_html__( 'Topbar Left', 'martfury' ),
+		'topbar-right'    			=> esc_html__( 'Topbar Right', 'martfury' ),
+		'topbar-mobile'   			=> esc_html__( 'Topbar on Mobile', 'martfury' ),
+		'header-bar'      			=> esc_html__( 'Header Bar', 'martfury' ),
+		'post-sidebar'    			=> esc_html__( 'Single Post Sidebar', 'martfury' ),
+		'product-socials'    		=> esc_html__( 'Product list socials in review', 'martfury' ),
+		'page-sidebar'    			=> esc_html__( 'Page Sidebar', 'martfury' ),
+		'catalog-sidebar' 			=> esc_html__( 'Catalog Sidebar', 'martfury' ),
+		'product-sidebar' 			=> esc_html__( 'Single Product Sidebar', 'martfury' ),
+		'product-sidebar_bottom' 	=> esc_html__( 'Single Product Sidebar Bottom', 'martfury' ),
+		'footer-links'    			=> esc_html__( 'Footer Links', 'martfury' ),
 	);
 
 	if ( class_exists( 'WC_Vendors' ) || class_exists( 'WCMp' ) ) {
@@ -169,7 +171,23 @@ function redirect_to_checkout($checkout_url) {
     }
     return $checkout_url;
 }
+//remove product tabs
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
 
+//get description product
+function woocommerce_template_product_description() {
+  woocommerce_get_template( 'single-product/tabs/description.php' );
+}
+add_action( 'woocommerce_after_single_product_summary', 'woocommerce_template_product_description', 20 );
+
+function woocommerce_template_product_infomation() {
+  woocommerce_get_template( 'single-product/tabs/additional-information.php' );
+}
+add_action( 'woocommerce_after_single_product_summary', 'woocommerce_template_product_infomation', 20 );
+
+//get review product
+
+add_action( 'woocommerce_after_single_product', 'comments_template', 50 );
 
 /**
  * Load theme

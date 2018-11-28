@@ -49,6 +49,8 @@ class Martfury_Widget_Products extends WC_Widget {
 					''         => esc_html__( 'All products', 'martfury' ),
 					'featured' => esc_html__( 'Featured products', 'martfury' ),
 					'onsale'   => esc_html__( 'On-sale products', 'martfury' ),
+					'best_selling'   => esc_html__( 'Best Selling', 'martfury' ),
+					'top_rated'   => esc_html__( 'Top Rated products', 'martfury' ),
 				),
 			),
 			'orderby'     => array(

@@ -22,12 +22,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $product;
 
-$heading = esc_html( apply_filters( 'woocommerce_product_additional_information_heading', __( 'Additional information', 'woocommerce' ) ) );
+$heading = esc_html( apply_filters( 'woocommerce_product_additional_information_heading', __( 'Thông số kỹ thuật', 'woocommerce' ) ) );
 
 ?>
-
-<?php if ( $heading ) : ?>
-	<h2><?php echo $heading; ?></h2>
-<?php endif; ?>
-
-<?php do_action( 'woocommerce_product_additional_information', $product ); ?>
+<div class="col-md-4 col-lg-3">
+	<div class="detail-left">
+		<?php if ( $heading ) : ?>
+			<h2 class="title-detail"><?php echo $heading; ?></h2>
+		<?php endif; ?>
+		<?php do_action( 'woocommerce_product_additional_information', $product ); ?>
+	</div>
+	<?php do_action('_featured_list_post'); ?>
+	<?php dynamic_sidebar('product-sidebar_bottom'); ?>
+</div>

@@ -2365,7 +2365,7 @@
 
         $sticky_header.find('.sc-tabs').on('click', 'a', function (e) {
             e.preventDefault();
-            var target = $(this).data('tab');
+            var target = $(this).data('div');
             $(this).closest('.sc-tabs').find('a').removeClass('active');
             $(this).addClass('active');
             if (martfury.$body.hasClass('single-product-layout-3')) {
