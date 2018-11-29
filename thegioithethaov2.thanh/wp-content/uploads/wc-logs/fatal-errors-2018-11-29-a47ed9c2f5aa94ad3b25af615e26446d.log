@@ -1,0 +1,90 @@
+2018-11-29T02:25:20+00:00 CRITICAL require_once(): Failed opening required 'D:\OSPanel\domains\VEC\thegioithethaov2.thanh/wp-content/themes/martfury/inc/widgets/widget-products-2.php' (include_path='.;d:/ospanel/modules/php/PHP-7.0-x64;d:/ospanel/modules/php/PHP-7.0-x64/PEAR/pear') in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\widgets\widgets.php on line 15
+
+2018-11-29T02:26:12+00:00 CRITICAL Uncaught Error: Call to undefined function cs_add_element() in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\widgets\widget-product-2.php:90
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-widget.php(507): Products_Widget->form(Array)
+#1 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-admin\includes\widgets.php(243): WP_Widget->form_callback(Array)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-admin\includes\widgets.php(48): wp_widget_control(Array, Array)
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-admin\widgets.php(401): wp_list_widgets()
+#4 {main}
+  thrown in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\widgets\widget-product-2.php on line 90
+
+2018-11-29T02:59:07+00:00 CRITICAL Uncaught Error: Call to undefined function cs_add_element() in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\widgets\widget-product-2.php:56
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-widget.php(507): Products_Widget->form(Array)
+#1 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-admin\includes\widgets.php(243): WP_Widget->form_callback(Array)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-admin\includes\widgets.php(48): wp_widget_control(Array, Array)
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-admin\widgets.php(401): wp_list_widgets()
+#4 {main}
+  thrown in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\widgets\widget-product-2.php on line 56
+
+2018-11-29T03:01:15+00:00 CRITICAL syntax error, unexpected ')' in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\widgets\widget-product-2.php on line 15
+
+2018-11-29T03:01:41+00:00 CRITICAL Uncaught Error: Call to undefined function cs_add_element() in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\widgets\widget-product-2.php:58
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-widget.php(507): Products_Widget->form(Array)
+#1 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-admin\includes\widgets.php(243): WP_Widget->form_callback(Array)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-admin\includes\widgets.php(48): wp_widget_control(Array, Array)
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-admin\widgets.php(401): wp_list_widgets()
+#4 {main}
+  thrown in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\widgets\widget-product-2.php on line 58
+
+2018-11-29T08:24:31+00:00 CRITICAL syntax error, unexpected ';' in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\index.php on line 21
+
+2018-11-29T08:24:50+00:00 CRITICAL syntax error, unexpected '}' in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\index.php on line 21
+
+2018-11-29T08:36:31+00:00 CRITICAL Uncaught Error: Call to undefined method Kuteshop_framework::includes() in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\functions\framework.php:24
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\functions\framework.php(153): Kuteshop_framework->__construct()
+#1 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\functions.php(234): require('D:\\OSPanel\\doma...')
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-settings.php(426): include('D:\\OSPanel\\doma...')
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-config.php(89): require_once('D:\\OSPanel\\doma...')
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-load.php(37): require_once('D:\\OSPanel\\doma...')
+#5 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-cron.php(33): require_once('D:\\OSPanel\\doma...')
+#6 {main}
+  thrown in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\functions\framework.php on line 24
+
+2018-11-29T08:36:33+00:00 CRITICAL Uncaught Error: Call to undefined method Kuteshop_framework::includes() in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\functions\framework.php:24
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\functions\framework.php(153): Kuteshop_framework->__construct()
+#1 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\functions.php(234): require('D:\\OSPanel\\doma...')
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-settings.php(426): include('D:\\OSPanel\\doma...')
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-config.php(89): require_once('D:\\OSPanel\\doma...')
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-load.php(37): require_once('D:\\OSPanel\\doma...')
+#5 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-blog-header.php(13): require_once('D:\\OSPanel\\doma...')
+#6 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\index.php(17): require('D:\\OSPanel\\doma...')
+#7 {main}
+  thrown in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\functions\framework.php on line 24
+
+2018-11-29T09:21:30+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO) in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\frontend\metabox.php on line 115
+
+2018-11-29T09:32:06+00:00 CRITICAL Uncaught Error: [] operator not supported for strings in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\frontend\metabox.php:103
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-hook.php(286): featured_banner('')
+#1 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\index.php(18): do_action('_featured_banne...')
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\template-loader.php(74): include('D:\\OSPanel\\doma...')
+#5 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-blog-header.php(19): require_once('D:\\OSPanel\\doma...')
+#6 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\index.php(17): require('D:\\OSPanel\\doma...')
+#7 {main}
+  thrown in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\frontend\metabox.php on line 103
+
+2018-11-29T09:38:51+00:00 CRITICAL syntax error, unexpected 'if' (T_IF) in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\frontend\metabox.php on line 95
+
+2018-11-29T09:38:53+00:00 CRITICAL syntax error, unexpected 'if' (T_IF) in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\frontend\metabox.php on line 95
+
+2018-11-29T09:45:02+00:00 CRITICAL syntax error, unexpected 'array_push' (T_STRING) in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\frontend\metabox.php on line 100
+
+2018-11-29T09:50:16+00:00 CRITICAL Uncaught Error: Call to undefined function post_content() in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\frontend\metabox.php:128
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-hook.php(286): featured_banner('')
+#1 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\index.php(18): do_action('_featured_banne...')
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-includes\template-loader.php(74): include('D:\\OSPanel\\doma...')
+#5 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-blog-header.php(19): require_once('D:\\OSPanel\\doma...')
+#6 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\index.php(17): require('D:\\OSPanel\\doma...')
+#7 {main}
+  thrown in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\frontend\metabox.php on line 128
+

@@ -11,7 +11,6 @@ get_header(); ?>
 
 <div id="primary" class="content-area <?php martfury_content_columns(); ?>">
 	<main id="main" class="site-main">
-
 		<?php if ( have_posts() ) : ?>
 
 			<div class="row">

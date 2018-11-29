@@ -12,6 +12,7 @@ require_once get_template_directory() . '/inc/widgets/widget-brands-nav.php';
 require_once get_template_directory() . '/inc/widgets/widget-rating-filter.php';
 require_once get_template_directory() . '/inc/widgets/widget-layered-nav-filters.php';
 require_once get_template_directory() . '/inc/widgets/widget-products.php';
+//require_once get_template_directory() . '/inc/widgets/widget-product-2.php';
 require_once get_template_directory() . '/inc/widgets/currencies.php';
 require_once get_template_directory() . '/inc/widgets/product-tag.php';
 require_once get_template_directory() . '/inc/widgets/wc-vendor-info.php';

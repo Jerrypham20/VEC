@@ -11,7 +11,7 @@ if ( martfury_is_blog() ) {
 	$blog_layout = martfury_get_layout();
 }
 if ( $blog_layout == 'grid' ) {
-	$css_class = 'col-md-4 col-sm-6 col-xs-6 post-item-grid';
+	$css_class = 'col-md-3 col-sm-6 col-xs-12 post-item-grid';
 	$size      = 'martfury-blog-grid';
 
 } elseif ( $blog_layout == 'small-thumb' ) {
@@ -71,11 +71,11 @@ $cat_list       = get_the_category();
 				</div>
 			<?php endif; ?>
 			<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-			<?php if ( in_array( $blog_layout, array( 'list', 'small-thumb' ) ) ) : ?>
+			<?php //if ( in_array( $blog_layout, array( 'list', 'small-thumb' ) ) ) : ?>
 				<div class="entry-desc">
-					<?php martfury_content_limit( get_the_excerpt(), $excerpt_length, '' ); ?>
+					<?php echo wp_trim_words( get_the_content(), 20, ''); ?>
 				</div>
-			<?php endif; ?>
+			<?php //endif; ?>
 		</div>
 		<div class="entry-content-bottom">
 			<?php martfury_posted_on(); ?>

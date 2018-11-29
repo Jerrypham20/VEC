@@ -29,15 +29,23 @@ if ( ! is_a( $product, 'WC_Product' ) ) {
 ?>
 <li>
 	<?php do_action( 'woocommerce_widget_product_item_start', $args ); ?>
-	<a href="<?php echo esc_url( $product->get_permalink() ); ?>">
-		<?php echo $product->get_image( 'shop_catalog' ); ?>
-		<span class="product-title"><?php echo esc_html($product->get_name()); ?></span>
-	</a>
-	<?php if ( ! empty( $show_rating ) ) : ?>
-		<?php echo wc_get_rating_html( $product->get_average_rating() ); ?>
-	<?php endif; ?>
-	<span class="price">
-		<?php echo $product->get_price_html(); ?>
-	</span>
+	<div class="row">
+		<div class="col-xs-4">
+			<a href="<?php echo esc_url( $product->get_permalink() ); ?>">
+				<?php echo $product->get_image( 'shop_catalog' ); ?>
+			</a>
+		</div>
+		<div class="col-xs-8">
+			<a href="<?php echo esc_url( $product->get_permalink() ); ?>">
+				<span class="product-title"><?php echo esc_html($product->get_name()); ?></span>
+			</a>
+			<span class="price">
+				<?php echo $product->get_price_html(); ?>
+			</span>
+			<?php //if ( ! empty( $show_rating ) ) : ?>
+				<?php echo wc_get_rating_html( $product->get_average_rating() ); ?>
+			<?php //endif; ?>
+		</div>		
+	</div>
 	<?php do_action( 'woocommerce_widget_product_item_end', $args ); ?>
 </li>

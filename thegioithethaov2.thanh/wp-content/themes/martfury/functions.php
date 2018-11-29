@@ -57,6 +57,8 @@ function martfury_setup() {
 	add_image_size( 'martfury-blog-list', 790, 510, true );
 	add_image_size( 'martfury-product-post-list', 100, 65, true );
 	add_image_size( 'martfury-blog-masonry', 370, 588, false );
+	add_image_size( 'martfury-blog-large', 365, 265, true );
+	add_image_size( 'martfury-blog-medium', 180, 120, true );
 
 	global $martfury_woocommerce;
 	$martfury_woocommerce = new Martfury_WooCommerce;
@@ -231,6 +233,7 @@ if ( is_admin() ) {
 	require get_template_directory() . '/inc/mega-menu/class-mega-menu-walker.php';
 	require get_template_directory() . '/inc/functions/comments.php';
 	require get_template_directory() . '/inc/functions/footer.php';
+	//require get_template_directory() . '/inc/functions/framework.php';
 
 	// Frontend hooks
 	require get_template_directory() . '/inc/frontend/layout.php';
