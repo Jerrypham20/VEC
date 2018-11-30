@@ -1,0 +1,13 @@
+2018-11-30T04:37:26+00:00 CRITICAL syntax error, unexpected '}', expecting end of file in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\sidebar.php on line 57
+
+2018-11-30T08:26:33+00:00 CRITICAL Uncaught Error: Call to a member function get_id() on null in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\woocommerce\global\quantity-input.php:50
+Stack trace:
+#0 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\woocommerce\includes\wc-core-functions.php(208): include()
+#1 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\woocommerce\includes\wc-template-functions.php(1606): wc_get_template('global/quantity...', Array)
+#2 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\woocommerce\cart\cart.php(123): woocommerce_quantity_input(Array, Object(WC_Product_Simple), false)
+#3 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\woocommerce\includes\wc-core-functions.php(208): include('D:\\OSPanel\\doma...')
+#4 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-cart.php(93): wc_get_template('cart/cart.php')
+#5 D:\OSPanel\domains\VEC\thegioithethaov2.thanh\w in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\woocommerce\global\quantity-input.php on line 50
+
+2018-11-30T10:01:13+00:00 CRITICAL Maximum execution time of 180 seconds exceeded in D:\OSPanel\domains\VEC\thegioithethaov2.thanh\wp-content\themes\martfury\inc\backend\customizer.php on line 9
+

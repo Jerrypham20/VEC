@@ -17,9 +17,10 @@
 			)
 		);
 		?>
+		
 	</div>
 	<!-- .entry-content -->
 
-	<?php martfury_entry_footer(); ?>
+	<?php// martfury_entry_footer(); ?>
 	<!-- .entry-footer -->
 </article><!-- #post-## -->

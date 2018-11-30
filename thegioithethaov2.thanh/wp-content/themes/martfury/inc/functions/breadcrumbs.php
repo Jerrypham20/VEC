@@ -9,7 +9,7 @@
 function martfury_breadcrumbs( $args = '' ) {
 	$args = wp_parse_args(
 		$args, array(
-			'separator'         => '<span class="sep">></span>',
+			'separator'         => '<span class="sep"></span>',
 			'home_class'        => 'home',
 			'before'            => '<span class="before">' . esc_html__( 'You are here: ', 'martfury' ) . '</span>',
 			'before_item'       => '',

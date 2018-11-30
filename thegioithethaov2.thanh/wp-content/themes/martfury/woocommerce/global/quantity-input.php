@@ -47,7 +47,7 @@ if ( $max_value && $min_value === $max_value ) {
 				inputmode="<?php echo esc_attr( $inputmode ); ?>" />
 			<span class="increase icon_plus"></span>
 		</div>
-		<?php $stock = get_post_meta( $product->get_id(), '_stock', true ); ?>
+		<?php $stock = get_post_meta( $product->ID, '_stock', true ); ?>
 		<?php if($stock != ''){ ?>
 			<span><?php esc_html_e( '(Còn lại '.$stock.' sản phẩm):', 'martfury' ); ?></span>
 			<?php }else{ esc_html_e( '(Hết hàng)', 'martfury' ); } ?>

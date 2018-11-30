@@ -236,7 +236,8 @@ class Martfury_WooCommerce {
 		add_filter( 'woocommerce_upsells_total', array( $this, 'upsells_total' ) );
 
 		add_action( 'woocommerce_after_single_product_summary', array( $this, 'single_product_summary_open' ), 1 );
-		add_action( 'woocommerce_after_single_product_summary', array( $this, 'fbt_product' ), 5 );
+		// sản phẩm được mua kèm
+		//add_action( 'woocommerce_after_single_product_summary', array( $this, 'fbt_product' ), 5 );
 		add_action( 'woocommerce_after_single_product_summary', array( $this, 'products_full_width_upsell' ), 5 );
 		add_action( 'woocommerce_after_single_product_summary', array( $this, 'single_product_summary_close' ), 100 );
 

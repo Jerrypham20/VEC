@@ -50,11 +50,13 @@ if ( is_page() ) {
 $sidebar_class .= ' ' . $sidebar;
 
 ?>
-<aside id="primary-sidebar" class="widgets-area primary-sidebar col-md-3 col-sm-12 col-xs-12 <?php echo esc_attr( $sidebar_class ) ?>">
+<aside id="primary-sidebar" class="widgets-area primary-sidebar col-md-4 col-sm-12 col-xs-12 <?php echo esc_attr( $sidebar_class ) ?>">
 	<?php
-	if ( is_active_sidebar( $sidebar ) ) {
-		dynamic_sidebar( $sidebar );
-	}
+	do_action('_featured_list_post');
+	// if ( is_active_sidebar( $sidebar ) ) {
+	// 	dynamic_sidebar( $sidebar );
+	// }
+	dynamic_sidebar('product-sidebar_bottom');
 
 	?>
 </aside><!-- #secondary -->

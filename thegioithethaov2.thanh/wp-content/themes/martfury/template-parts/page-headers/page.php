@@ -11,7 +11,8 @@ if ( ! in_array( 'title', $page_header ) ) {
 	<div class="page-breadcrumbs">
 		<div class="container">
 			<?php martfury_get_breadcrumbs(); ?>
+			
 		</div>
 	</div>
-	<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+	
 </div>

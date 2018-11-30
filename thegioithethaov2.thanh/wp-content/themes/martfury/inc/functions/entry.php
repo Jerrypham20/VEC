@@ -16,28 +16,28 @@ function martfury_posted_on( $show_cat = false, $show_character = false ) {
 	$time_string   = sprintf(
 		$time_string,
 		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() )
+		esc_html( get_the_date('F j, Y g:i a') )
 	);
 	$archive_year  = get_the_time( 'Y' );
 	$archive_month = get_the_time( 'm' );
 	$archive_day   = get_the_time( 'd' );
 
-	$posted_on = '<a href="' . esc_url( get_day_link( $archive_year, $archive_month, $archive_day ) ) . '" class="entry-meta" rel="bookmark">' . $time_string . '</a>';
+	$posted_on = '<a href="' . esc_url( get_day_link( $archive_day, $archive_month, $archive_year ) ) . '" class="entry-meta" rel="bookmark">' . $time_string . '</a>';
 
-	if ( $show_character ) {
-		$posted_on .= '<span class="sep"> /</span>';
-	}
+	// if ( $show_character ) {
+	// 	$posted_on .= '<span class="sep"> /</span>';
+	// }
 
 	$author_id = $post->post_author;
-	$posted_on .= '<span class="entry-author entry-meta">' . esc_html__( ' by ', 'martfury' ) . '<a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID', $author_id ) ) ) . '">' . esc_html( get_the_author_meta( 'display_name', $author_id ) ) . '</a></span>';
+	//$posted_on .= '<span class="entry-author entry-meta">' . esc_html__( ' by ', 'martfury' ) . '<a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID', $author_id ) ) ) . '">' . esc_html( get_the_author_meta( 'display_name', $author_id ) ) . '</a></span>';
 
 	if ( $show_cat ) {
 
-		if ( $show_character ) {
-			$posted_on .= '<span class="sep"> /</span>';
-		}
+		// if ( $show_character ) {
+		// 	$posted_on .= '<span class="sep"> /</span>';
+		// }
 
-		$categories_list = get_the_category_list( '<span class="sep">, </span>' );
+		//$categories_list = get_the_category_list( '<span class="sep">, </span>' );
 		if ( $categories_list ) {
 			$posted_on .= sprintf( '<span class="cat-links entry-meta">' . esc_html__( ' in %s', 'martfury' ) . '</span>', $categories_list );
 		}
@@ -222,6 +222,31 @@ if ( ! function_exists( 'martfury_author_box' ) ) :
 endif;
 
 /**
+ * Get tags meta
+ *
+ * @since  1.0
+ *
+ */
+if ( ! function_exists( 'martfury_tags_box' ) ) :
+	function martfury_tags_box() {
+		global $product;
+		?>
+        <div class="post-tags-box clearfix">
+            <strong><i class="fa fa-tag" aria-hidden="true"></i> Từ khóa</strong>
+            <ul class="list-tags">
+            	<?php 
+            		$tags = get_the_tags($product->ID); 
+            		foreach($tags as $tag) :
+            	?>
+            	<li><a href="<?php bloginfo('url');?>/tag/<?php print_r($tag->slug);?>" tittle="<?php print_r($tag->name); ?>"><?php print_r($tag->name); ?></a></li>
+            	<?php endforeach; ?>
+            </ul>
+        </div>
+		<?php
+	}
+endif;
+
+/**
  * Get related post
  *
  * @since  1.0
@@ -270,8 +295,8 @@ if ( ! function_exists( 'martfury_related_posts' ) ) :
 		$related_title = martfury_get_option( 'related_posts_title' );
 
 		?>
-        <div class="mf-related-posts" id="mf-related-posts">
-            <h2 class="related-title"><?php echo esc_html( $related_title ); ?></h2>
+        <div class="mf-related-posts widget_recent_entries" id="mf-related-posts">
+            <h2 class="widgettitle"><?php echo esc_html( $related_title ); ?></h2>
 
             <div class="row">
                 <div class="related-posts-list">
@@ -327,7 +352,7 @@ if ( ! function_exists( 'martfury_get_breadcrumbs' ) ) :
 		}
 		ob_start();
 		?>
-        <ul class="breadcrumbs">
+        <ul class="breadcrumbs breadcrumb-catchild">
 			<?php
 			martfury_breadcrumbs(
 				array(

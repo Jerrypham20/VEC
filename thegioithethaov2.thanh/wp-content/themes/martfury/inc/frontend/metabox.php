@@ -42,7 +42,7 @@ function featured_list_post(){
 							if ( has_post_thumbnail() ) {
 								$post_thumbnail_id = get_post_thumbnail_id( $q->ID );
 
-								echo '<a href="'.get_permalink($q->ID).' title="'.$q->post_title.'">'. martfury_get_image_html( $post_thumbnail_id, 'full' ).'</a>';
+								echo '<a href="'.get_permalink($q->ID).'" title="'.$q->post_title.'">'. martfury_get_image_html( $post_thumbnail_id, 'full' ).'</a>';
 
 							} elseif ( function_exists( 'woocommerce_get_product_thumbnail' ) ) {
 								echo woocommerce_get_product_thumbnail();

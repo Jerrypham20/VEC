@@ -14,7 +14,7 @@ get_header(); ?>
 
 	<div id="primary" class="content-area <?php martfury_content_columns(); ?>">
 		<main id="main" class="site-main">
-
+			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php get_template_part( 'template-parts/content', 'page' ); ?>

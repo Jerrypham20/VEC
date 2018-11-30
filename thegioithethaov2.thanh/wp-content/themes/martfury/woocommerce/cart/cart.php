@@ -156,7 +156,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 		<tr>
 			<td colspan="6" class="actions">
 
-				<a href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_shop_page_id' ) ) ); ?>" class="btn-shop"><i class="icon-arrow-left"></i> <?php esc_html_e( 'Back To Shop', 'martfury' ); ?>
+				<a href="<?php echo esc_url( get_permalink( get_option( 'woocommerce_shop_page_id' ) ) ); ?>" class="btn-shop"><i class="icon-arrow-left"></i> <?php esc_html_e( 'Tiếp tục mua sắm', 'martfury' ); ?>
 				</a>
 
 				<button type="submit" class="button btn-update" name="update_cart" value="<?php esc_attr_e( 'Cập nhật giỏ hàng', 'martfury' ); ?>"><?php esc_html_e( 'Cập nhật giỏ hàng', 'martfury' ); ?></button>
@@ -175,9 +175,9 @@ do_action( 'woocommerce_before_cart' ); ?>
 		<div class="row">
 			<div class="col-md-4 col-sm-12 col-coupon">
 				<div class="coupon">
-					<label for="coupon_code"><?php esc_html_e( 'Coupon Discount', 'martfury' ); ?></label>
-					<input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'martfury' ); ?>" />
-					<input type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'martfury' ); ?>" />
+					<label for="coupon_code"><?php esc_html_e( 'Mã giảm giá', 'martfury' ); ?></label>
+					<input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Mã giảm giá', 'martfury' ); ?>" />
+					<input type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Nhập mã giảm giá', 'martfury' ); ?>" />
 					<?php do_action( 'woocommerce_cart_coupon' ); ?>
 				</div>
 			</div>

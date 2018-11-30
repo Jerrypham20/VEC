@@ -168,6 +168,9 @@ if ( ! function_exists( 'martfury_single_entry_header' ) ) :
 		?>
 		<div class="entry-metas">
 			<?php martfury_posted_on( false, true ); ?>
+			<div class="facebook">
+				<div class="fb-like" data-action="like" data-href="" data-layout="button_count" data-share="true" data-show-faces="false" data-width="520"/></div>
+			</div>
 		</div>
 		<?php
 	}
